@@ -10,26 +10,16 @@
 </head>
 <body>
     <!-- <img src="../dekstop.png" alt="" class="f1"> -->
+
     <div class="section0_menu">
         <div class="titles">
-            <a href="#" onclick="loadPage('./pages/zvuk.html'); return false;" class="q1">Звукотерапия</a>
-            <a href="#" onclick="loadPage('./pages/articles.html'); return false;" class="q2">Статьи</a>
-            <a href="#" onclick="loadPage('./index.html'); return false;" class="logo">Purity of Aum</a>
-            <a href="#" onclick="loadPage('./pages/vzaim.html'); return false;" class="q3" class="dropbtn">Взаимодействие</a>
-            <a href="#" onclick="loadPage('./pages/tests.html'); return false;" class="q4">Тесты</a>
+            <a href="./pages/zvuk.html" class="q1">Звукотерапия</a>
+            <a href="./pages/articles.html" class="q2">Статьи</a>
+            <a href="./index.html" class="logo">Purity of Aum</a>
+            <a href="./pages/vzaim.html" class="q3" class="dropbtn">Взаимодействие</a>
+            <a href="./pages/tests.html" class="q4">Тесты</a>
         </div>
     </div>
-
-    <script>
-        async function loadPage(path) {
-            const container = document.getElementById('content');
-            container.innerHTML = '<div class="loader">Загрузка...</div>';
-            const response = await fetch(path);
-            const html = await response.text();
-            container.innerHTML = html;
-            history.pushState({}, '', path);
-        }
-    </script>
 
     <div class="section1_glav">
         <div class="glav_img">
