@@ -74,7 +74,7 @@
     font-family: Raleway;
     font-size: 1vw;
     font-weight: 350;
-    padding-bottom: 1.5vw;
+    padding-bottom: 5.5vw;
 
 }
 
@@ -93,7 +93,7 @@
     font-family: Raleway;
     font-size: 1.2vw;
     font-weight: 550;
-    padding-top: 2vw;
+    padding-top: 5vw;
     padding-bottom: 0.5vw;
 }
 
@@ -105,19 +105,11 @@
     background-color: #182809;
 }
 
-.btm_mix {
-    position: absolute;
-    margin-top: 11.5vw;
-    margin-left: -17vw;
-    border: 0;
-    background-color: #ffffff;
-    color: black;
-}
-
 .btm_mix1 {
     font-family: Raleway;
     font-size: 1.1vw;
     font-weight: 550;
     text-decoration: none;
     color: rgb(2, 54, 11);
+    padding-left: 30vw;
 }

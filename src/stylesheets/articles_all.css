@@ -25,6 +25,8 @@
     font-family: RalewaySB;
     font-size: 1.8vw;
     border: 0.2vw;
+    margin-top: 4vw;
+    padding-bottom: 2vw;
 }
 
 .zk1_11 {
@@ -34,6 +36,15 @@
     text-align: center;
     font-size: 1.8vw;
     border: 0.2vw;
+}
+
+.zk1_bl {
+    position: relative;
+    width: 60vw;
+    padding-bottom: 1vw;
+    text-align: justify;
+    font-family: RalewayM;
+    font-size: 1.4vw;
 }
 
 .zk1 {
