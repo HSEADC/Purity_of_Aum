@@ -122,10 +122,28 @@
     font-size: 1vw;
 }
 
+.zv_img_text {
+    position: relative;
+    width: 60vw;
+}
+
+.zk_img_text {
+    position: relative;
+    width: 60vw;
+}
+
 .zk_img {
     width: 60vw;
     height: 30vw;
     padding-top: 0.5vw;
+}
+
+.zv_img_text1 {
+    text-align: center;
+    font-family: Raleway;
+    font-size: 0.6vw;
+    color: black;
+    padding-bottom: 1.5vw;
 }
 
 .zk_img_text1 {
