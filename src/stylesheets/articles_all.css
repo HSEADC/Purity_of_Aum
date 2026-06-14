@@ -29,6 +29,16 @@
     padding-bottom: 2vw;
 }
 
+.zk1_1_bl {
+    position: relative;
+    width: 60vw;
+    font-family: RalewaySB;
+    font-size: 1.8vw;
+    border: 0.2vw;
+    /* margin-top: 2vw; */
+    padding-bottom: 2vw;
+}
+
 .zk1_11 {
     position: relative;
     width: 60vw;
