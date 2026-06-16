@@ -75,7 +75,7 @@ body {
     margin-left: 1.5vw;
 }
 
-.w1.1 {
+.w1_1 {
     position: absolute;
 }
 
@@ -737,4 +737,25 @@ input[type="email"] {
     color: #E4E4E4;
     border: 0.1vw solid #ccc; 
     border-radius: 0.7vw;
+}
+
+
+
+
+.screen1_1 {
+    width: 100vw;
+    height: 51vw;
+    overflow-x: hidden;
+}
+
+.water_image_bg {
+    overflow-x: hidden;
+    width: 100vw;
+    height: 90vh;
+    background-image: url(../img/glav_pages/glav_fon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    margin-top: 0vw;
+    margin-left: 0vw;
 }
