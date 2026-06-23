@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
+    <title>Тест: Баланс Чакр - Purity of Aum</title>
+    <style>
+        /* Стили идентичны первому тесту для сохранения единства */
+        .tree-silhouette { position: absolute; bottom: -20px; opacity: 0.04; fill: var(--secondary-color); transform-origin: bottom center; }
+        .tree-1 { left: 5%; width: 300px; animation: sway 15s infinite ease-in-out alternate; }
+        .tree-2 { right: 8%; width: 260px; animation: sway 18s infinite ease-in-out alternate-reverse; }
+        .tree-3 { left: 35%; width: 180px; animation: sway 20s infinite ease-in-out alternate; animation-delay: -5s; }
+        @keyframes sway { 0% { transform: rotate(-1.5deg); } 100% { transform: rotate(1.5deg); } }
+
+        .firefly { position: absolute; width: 4px; height: 4px; background: radial-gradient(circle, rgba(74, 124, 67, 0.9), transparent); border-radius: 50%; box-shadow: 0 0 12px rgba(74, 124, 67, 0.5); animation: rise 20s infinite linear; opacity: 0; }
+        .firefly:nth-child(4) { left: 20%; animation-duration: 18s; animation-delay: 0s; }
+        .firefly:nth-child(5) { left: 50%; animation-duration: 22s; animation-delay: 5s; }
+        .firefly:nth-child(6) { left: 80%; animation-duration: 19s; animation-delay: 10s; }
+        .firefly:nth-child(7) { left: 35%; animation-duration: 24s; animation-delay: 2s; }
+        .firefly:nth-child(8) { left: 65%; animation-duration: 21s; animation-delay: 7s; }
+        @keyframes rise { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 20% { opacity: 0.7; } 80% { opacity: 0.7; } 100% { transform: translateY(-10vh) translateX(40px); opacity: 0; } }
+
+        .test-container { max-width: 800px; margin: 0 auto; padding: 10rem 2rem 4rem; position: relative; z-index: 1; }
+        .test-header { text-align: center; margin-bottom: 4rem; animation: fadeInUp 1s ease forwards; }
+        .test-title { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem; letter-spacing: -0.02em; }
+        .info-box { text-align: center; font-size: 1.1rem; line-height: 1.7; color: #555; max-width: 600px; margin: 0 auto 4rem; animation: fadeInUp 1s ease 0.2s forwards; opacity: 0; }
+        
+        .question-block { margin-bottom: 3rem; }
+        .question { margin-bottom: 2.5rem; padding: 0 0 2rem 0; border-bottom: 1px solid rgba(45, 90, 39, 0.15); animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+        .question:nth-child(1) { animation-delay: 0.3s; } .question:nth-child(2) { animation-delay: 0.4s; } .question:nth-child(3) { animation-delay: 0.5s; } .question:nth-child(4) { animation-delay: 0.6s; } .question:nth-child(5) { animation-delay: 0.7s; } .question:nth-child(6) { animation-delay: 0.8s; } .question:nth-child(7) { animation-delay: 0.9s; } .question:nth-child(8) { animation-delay: 1.0s; } .question:nth-child(9) { animation-delay: 1.1s; } .question:nth-child(10) { animation-delay: 1.2s; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } from { transform: translateY(20px); } }
+
+        .question-text { font-weight: 600; margin-bottom: 1.5rem; color: var(--text-dark); font-size: 1.2rem; }
+        .answers label { display: flex; align-items: center; padding: 1rem 1.5rem; margin: 0.8rem 0; background: rgba(255, 255, 255, 0.4); border-radius: 16px; cursor: pointer; transition: all 0.3s ease; border: 1px solid rgba(45, 90, 39, 0.05); }
+        .answers label:hover { background: rgba(255, 255, 255, 0.8); border-color: rgba(45, 90, 39, 0.2); transform: translateX(5px); box-shadow: 0 4px 15px rgba(45, 90, 39, 0.05); }
+        input[type="radio"] { margin-right: 12px; accent-color: var(--secondary-color); width: 18px; height: 18px; }
+
+        .btn-submit { display: block; width: 100%; padding: 1.5rem; background: var(--secondary-color); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.4s ease; margin-top: 3rem; box-shadow: 0 8px 30px rgba(45, 90, 39, 0.2); }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(45, 90, 39, 0.3); background: #23471e; }
+
+        .result-panel { display: none; animation: fadeInUp 1s ease forwards; }
+        .result-title { color: var(--secondary-color); font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 1rem; text-align: center; font-weight: 700; }
+        .result-desc { text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .level-indicator { display: flex; justify-content: center; gap: 15px; margin: 3rem 0; flex-wrap: wrap; }
+        .level-badge { padding: 1rem 2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 600; background: rgba(255, 255, 255, 0.4); color: #666; border: 1px solid rgba(45, 90, 39, 0.1); transition: all 0.4s ease; }
+        .level-badge.active { background: var(--secondary-color); color: white; transform: scale(1.1); box-shadow: 0 8px 25px rgba(45, 90, 39, 0.25); border-color: transparent; }
+
+        .result-section { margin: 3rem 0; text-align: center; }
+        .result-section h3 { color: var(--secondary-color); margin-bottom: 1.5rem; font-size: 1.4rem; }
+        .result-section ul { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; text-align: left; }
+        .result-section li { padding: 1rem 0 1rem 2.5rem; position: relative; line-height: 1.7; border-bottom: 1px solid rgba(45, 90, 39, 0.08); }
+        .result-section li:before { content: "🎵"; position: absolute; left: 0; font-size: 1.2rem; }
+        
+        .instruments-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 1.5rem; }
+        .instrument-tag { background: rgba(45, 90, 39, 0.1); color: var(--secondary-color); padding: 0.6rem 1.8rem; border-radius: 50px; font-size: 0.95rem; font-weight: 600; border: 1px solid rgba(45, 90, 39, 0.15); transition: all 0.3s; }
+        .instrument-tag:hover { background: var(--secondary-color); color: white; transform: translateY(-2px); }
+
+        .recommendations { background: rgba(255, 243, 205, 0.3); border: 1px solid rgba(255, 193, 7, 0.2); padding: 2rem; border-radius: 24px; margin: 3rem auto; max-width: 600px; text-align: center; }
+        .recommendations h4 { color: #856404; margin-bottom: 1rem; font-size: 1.1rem; }
+
+        .btn-secondary { display: inline-block; margin-top: 2rem; padding: 1rem 2.5rem; background: transparent; color: var(--secondary-color); border: 1px solid rgba(45, 90, 39, 0.3); border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+        .btn-secondary:hover { background: rgba(45, 90, 39, 0.05); border-color: var(--secondary-color); }
+
+        @media (max-width: 768px) { .test-container { padding: 8rem 1.5rem 3rem; } .tree-silhouette { display: none; } }
+        @media (max-width: 480px) { .test-container { padding: 7rem 1rem 2rem; } .question-text { font-size: 1.1rem; } .answers label { padding: 0.8rem 1rem; font-size: 0.95rem; } .firefly { display: none; } }
+    </style>
+</head>
+<body>
+    <!-- Живой лесной фон -->
+    <div class="forest-bg">
+        <svg class="tree-silhouette tree-1" viewBox="0 0 200 400"><path d="M100,20 L180,380 L20,380 Z M100,20 L100,380"/></svg>
+        <svg class="tree-silhouette tree-2" viewBox="0 0 200 400"><path d="M100,30 Q160,200 180,380 L20,380 Q40,200 100,30 Z"/></svg>
+        <svg class="tree-silhouette tree-3" viewBox="0 0 200 400"><path d="M100,10 L170,380 L30,380 Z M100,10 L100,380"/></svg>
+        <div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu"><span></span><span></span><span></span></div>
+            <nav><ul class="nav-menu-left"><li><a href="./zvuk.html">Звукотерапия</a></li><li><a href="#about">Статьи</a></li></ul></nav>
+        </div>
+        <a href="./index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav><ul class="nav-menu-right"><li><a href="./vzaim_glav.html">Взаимодействие</a></li><li><a href="./tests_glav.html">Тесты</a></li></ul></nav>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- TEST CONTENT -->
+    <div class="test-container">
+        <div id="quizPanel">
+            <div class="test-header"><h1 class="test-title">🌈 Баланс ваших чакр</h1></div>
+            <div class="info-box">Ответьте на 10 вопросов, чтобы определить, какой энергетический центр требует внимания и какой звук поможет восстановить гармонию.</div>
+            
+            <form id="testForm">
+                <div class="question-block">
+                    <div class="question"><div class="question-text">1. Какой цвет вам ближе сейчас?</div><div class="answers"><label><input type="radio" name="q1" value="root"> Красный — сила, опора</label><label><input type="radio" name="q1" value="sacral"> Оранжевый — творчество, радость</label><label><input type="radio" name="q1" value="solar"> Желтый — уверенность, воля</label><label><input type="radio" name="q1" value="heart"> Зеленый — любовь, гармония</label><label><input type="radio" name="q1" value="throat"> Голубой — общение, правда</label><label><input type="radio" name="q1" value="third"> Синий — интуиция, мудрость</label><label><input type="radio" name="q1" value="crown"> Фиолетовый — единство, духовность</label></div></div>
+                    
+                    <div class="question"><div class="question-text">2. Где вы чаще всего чувствуете напряжение в теле?</div><div class="answers"><label><input type="radio" name="q2" value="root"> Ноги, бедра, основание позвоночника</label><label><input type="radio" name="q2" value="sacral"> Низ живота, таз</label><label><input type="radio" name="q2" value="solar"> Солнечное сплетение, желудок</label><label><input type="radio" name="q2" value="heart"> Грудь, сердце</label><label><input type="radio" name="q2" value="throat"> Горло, шея</label><label><input type="radio" name="q2" value="third"> Лоб, виски, глаза</label><label><input type="radio" name="q2" value="crown"> Макушка, вся голова</label></div></div>
+                    
+                    <div class="question"><div class="question-text">3. Какой звук ассоциируется у вас с чувством безопасности?</div><div class="answers"><label><input type="radio" name="q3" value="root"> Низкий гул барабана</label><label><input type="radio" name="q3" value="sacral"> Течение воды</label><label><input type="radio" name="q3" value="solar"> Звонкий удар гонга</label><label><input type="radio" name="q3" value="heart"> Мягкое пение</label><label><input type="radio" name="q3" value="throat"> Тихий шепот</label><label><input type="radio" name="q3" value="third"> Тонкий звон колокольчика</label><label><input type="radio" name="q3" value="crown"> Полная тишина</label></div></div>
+                    
+                    <div class="question"><div class="question-text">4. Какой звук вам нужен для заземления и ощущения опоры?</div><div class="answers"><label><input type="radio" name="q4" value="root"> Ритмичный барабан</label><label><input type="radio" name="q4" value="sacral"> Звук текущей воды</label><label><input type="radio" name="q4" value="solar"> Камертон</label><label><input type="radio" name="q4" value="heart"> Тихая флейта</label><label><input type="radio" name="q4" value="throat"> Пение мантр</label><label><input type="radio" name="q4" value="third"> Свист ветра</label><label><input type="radio" name="q4" value="crown"> Тишина</label></div></div>
+                    
+                    <div class="question"><div class="question-text">5. Где вы чувствуете блок в общении?</div><div class="answers"><label><input type="radio" name="q5" value="throat"> Горло — сложно говорить</label><label><input type="radio" name="q5" value="heart"> Грудь — не могу открыться</label><label><input type="radio" name="q5" value="solar"> Живот — нет уверенности</label><label><input type="radio" name="q5" value="root"> Ноги — не чувствую опоры</label><label><input type="radio" name="q5" value="third"> Голова — не знаю, что сказать</label><label><input type="radio" name="q5" value="sacral"> Таз — нет вдохновения</label><label><input type="radio" name="q5" value="crown"> Все тело — не хочу общаться</label></div></div>
+                    
+                    <div class="question"><div class="question-text">6. Какой звук ассоциируется у вас с любовью?</div><div class="answers"><label><input type="radio" name="q6" value="heart"> Сердцебиение</label><label><input type="radio" name="q6" value="throat"> Нежная мантра</label><label><input type="radio" name="q6" value="third"> Тихий звон</label><label><input type="radio" name="q6" value="crown"> Тишина</label><label><input type="radio" name="q6" value="root"> Глубокий бас</label><label><input type="radio" name="q6" value="sacral"> Плеск воды</label><label><input type="radio" name="q6" value="solar"> Уверенный голос</label></div></div>
+                    
+                    <div class="question"><div class="question-text">7. Какой звук вам нужен для уверенности в себе?</div><div class="answers"><label><input type="radio" name="q7" value="solar"> Барабан — ритм силы</label><label><input type="radio" name="q7" value="root"> Гонг — мощная вибрация</label><label><input type="radio" name="q7" value="throat"> Пение — выражение себя</label><label><input type="radio" name="q7" value="heart"> Арфа — мягкость</label><label><input type="radio" name="q7" value="third"> Камертон — ясность</label><label><input type="radio" name="q7" value="sacral"> Флейта — творчество</label><label><input type="radio" name="q7" value="crown"> Тишина — внутренняя сила</label></div></div>
+                    
+                    <div class="question"><div class="question-text">8. Какой звук ассоциируется у вас с интуицией?</div><div class="answers"><label><input type="radio" name="q8" value="third"> Тонкий свист</label><label><input type="radio" name="q8" value="crown"> Колокольчик</label><label><input type="radio" name="q8" value="throat"> Шепот</label><label><input type="radio" name="q8" value="heart"> Тишина сердца</label><label><input type="radio" name="q8" value="solar"> Внутренний голос</label><label><input type="radio" name="q8" value="sacral"> Звук воды</label><label><input type="radio" name="q8" value="root"> Гул земли</label></div></div>
+                    
+                    <div class="question"><div class="question-text">9. Какой цвет вам дает ясность мышления?</div><div class="answers"><label><input type="radio" name="q9" value="third"> Синий — глубина</label><label><input type="radio" name="q9" value="crown"> Фиолетовый — мудрость</label><label><input type="radio" name="q9" value="throat"> Голубой — чистота</label><label><input type="radio" name="q9" value="heart"> Зеленый — баланс</label><label><input type="radio" name="q9" value="solar"> Желтый — концентрация</label><label><input type="radio" name="q9" value="sacral"> Оранжевый — креативность</label><label><input type="radio" name="q9" value="root"> Красный — фокус</label></div></div>
+                    
+                    <div class="question"><div class="question-text">10. Какой звук вам нужен для единства с миром?</div><div class="answers"><label><input type="radio" name="q10" value="crown"> Мантра «Ом»</label><label><input type="radio" name="q10" value="third"> Гонг — растворение</label><label><input type="radio" name="q10" value="throat"> Хоровое пение</label><label><input type="radio" name="q10" value="heart"> Звук сердца</label><label><input type="radio" name="q10" value="solar"> Ритм барабана</label><label><input type="radio" name="q10" value="sacral"> Течение реки</label><label><input type="radio" name="q10" value="root"> Тишина земли</label></div></div>
+                </div>
+                <button type="button" class="btn-submit" onclick="calculateResult()">🌈 Узнать баланс чакр</button>
+            </form>
+        </div>
+
+        <div id="resultPanel" class="result-panel"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="section8_fin">
+        <div id="fin_plashka">
+           <div class="fin_plashka1"><a href="#" class="logo22">Purity of Aum</a></div>
+           <div class="fin_plashka2">
+                <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="../pages/articles.html" class="fin1">Статьи</a>
+                <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
+                <a href="../pages/tests.html" class="fin1">Тесты</a>
+            </div>  
+           <div class="btm_fin">
+                <div class="card1">
+                    <form id="thanks" method="POST">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span></button>
+                    </form>
+                    <p class="msg" id="congo">Спасибо за подписку!</p>
+                </div>
+            </div>
+            <hr class="line_fin">
+            <div class="box_fin"><p class="PoA">2026 Purity of Aum</p><p class="NS">Настасья Звонарёва</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active'); sideMenu.classList.toggle('active'); sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+        document.querySelectorAll('.side-menu-link').forEach(link => { link.addEventListener('click', () => { toggleSideMenu(); }); });
+        window.addEventListener('scroll', () => { if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
+
+        // Результаты по 7 чакрам
+        const results = {
+            root: { 
+                title: '🔴 Корневая чакра (Муладхара)', 
+                desc: 'Ваша основа требует укрепления. Вы чувствуете неуверенность, потерю опоры или страх за будущее.',
+                practices: ['Медитация с барабаном (60-80 Гц)', 'Звуковая ванна с тибетскими чашами низких частот', 'Практика заземления под ритмичную музыку', 'Пение мантры «ЛАМ»'],
+                instruments: ['Барабан', 'Гонг (низкий)', 'Тибетские чаши (бас)', 'Диджериду'],
+                advice: 'Слушайте низкие, ритмичные звуки 15 минут в день. Ходите босиком по земле, ощущая вибрацию под ногами.'
+            },
+            sacral: { 
+                title: '🟠 Сакральная чакра (Свадхистана)', 
+                desc: 'Ваш творческий центр заблокирован. Вы чувствуете потерю радости, вдохновения или эмоциональную холодность.',
+                practices: ['Медитация под звуки текущей воды', 'Танцевальные практики под флейту', 'Пение мантры «ВАМ»', 'Звуковая терапия с арфой'],
+                instruments: ['Флейта', 'Арфа', 'Записи воды', 'Кристаллические чаши'],
+                advice: 'Окружите себя звуками воды и ветра. Танцуйте под музыку, позволяя телу двигаться свободно.'
+            },
+            solar: { 
+                title: '🟡 Чакра солнечного сплетения (Манипура)', 
+                desc: 'Ваш центр силы ослаблен. Вы чувствуете неуверенность, потерю контроля или трудности с принятием решений.',
+                practices: ['Медитация с камертоном (нота Ми)', 'Практики с барабаном для уверенности', 'Пение мантры «РАМ»', 'Активные ритмические практики'],
+                instruments: ['Барабан', 'Камертон', 'Гонг', 'Колокольчики'],
+                advice: 'Используйте ритмичные, уверенные звуки. Барабанная медитация вернет вам ощущение личной силы.'
+            },
+            heart: { 
+                title: '🟢 Сердечная чакра (Анахата)', 
+                desc: 'Ваш центр любви требует внимания. Вы чувствуете закрытость, обиду или неспособность принимать и давать любовь.',
+                practices: ['Медитация с поющими чашами (нота Фа)', 'Практики прощения под мягкую музыку', 'Пение мантры «ЯМ»', 'Звуковая терапия с арфой'],
+                instruments: ['Арфа', 'Поющие чаши', 'Флейта', 'Колокольчики'],
+                advice: 'Слушайте нежные, обволакивающие звуки. Позвольте сердцу открыться через музыку и пение.'
+            },
+            throat: { 
+                title: '🔵 Горловая чакра (Вишуддха)', 
+                desc: 'Ваш центр общения заблокирован. Вы чувствуете трудности с самовыражением или неспособность говорить правду.',
+                practices: ['Мантра-медитация «ХАМ»', 'Вокальные практики и пение', 'Звуковая терапия с хрустальными чашами', 'Практики осознанного говорения'],
+                instruments: ['Хрустальные чаши', 'Колокольчики', 'Голос (пение, мантры)', 'Флейта'],
+                advice: 'Пойте, даже если кажется, что не умеете. Ваш голос — ваш главный инструмент исцеления горловой чакры.'
+            },
+            third: { 
+                title: '🔵 Чакра третьего глаза (Аджна)', 
+                desc: 'Ваш центр интуиции требует активации. Вы чувствуете потерю ясности, сомнения или неспособность видеть суть.',
+                practices: ['Медитация с камертоном (нота Ля)', 'Практики с колокольчиками для ясности', 'Пение мантры «ОМ»', 'Тишина для слушания внутреннего голоса'],
+                instruments: ['Камертон', 'Колокольчики', 'Тибетские чаши (высокие)', 'Тишина'],
+                advice: 'Практикуйте тишину и медитацию. Задавайте вопросы и слушайте ответы внутри, а не снаружи.'
+            },
+            crown: { 
+                title: '🟣 Коронная чакра (Сахасрара)', 
+                desc: 'Ваша связь с высшим ослаблена. Вы чувствуете потерю смысла, оторванность или духовный кризис.',
+                practices: ['Медитация с гонгом для растворения', 'Практики с мантрой «ОМ»', 'Звуковая ванна с поющими чашами', 'Практики тишины и созерцания'],
+                instruments: ['Гонг', 'Тибетские чаши', 'Тишина', 'Мантры'],
+                advice: 'Практикуйте тишину и медитацию на единство. Позвольте звуку растворить границы между вами и миром.'
+            }
+        };
+
+        function calculateResult() {
+            let counts = { root: 0, sacral: 0, solar: 0, heart: 0, throat: 0, third: 0, crown: 0 };
+            let allAnswered = true;
+            
+            for (let i = 1; i <= 10; i++) {
+                const ans = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!ans) { alert('Пожалуйста, ответьте на все вопросы!'); return; }
+                counts[ans.value]++;
+            }
+
+            // Находим чакру с максимальным количеством ответов
+            let type = 'root';
+            let maxCount = 0;
+            for (let key in counts) {
+                if (counts[key] > maxCount) {
+                    maxCount = counts[key];
+                    type = key;
+                }
+            }
+
+            const r = results[type];
+            
+            document.getElementById('quizPanel').style.display = 'none';
+            const rp = document.getElementById('resultPanel');
+            rp.innerHTML = `
+                <div class="result-title">${r.title}</div>
+                <div class="result-desc">${r.desc}</div>
+                <div class="level-indicator">
+                    <div class="level-badge ${type==='root'?'active':''}">Корневая</div>
+                    <div class="level-badge ${type==='sacral'?'active':''}">Сакральная</div>
+                    <div class="level-badge ${type==='solar'?'active':''}">Солнечная</div>
+                    <div class="level-badge ${type==='heart'?'active':''}">Сердечная</div>
+                    <div class="level-badge ${type==='throat'?'active':''}">Горловая</div>
+                    <div class="level-badge ${type==='third'?'active':''}">Третий глаз</div>
+                    <div class="level-badge ${type==='crown'?'active':''}">Коронная</div>
+                </div>
+                <div class="result-section"><h3>📋 Рекомендованные практики:</h3><ul>${r.practices.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+                <div class="result-section"><h3>🎼 Ваши инструменты:</h3><div class="instruments-list">${r.instruments.map(i=>`<span class="instrument-tag">${i}</span>`).join('')}</div></div>
+                <div class="recommendations"><h4>💡 Совет:</h4><p>${r.advice}</p></div>
+                <div style="text-align:center;"><button class="btn-submit" onclick="resetTest()" style="max-width:300px;margin:0 auto;">🔄 Пройти заново</button><br><a href="./tests_glav.html" class="btn-secondary">← К тестам</a></div>
+            `;
+            rp.style.display = 'block';
+            rp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetTest() {
+            document.getElementById('testForm').reset();
+            document.getElementById('resultPanel').style.display = 'none';
+            document.getElementById('quizPanel').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

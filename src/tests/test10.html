@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet/style.css">
-    <link rel="preload" href="./stylesheets/index.css" as="style">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
     <title>Тест: Звуковая Интуиция - Purity of Aum</title>
     <style>
         /* Стили идентичны первому тесту для сохранения единства */
@@ -93,11 +93,37 @@
     <div class="side-menu-overlay" id="sideMenuOverlay"></div>
     <div class="side-menu" id="sideMenu">
         <ul class="side-menu-list">
-            <li class="side-menu-item"><a href="./index.html" class="side-menu-link">Главная</a></li>
-            <li class="side-menu-item"><a href="./zvuk.html" class="side-menu-link">Звукотерапия</a></li>
-            <li class="side-menu-item has-submenu"><a href="#articles" class="side-menu-link">Статьи</a><div class="submenu"><ul class="side-menu-list"><li class="submenu-item"><a href="#" class="submenu-link">Возникновение звука</a></li><li class="submenu-item"><a href="#" class="submenu-link">Влияние звука</a></li><li class="submenu-item"><a href="#" class="submenu-link">Медитации</a></li></ul></div></li>
-            <li class="side-menu-item has-submenu"><a href="./vzaim_glav.html" class="side-menu-link">Взаимодействие</a><div class="submenu"><ul class="side-menu-list"><li class="submenu-item"><a href="#" class="submenu-link">Практическая медитация</a></li><li class="submenu-item"><a href="#" class="submenu-link">Современные разработки</a></li><li class="submenu-item"><a href="#" class="submenu-link">Специалисты</a></li></ul></div></li>
-            <li class="side-menu-item"><a href="#contact" class="side-menu-link">Тесты</a></li>
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
         </ul>
     </div>
 
@@ -141,11 +167,11 @@
         <div id="fin_plashka">
            <div class="fin_plashka1"><a href="#" class="logo22">Purity of Aum</a></div>
            <div class="fin_plashka2">
-                <a href="./zvuk.html" class="fin1">Звукотерапия</a>
-                <a href="./articles_glav.html" class="fin1">Статьи</a>
-                <a href="./vzaim_glav.html" class="fin1">Взаимодействия</a>
-                <a href="./tests_glav.html" class="fin1">Тесты</a>
-           </div>  
+                <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="../pages/articles.html" class="fin1">Статьи</a>
+                <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
+                <a href="../pages/tests.html" class="fin1">Тесты</a>
+            </div>    
            <div class="btm_fin">
                 <div class="card1">
                     <form id="thanks" method="POST">

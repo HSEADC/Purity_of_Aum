@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
+    <title>Тест: Сила Голоса - Purity of Aum</title>
+    <style>
+        /* Стили идентичны первому тесту для сохранения единства */
+        .tree-silhouette { position: absolute; bottom: -20px; opacity: 0.04; fill: var(--secondary-color); transform-origin: bottom center; }
+        .tree-1 { left: 5%; width: 300px; animation: sway 15s infinite ease-in-out alternate; }
+        .tree-2 { right: 8%; width: 260px; animation: sway 18s infinite ease-in-out alternate-reverse; }
+        .tree-3 { left: 35%; width: 180px; animation: sway 20s infinite ease-in-out alternate; animation-delay: -5s; }
+        @keyframes sway { 0% { transform: rotate(-1.5deg); } 100% { transform: rotate(1.5deg); } }
+
+        .firefly { position: absolute; width: 4px; height: 4px; background: radial-gradient(circle, rgba(74, 124, 67, 0.9), transparent); border-radius: 50%; box-shadow: 0 0 12px rgba(74, 124, 67, 0.5); animation: rise 20s infinite linear; opacity: 0; }
+        .firefly:nth-child(4) { left: 20%; animation-duration: 18s; animation-delay: 0s; }
+        .firefly:nth-child(5) { left: 50%; animation-duration: 22s; animation-delay: 5s; }
+        .firefly:nth-child(6) { left: 80%; animation-duration: 19s; animation-delay: 10s; }
+        .firefly:nth-child(7) { left: 35%; animation-duration: 24s; animation-delay: 2s; }
+        .firefly:nth-child(8) { left: 65%; animation-duration: 21s; animation-delay: 7s; }
+        @keyframes rise { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 20% { opacity: 0.7; } 80% { opacity: 0.7; } 100% { transform: translateY(-10vh) translateX(40px); opacity: 0; } }
+
+        .test-container { max-width: 800px; margin: 0 auto; padding: 10rem 2rem 4rem; position: relative; z-index: 1; }
+        .test-header { text-align: center; margin-bottom: 4rem; animation: fadeInUp 1s ease forwards; }
+        .test-title { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem; letter-spacing: -0.02em; }
+        .info-box { text-align: center; font-size: 1.1rem; line-height: 1.7; color: #555; max-width: 600px; margin: 0 auto 4rem; animation: fadeInUp 1s ease 0.2s forwards; opacity: 0; }
+        
+        .question-block { margin-bottom: 3rem; }
+        .question { margin-bottom: 2.5rem; padding: 0 0 2rem 0; border-bottom: 1px solid rgba(45, 90, 39, 0.15); animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+        .question:nth-child(1) { animation-delay: 0.3s; } .question:nth-child(2) { animation-delay: 0.4s; } .question:nth-child(3) { animation-delay: 0.5s; } .question:nth-child(4) { animation-delay: 0.6s; } .question:nth-child(5) { animation-delay: 0.7s; } .question:nth-child(6) { animation-delay: 0.8s; } .question:nth-child(7) { animation-delay: 0.9s; } .question:nth-child(8) { animation-delay: 1.0s; } .question:nth-child(9) { animation-delay: 1.1s; } .question:nth-child(10) { animation-delay: 1.2s; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } from { transform: translateY(20px); } }
+
+        .question-text { font-weight: 600; margin-bottom: 1.5rem; color: var(--text-dark); font-size: 1.2rem; }
+        .answers label { display: flex; align-items: center; padding: 1rem 1.5rem; margin: 0.8rem 0; background: rgba(255, 255, 255, 0.4); border-radius: 16px; cursor: pointer; transition: all 0.3s ease; border: 1px solid rgba(45, 90, 39, 0.05); }
+        .answers label:hover { background: rgba(255, 255, 255, 0.8); border-color: rgba(45, 90, 39, 0.2); transform: translateX(5px); box-shadow: 0 4px 15px rgba(45, 90, 39, 0.05); }
+        input[type="radio"] { margin-right: 12px; accent-color: var(--secondary-color); width: 18px; height: 18px; }
+
+        .btn-submit { display: block; width: 100%; padding: 1.5rem; background: var(--secondary-color); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.4s ease; margin-top: 3rem; box-shadow: 0 8px 30px rgba(45, 90, 39, 0.2); }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(45, 90, 39, 0.3); background: #23471e; }
+
+        .result-panel { display: none; animation: fadeInUp 1s ease forwards; }
+        .result-title { color: var(--secondary-color); font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 1rem; text-align: center; font-weight: 700; }
+        .result-desc { text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .level-indicator { display: flex; justify-content: center; gap: 15px; margin: 3rem 0; flex-wrap: wrap; }
+        .level-badge { padding: 1rem 2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 600; background: rgba(255, 255, 255, 0.4); color: #666; border: 1px solid rgba(45, 90, 39, 0.1); transition: all 0.4s ease; }
+        .level-badge.active { background: var(--secondary-color); color: white; transform: scale(1.1); box-shadow: 0 8px 25px rgba(45, 90, 39, 0.25); border-color: transparent; }
+
+        .result-section { margin: 3rem 0; text-align: center; }
+        .result-section h3 { color: var(--secondary-color); margin-bottom: 1.5rem; font-size: 1.4rem; }
+        .result-section ul { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; text-align: left; }
+        .result-section li { padding: 1rem 0 1rem 2.5rem; position: relative; line-height: 1.7; border-bottom: 1px solid rgba(45, 90, 39, 0.08); }
+        .result-section li:before { content: "🎵"; position: absolute; left: 0; font-size: 1.2rem; }
+        
+        .instruments-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 1.5rem; }
+        .instrument-tag { background: rgba(45, 90, 39, 0.1); color: var(--secondary-color); padding: 0.6rem 1.8rem; border-radius: 50px; font-size: 0.95rem; font-weight: 600; border: 1px solid rgba(45, 90, 39, 0.15); transition: all 0.3s; }
+        .instrument-tag:hover { background: var(--secondary-color); color: white; transform: translateY(-2px); }
+
+        .recommendations { background: rgba(255, 243, 205, 0.3); border: 1px solid rgba(255, 193, 7, 0.2); padding: 2rem; border-radius: 24px; margin: 3rem auto; max-width: 600px; text-align: center; }
+        .recommendations h4 { color: #856404; margin-bottom: 1rem; font-size: 1.1rem; }
+
+        .btn-secondary { display: inline-block; margin-top: 2rem; padding: 1rem 2.5rem; background: transparent; color: var(--secondary-color); border: 1px solid rgba(45, 90, 39, 0.3); border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+        .btn-secondary:hover { background: rgba(45, 90, 39, 0.05); border-color: var(--secondary-color); }
+
+        @media (max-width: 768px) { .test-container { padding: 8rem 1.5rem 3rem; } .tree-silhouette { display: none; } }
+        @media (max-width: 480px) { .test-container { padding: 7rem 1rem 2rem; } .question-text { font-size: 1.1rem; } .answers label { padding: 0.8rem 1rem; font-size: 0.95rem; } .firefly { display: none; } }
+    </style>
+</head>
+<body>
+    <!-- Живой лесной фон -->
+    <div class="forest-bg">
+        <svg class="tree-silhouette tree-1" viewBox="0 0 200 400"><path d="M100,20 L180,380 L20,380 Z M100,20 L100,380"/></svg>
+        <svg class="tree-silhouette tree-2" viewBox="0 0 200 400"><path d="M100,30 Q160,200 180,380 L20,380 Q40,200 100,30 Z"/></svg>
+        <svg class="tree-silhouette tree-3" viewBox="0 0 200 400"><path d="M100,10 L170,380 L30,380 Z M100,10 L100,380"/></svg>
+        <div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu"><span></span><span></span><span></span></div>
+            <nav><ul class="nav-menu-left"><li><a href="./zvuk.html">Звукотерапия</a></li><li><a href="#about">Статьи</a></li></ul></nav>
+        </div>
+        <a href="./index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav><ul class="nav-menu-right"><li><a href="./vzaim_glav.html">Взаимодействие</a></li><li><a href="./tests_glav.html">Тесты</a></li></ul></nav>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- TEST CONTENT -->
+    <div class="test-container">
+        <div id="quizPanel">
+            <div class="test-header"><h1 class="test-title">🎤 Сила Голоса и Вокальные Практики</h1></div>
+            <div class="info-box">Ответьте на 10 вопросов, чтобы мы могли оценить ваше отношение к собственному голосу и подобрать вокальные практики для раскрытия вашего потенциала.</div>
+            
+            <form id="testForm">
+                <div class="question-block">
+                    <div class="question"><div class="question-text">1. Нравится ли вам звук собственного голоса в записи?</div><div class="answers"><label><input type="radio" name="q1" value="high"> Да, мне нравится мой голос</label><label><input type="radio" name="q1" value="mid"> Терпимо, постепенно привыкаю</label><label><input type="radio" name="q1" value="low"> Нет, стараюсь не слушать</label><label><input type="radio" name="q1" value="none"> Совсем не могу слушать</label></div></div>
+                    
+                    <div class="question"><div class="question-text">2. Часто ли вы поёте в душе или наедине с собой?</div><div class="answers"><label><input type="radio" name="q2" value="high"> Да, постоянно и с удовольствием</label><label><input type="radio" name="q2" value="mid"> Иногда, когда никто не слышит</label><label><input type="radio" name="q2" value="low"> Очень редко</label><label><input type="radio" name="q2" value="none"> Никогда не пою</label></div></div>
+                    
+                    <div class="question"><div class="question-text">3. Легко ли вам говорить громко и уверенно?</div><div class="answers"><label><input type="radio" name="q3" value="high"> Да, легко и естественно</label><label><input type="radio" name="q3" value="mid"> Обычно да, но иногда стесняюсь</label><label><input type="radio" name="q3" value="low"> С трудом, голос часто дрожит</label><label><input type="radio" name="q3" value="none"> Очень сложно, избегаю громкой речи</label></div></div>
+                    
+                    <div class="question"><div class="question-text">4. Нравится ли вам хоровое пение или групповое пение мантр?</div><div class="answers"><label><input type="radio" name="q4" value="high"> Обожаю, это объединяет и даёт силу</label><label><input type="radio" name="q4" value="mid"> Нравится, если компания хорошая</label><label><input type="radio" name="q4" value="low"> Предпочитаю петь один</label><label><input type="radio" name="q4" value="none"> Не люблю петь с другими</label></div></div>
+                    
+                    <div class="question"><div class="question-text">5. Часто ли вы используете голос для выражения эмоций?</div><div class="answers"><label><input type="radio" name="q5" value="high"> Да, голос — мой главный инструмент выражения</label><label><input type="radio" name="q5" value="mid"> Иногда, когда это уместно</label><label><input type="radio" name="q5" value="low"> Редко, предпочитаю сдержанность</label><label><input type="radio" name="q5" value="none"> Предпочитаю молчать</label></div></div>
+                    
+                    <div class="question"><div class="question-text">6. Нравится ли вам звук мантр или chanting?</div><div class="answers"><label><input type="radio" name="q6" value="high"> Да, очень нравится, практикую регулярно</label><label><input type="radio" name="q6" value="mid"> Нравится, но пока не практикую</label><label><input type="radio" name="q6" value="low"> Не пробовал(а), но интересно</label><label><input type="radio" name="q6" value="none"> Не моё, не привлекает</label></div></div>
+                    
+                    <div class="question"><div class="question-text">7. Легко ли вам имитировать чужие голоса или звуки?</div><div class="answers"><label><input type="radio" name="q7" value="high"> Да, очень легко и точно</label><label><input type="radio" name="q7" value="mid"> Могу, но не идеально</label><label><input type="radio" name="q7" value="low"> С трудом получается</label><label><input type="radio" name="q7" value="none"> Совсем не могу</label></div></div>
+                    
+                    <div class="question"><div class="question-text">8. Как громко вы обычно говорите?</div><div class="answers"><label><input type="radio" name="q8" value="high"> Громко и уверенно</label><label><input type="radio" name="q8" value="mid"> Средне, зависит от ситуации</label><label><input type="radio" name="q8" value="low"> Тихо, часто шепчу</label><label><input type="radio" name="q8" value="none"> Очень тихо, еле слышно</label></div></div>
+                    
+                    <div class="question"><div class="question-text">9. Нравится ли вам звук смеха (своего или чужого)?</div><div class="answers"><label><input type="radio" name="q9" value="high"> Да, обожаю смеяться и радовать других</label><label><input type="radio" name="q9" value="mid"> Нравится, когда уместно</label><label><input type="radio" name="q9" value="low"> Редко смеюсь в голос</label><label><input type="radio" name="q9" value="none"> Не люблю громкий смех</label></div></div>
+                    
+                    <div class="question"><div class="question-text">10. Легко ли вам сказать «нет» или выразить несогласие голосом?</div><div class="answers"><label><input type="radio" name="q10" value="high"> Да, легко и уверенно</label><label><input type="radio" name="q10" value="mid"> Могу, но с некоторым усилием</label><label><input type="radio" name="q10" value="low"> Очень сложно, избегаю конфликтов</label><label><input type="radio" name="q10" value="none"> Не могу совсем, молчу</label></div></div>
+                </div>
+                <button type="button" class="btn-submit" onclick="calculateResult()">🎤 Узнать результат</button>
+            </form>
+        </div>
+
+        <div id="resultPanel" class="result-panel"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="section8_fin">
+        <div id="fin_plashka">
+           <div class="fin_plashka1"><a href="#" class="logo22">Purity of Aum</a></div>
+           <div class="fin_plashka2">
+                <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="../pages/articles.html" class="fin1">Статьи</a>
+                <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
+                <a href="../pages/tests.html" class="fin1">Тесты</a>
+            </div>  
+           <div class="btm_fin">
+                <div class="card1">
+                    <form id="thanks" method="POST">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span></button>
+                    </form>
+                    <p class="msg" id="congo">Спасибо за подписку!</p>
+                </div>
+            </div>
+            <hr class="line_fin">
+            <div class="box_fin"><p class="PoA">2026 Purity of Aum</p><p class="NS">Настасья Звонарёва</p></div>
+        </div>
+    </footer>
+
+    <script>
+        // Бургер-меню
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active');
+            sideMenu.classList.toggle('active');
+            sideMenuOverlay.classList.toggle('active');
+            if (sideMenu.classList.contains('active')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
+        }
+
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+        
+        document.querySelectorAll('.side-menu-link').forEach(link => {
+            link.addEventListener('click', function() {
+                if (sideMenu.classList.contains('active')) {
+                    toggleSideMenu();
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Баллы: high=3 (сильный голос), mid=2, low=1, none=0 (базовый уровень)
+        const scores = {
+            'high': 3,
+            'mid': 2,
+            'low': 1,
+            'none': 0
+        };
+
+        // Результаты теста
+        const results = {
+            'strong': {
+                title: 'Сильный и открытый голос',
+                desc: 'У вас мощный и уверенный голос. Вы готовы к активным вокальным практикам и можете использовать голос как мощный инструмент исцеления и самовыражения.',
+                practices: [
+                    'Активное вокализирование 20-30 минут ежедневно',
+                    'Групповое пение мантр и chanting',
+                    'Громкое пение на природе для усиления эффекта',
+                    'Практика «Голос как инструмент» — работа с разными регистрами'
+                ],
+                instruments: ['Голос', 'Гонги (для сопровождения)', 'Барабаны', 'Диджериду']
+            },
+            'developed': {
+                title: 'Развитый голос',
+                desc: 'У вас хороший голос с потенциалом для дальнейшего развития. Вокальные практики помогут раскрыть ваш голосовой потенциал полностью.',
+                practices: [
+                    'Вокальный тонинг 15-20 минут ежедневно',
+                    'Пение мантр в группе или индивидуально',
+                    'Практика свободного звукоизвлечения',
+                    'Работа с голосом перед зеркалом'
+                ],
+                instruments: ['Голос', 'Поющие чаши', 'Флейты', 'Колокольчики']
+            },
+            'moderate': {
+                title: 'Умеренное владение голосом',
+                desc: 'Ваш голос требует развития. Начните с простых вокальных практик для раскрытия потенциала и преодоления внутренних барьеров.',
+                practices: [
+                    'Тихое пение или напевание 10 минут ежедневно',
+                    'Практика «Ом» — повторение мантры',
+                    'Свободное гудение или мычание',
+                    'Пение под тихую музыку'
+                ],
+                instruments: ['Голос', 'Камертоны', 'Тибетские чаши', 'Записи природы']
+            },
+            'basic': {
+                title: 'Базовый уровень работы с голосом',
+                desc: 'Вам сложно использовать голос как инструмент. Начните с очень простых практик для преодоления барьеров и постепенного раскрытия голоса.',
+                practices: [
+                    'Тихое напевание 5 минут ежедневно',
+                    'Практика дыхания со звуком',
+                    'Повторение простых звуков (А, О, У)',
+                    'Слушание своего голоса в записи'
+                ],
+                instruments: ['Голос', 'Камертоны', 'Простые записи природы', 'Тихие колокольчики']
+            }
+        };
+
+        // Функция подсчёта результата
+        function calculateResult() {
+            let totalScore = 0;
+            let allAnswered = true;
+            
+            for (let i = 1; i <= 10; i++) {
+                const ans = document.querySelector('input[name="q' + i + '"]:checked');
+                if (!ans) {
+                    allAnswered = false;
+                    break;
+                }
+                totalScore += scores[ans.value];
+            }
+
+            if (!allAnswered) {
+                alert('Пожалуйста, ответьте на все вопросы!');
+                return;
+            }
+
+            // Определение типа результата
+            let type = 'basic';
+            if (totalScore >= 24) {
+                type = 'strong';
+            } else if (totalScore >= 16) {
+                type = 'developed';
+            } else if (totalScore >= 8) {
+                type = 'moderate';
+            }
+
+            const r = results[type];
+            
+            // Скрываем панель вопросов
+            document.getElementById('quizPanel').style.display = 'none';
+            
+            // Показываем панель результатов
+            const rp = document.getElementById('resultPanel');
+            
+            // Формируем HTML результата
+            let adviceText = '';
+            if (type === 'strong') {
+                adviceText = 'Используйте свой голос как мощный инструмент исцеления. Пойте громко и уверенно, особенно на природе. Ваш голос — ваша сила.';
+            } else if (type === 'developed') {
+                adviceText = 'Развивайте свой голос через регулярные вокальные практики. Попробуйте групповое пение мантр для усиления эффекта.';
+            } else if (type === 'moderate') {
+                adviceText = 'Начните с тихого пения 10 минут в день. Постепенно увеличивайте громкость и время. Не бойтесь своего голоса.';
+            } else {
+                adviceText = 'Начните с простого напевания 5 минут в день. Не бойтесь своего голоса — он уникален и целителен. Каждый голос прекрасен.';
+            }
+            
+            let badgesHTML = '';
+            badgesHTML += '<div class="level-badge ' + (type === 'strong' ? 'active' : '') + '">Сильный</div>';
+            badgesHTML += '<div class="level-badge ' + (type === 'developed' ? 'active' : '') + '">Развитый</div>';
+            badgesHTML += '<div class="level-badge ' + (type === 'moderate' ? 'active' : '') + '">Умеренный</div>';
+            badgesHTML += '<div class="level-badge ' + (type === 'basic' ? 'active' : '') + '">Базовый</div>';
+            
+            let practicesHTML = '';
+            for (let i = 0; i < r.practices.length; i++) {
+                practicesHTML += '<li>' + r.practices[i] + '</li>';
+            }
+            
+            let instrumentsHTML = '';
+            for (let i = 0; i < r.instruments.length; i++) {
+                instrumentsHTML += '<span class="instrument-tag">' + r.instruments[i] + '</span>';
+            }
+            
+            rp.innerHTML = 
+                '<div class="result-title">🎤 ' + r.title + '</div>' +
+                '<div class="result-desc">' + r.desc + '</div>' +
+                '<div class="level-indicator">' + badgesHTML + '</div>' +
+                '<div class="result-section"><h3>📋 Рекомендованные практики:</h3><ul>' + practicesHTML + '</ul></div>' +
+                '<div class="result-section"><h3>🎼 Инструменты:</h3><div class="instruments-list">' + instrumentsHTML + '</div></div>' +
+                '<div class="recommendations"><h4>💡 Совет:</h4><p>' + adviceText + '</p></div>' +
+                '<div style="text-align:center;"><button class="btn-submit" onclick="resetTest()" style="max-width:300px;margin:0 auto;">🔄 Пройти заново</button><br><a href="./tests_glav.html" class="btn-secondary">← К тестам</a></div>';
+            
+            rp.style.display = 'block';
+            rp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // Функция сброса теста
+        function resetTest() {
+            document.getElementById('testForm').reset();
+            document.getElementById('resultPanel').style.display = 'none';
+            document.getElementById('quizPanel').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

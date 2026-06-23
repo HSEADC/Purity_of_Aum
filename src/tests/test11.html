@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
+    <title>Тест: Связь с Природой - Purity of Aum</title>
+    <style>
+        /* Стили идентичны первому тесту для сохранения единства */
+        .tree-silhouette { position: absolute; bottom: -20px; opacity: 0.04; fill: var(--secondary-color); transform-origin: bottom center; }
+        .tree-1 { left: 5%; width: 300px; animation: sway 15s infinite ease-in-out alternate; }
+        .tree-2 { right: 8%; width: 260px; animation: sway 18s infinite ease-in-out alternate-reverse; }
+        .tree-3 { left: 35%; width: 180px; animation: sway 20s infinite ease-in-out alternate; animation-delay: -5s; }
+        @keyframes sway { 0% { transform: rotate(-1.5deg); } 100% { transform: rotate(1.5deg); } }
+
+        .firefly { position: absolute; width: 4px; height: 4px; background: radial-gradient(circle, rgba(74, 124, 67, 0.9), transparent); border-radius: 50%; box-shadow: 0 0 12px rgba(74, 124, 67, 0.5); animation: rise 20s infinite linear; opacity: 0; }
+        .firefly:nth-child(4) { left: 20%; animation-duration: 18s; animation-delay: 0s; }
+        .firefly:nth-child(5) { left: 50%; animation-duration: 22s; animation-delay: 5s; }
+        .firefly:nth-child(6) { left: 80%; animation-duration: 19s; animation-delay: 10s; }
+        .firefly:nth-child(7) { left: 35%; animation-duration: 24s; animation-delay: 2s; }
+        .firefly:nth-child(8) { left: 65%; animation-duration: 21s; animation-delay: 7s; }
+        @keyframes rise { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 20% { opacity: 0.7; } 80% { opacity: 0.7; } 100% { transform: translateY(-10vh) translateX(40px); opacity: 0; } }
+
+        .test-container { max-width: 800px; margin: 0 auto; padding: 10rem 2rem 4rem; position: relative; z-index: 1; }
+        .test-header { text-align: center; margin-bottom: 4rem; animation: fadeInUp 1s ease forwards; }
+        .test-title { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem; letter-spacing: -0.02em; }
+        .info-box { text-align: center; font-size: 1.1rem; line-height: 1.7; color: #555; max-width: 600px; margin: 0 auto 4rem; animation: fadeInUp 1s ease 0.2s forwards; opacity: 0; }
+        
+        .question-block { margin-bottom: 3rem; }
+        .question { margin-bottom: 2.5rem; padding: 0 0 2rem 0; border-bottom: 1px solid rgba(45, 90, 39, 0.15); animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+        .question:nth-child(1) { animation-delay: 0.3s; } .question:nth-child(2) { animation-delay: 0.4s; } .question:nth-child(3) { animation-delay: 0.5s; } .question:nth-child(4) { animation-delay: 0.6s; } .question:nth-child(5) { animation-delay: 0.7s; } .question:nth-child(6) { animation-delay: 0.8s; } .question:nth-child(7) { animation-delay: 0.9s; } .question:nth-child(8) { animation-delay: 1.0s; } .question:nth-child(9) { animation-delay: 1.1s; } .question:nth-child(10) { animation-delay: 1.2s; }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } from { transform: translateY(20px); } }
+
+        .question-text { font-weight: 600; margin-bottom: 1.5rem; color: var(--text-dark); font-size: 1.2rem; }
+        .answers label { display: flex; align-items: center; padding: 1rem 1.5rem; margin: 0.8rem 0; background: rgba(255, 255, 255, 0.4); border-radius: 16px; cursor: pointer; transition: all 0.3s ease; border: 1px solid rgba(45, 90, 39, 0.05); }
+        .answers label:hover { background: rgba(255, 255, 255, 0.8); border-color: rgba(45, 90, 39, 0.2); transform: translateX(5px); box-shadow: 0 4px 15px rgba(45, 90, 39, 0.05); }
+        input[type="radio"] { margin-right: 12px; accent-color: var(--secondary-color); width: 18px; height: 18px; }
+
+        .btn-submit { display: block; width: 100%; padding: 1.5rem; background: var(--secondary-color); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.4s ease; margin-top: 3rem; box-shadow: 0 8px 30px rgba(45, 90, 39, 0.2); }
+        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(45, 90, 39, 0.3); background: #23471e; }
+
+        .result-panel { display: none; animation: fadeInUp 1s ease forwards; }
+        .result-title { color: var(--secondary-color); font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 1rem; text-align: center; font-weight: 700; }
+        .result-desc { text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+        
+        .level-indicator { display: flex; justify-content: center; gap: 15px; margin: 3rem 0; flex-wrap: wrap; }
+        .level-badge { padding: 1rem 2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 600; background: rgba(255, 255, 255, 0.4); color: #666; border: 1px solid rgba(45, 90, 39, 0.1); transition: all 0.4s ease; }
+        .level-badge.active { background: var(--secondary-color); color: white; transform: scale(1.1); box-shadow: 0 8px 25px rgba(45, 90, 39, 0.25); border-color: transparent; }
+
+        .result-section { margin: 3rem 0; text-align: center; }
+        .result-section h3 { color: var(--secondary-color); margin-bottom: 1.5rem; font-size: 1.4rem; }
+        .result-section ul { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; text-align: left; }
+        .result-section li { padding: 1rem 0 1rem 2.5rem; position: relative; line-height: 1.7; border-bottom: 1px solid rgba(45, 90, 39, 0.08); }
+        .result-section li:before { content: "🌲"; position: absolute; left: 0; font-size: 1.2rem; }
+        
+        .instruments-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 1.5rem; }
+        .instrument-tag { background: rgba(45, 90, 39, 0.1); color: var(--secondary-color); padding: 0.6rem 1.8rem; border-radius: 50px; font-size: 0.95rem; font-weight: 600; border: 1px solid rgba(45, 90, 39, 0.15); transition: all 0.3s; }
+        .instrument-tag:hover { background: var(--secondary-color); color: white; transform: translateY(-2px); }
+
+        .recommendations { background: rgba(255, 243, 205, 0.3); border: 1px solid rgba(255, 193, 7, 0.2); padding: 2rem; border-radius: 24px; margin: 3rem auto; max-width: 600px; text-align: center; }
+        .recommendations h4 { color: #856404; margin-bottom: 1rem; font-size: 1.1rem; }
+
+        .btn-secondary { display: inline-block; margin-top: 2rem; padding: 1rem 2.5rem; background: transparent; color: var(--secondary-color); border: 1px solid rgba(45, 90, 39, 0.3); border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
+        .btn-secondary:hover { background: rgba(45, 90, 39, 0.05); border-color: var(--secondary-color); }
+
+        @media (max-width: 768px) { .test-container { padding: 8rem 1.5rem 3rem; } .tree-silhouette { display: none; } }
+        @media (max-width: 480px) { .test-container { padding: 7rem 1rem 2rem; } .question-text { font-size: 1.1rem; } .answers label { padding: 0.8rem 1rem; font-size: 0.95rem; } .firefly { display: none; } }
+    </style>
+</head>
+<body>
+    <!-- Живой лесной фон -->
+    <div class="forest-bg">
+        <svg class="tree-silhouette tree-1" viewBox="0 0 200 400"><path d="M100,20 L180,380 L20,380 Z M100,20 L100,380"/></svg>
+        <svg class="tree-silhouette tree-2" viewBox="0 0 200 400"><path d="M100,30 Q160,200 180,380 L20,380 Q40,200 100,30 Z"/></svg>
+        <svg class="tree-silhouette tree-3" viewBox="0 0 200 400"><path d="M100,10 L170,380 L30,380 Z M100,10 L100,380"/></svg>
+        <div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu"><span></span><span></span><span></span></div>
+            <nav><ul class="nav-menu-left"><li><a href="./zvuk.html">Звукотерапия</a></li><li><a href="#about">Статьи</a></li></ul></nav>
+        </div>
+        <a href="./index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav><ul class="nav-menu-right"><li><a href="./vzaim_glav.html">Взаимодействие</a></li><li><a href="./tests_glav.html">Тесты</a></li></ul></nav>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- TEST CONTENT -->
+    <div class="test-container">
+        <div id="quizPanel">
+            <div class="test-header"><h1 class="test-title">🌲 Связь с Природой и Звуки Леса</h1></div>
+            <div class="info-box">Ответьте на 10 вопросов, чтобы мы могли оценить глубину вашей связи с природой и подобрать звуковые практики, основанные на природных звуках.</div>
+            
+            <form id="testForm">
+                <div class="question-block">
+                    <div class="question"><div class="question-text">1. Как часто вы бываете в лесу или на природе?</div><div class="answers"><label><input type="radio" name="q1" value="high"> Раз в неделю или чаще</label><label><input type="radio" name="q1" value="mid"> Раз в месяц</label><label><input type="radio" name="q1" value="low"> Несколько раз в год</label><label><input type="radio" name="q1" value="none"> Почти никогда</label></div></div>
+                    
+                    <div class="question"><div class="question-text">2. Какой природный звук вам сложнее всего забыть?</div><div class="answers"><label><input type="radio" name="q2" value="high"> Пение соловья или птиц</label><label><input type="radio" name="q2" value="mid"> Шум дождя или грозы</label><label><input type="radio" name="q2" value="low"> Треск костра</label><label><input type="radio" name="q2" value="none"> Не могу выделить</label></div></div>
+                    
+                    <div class="question"><div class="question-text">3. Можете ли вы заснуть под звуки природы?</div><div class="answers"><label><input type="radio" name="q3" value="high"> Легко, это меня успокаивает</label><label><input type="radio" name="q3" value="mid"> Только если очень устал(а)</label><label><input type="radio" name="q3" value="low"> Нет, нужен белый шум</label><label><input type="radio" name="q3" value="none"> Предпочитаю тишину</label></div></div>
+                    
+                    <div class="question"><div class="question-text">4. Различаете ли вы голоса разных птиц?</div><div class="answers"><label><input type="radio" name="q4" value="high"> Да, многих узнаю</label><label><input type="radio" name="q4" value="mid"> Только самых частых</label><label><input type="radio" name="q4" value="low"> Нет, для меня это просто щебет</label><label><input type="radio" name="q4" value="none"> Не обращаю внимания</label></div></div>
+                    
+                    <div class="question"><div class="question-text">5. Какой запах ассоциируется у вас со спокойствием?</div><div class="answers"><label><input type="radio" name="q5" value="high"> Хвоя или лес после дождя</label><input type="radio" name="q5" value="mid"> Мокрая земля</label><label><input type="radio" name="q5" value="low"> Морской бриз</label><label><input type="radio" name="q5" value="none"> Другой запах</label></div></div>
+                    
+                    <div class="question"><div class="question-text">6. Нравится ли вам гулять в грозу?</div><div class="answers"><label><input type="radio" name="q6" value="high"> Обожаю эту стихию</label><label><input type="radio" name="q6" value="mid"> Боюсь грома, но нравится дождь</label><label><input type="radio" name="q6" value="low"> Нравится только дождь без грозы</label><label><input type="radio" name="q6" value="none"> Не люблю плохую погоду</label></div></div>
+                    
+                    <div class="question"><div class="question-text">7. Часто ли вы прислушиваетесь к ветру?</div><div class="answers"><label><input type="radio" name="q7" value="high"> Да, он рассказывает истории</label><label><input type="radio" name="q7" value="mid"> Иногда замечаю</label><label><input type="radio" name="q7" value="low"> Редко</label><label><input type="radio" name="q7" value="none"> Нет, это просто сквозняк</label></div></div>
+                    
+                    <div class="question"><div class="question-text">8. Какой водоём вам ближе?</div><div class="answers"><label><input type="radio" name="q8" value="high"> Горная река с быстрым течением</label><label><input type="radio" name="q8" value="mid"> Тихое озеро</label><label><input type="radio" name="q8" value="low"> Океан с волнами</label><label><input type="radio" name="q8" value="none"> Мне всё равно</label></div></div>
+                    
+                    <div class="question"><div class="question-text">9. Раздражает ли вас городской шум?</div><div class="answers"><label><input type="radio" name="q9" value="high"> Сильно, мечтаю о тишине природы</label><label><input type="radio" name="q9" value="mid"> Терпимо, но устаю</label><label><input type="radio" name="q9" value="low"> Слабо, привык(ла)</label><label><input type="radio" name="q9" value="none"> Я его не замечаю</label></div></div>
+                    
+                    <div class="question"><div class="question-text">10. Любите ли вы записи звуков природы?</div><div class="answers"><label><input type="radio" name="q10" value="high"> Да, включаю фоном постоянно</label><label><input type="radio" name="q10" value="mid"> Нет, лучше живые звуки</label><label><input type="radio" name="q10" value="low"> Иногда для медитации</label><label><input type="radio" name="q10" value="none"> Не слушаю</label></div></div>
+                </div>
+                <button type="button" class="btn-submit" onclick="calculateResult()">🌲 Узнать результат</button>
+            </form>
+        </div>
+
+        <div id="resultPanel" class="result-panel"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="section8_fin">
+        <div id="fin_plashka">
+           <div class="fin_plashka1"><a href="#" class="logo22">Purity of Aum</a></div>
+           <div class="fin_plashka2">
+                <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="../pages/articles.html" class="fin1">Статьи</a>
+                <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
+                <a href="../pages/tests.html" class="fin1">Тесты</a>
+            </div>  
+           <div class="btm_fin">
+                <div class="card1">
+                    <form id="thanks" method="POST">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span></button>
+                    </form>
+                    <p class="msg" id="congo">Спасибо за подписку!</p>
+                </div>
+            </div>
+            <hr class="line_fin">
+            <div class="box_fin"><p class="PoA">2026 Purity of Aum</p><p class="NS">Настасья Звонарёва</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active'); sideMenu.classList.toggle('active'); sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+        document.querySelectorAll('.side-menu-link').forEach(link => { link.addEventListener('click', () => { toggleSideMenu(); }); });
+        window.addEventListener('scroll', () => { if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
+
+        // Баллы: high=3, mid=2, low=1, none=0
+        const scores = { 'high': 3, 'mid': 2, 'low': 1, 'none': 0 };
+
+        const results = {
+            critical: { 
+                title: 'Глубокая связь с природой', 
+                desc: 'У вас выдающаяся способность чувствовать природные звуки. Вы тонко настроены на ритмы природы и можете использовать это для глубокой звуковой терапии.',
+                practices: ['Экологическая медитация на природе 40-60 минут', 'Практика осознанного слушания природных звуков', 'Звуковая ванна с записями леса и воды', 'Медитация с флейтой или духовыми инструментами на открытом воздухе'],
+                instruments: ['Флейты', 'Записи природы', 'Кристаллические чаши', 'Духовые инструменты']
+            },
+            elevated: { 
+                title: 'Развитая связь с природой', 
+                desc: 'Вы хорошо чувствуете природные звуки. Используйте эту чувствительность для углубления практик и восстановления через звуки природы.',
+                practices: ['Прогулки в лесу с осознанным слушанием', 'Медитация под записи дождя или воды', 'Экологическая медитация 20-30 минут', 'Практика различения природных звуков'],
+                instruments: ['Записи воды', 'Флейта', 'Колокольчики', 'Записи леса']
+            },
+            moderate: { 
+                title: 'Умеренная связь с природой', 
+                desc: 'Ваша связь с природой развивается. Регулярные практики со звуками природы помогут углубить эту связь и улучшить самочувствие.',
+                practices: ['Короткие прогулки на природе с вниманием к звукам', 'Слушание записей природы 15-20 минут', 'Медитация с природными звуками', 'Практика осознанного дыхания на свежем воздухе'],
+                instruments: ['Записи природы', 'Колокольчики', 'Лёгкие барабаны', 'Записи дождя']
+            },
+            balanced: { 
+                title: 'Начальная связь с природой', 
+                desc: 'Ваша связь с природой только начинается. Начните с простых практик для развития чувствительности к природным звукам.',
+                practices: ['Короткие прогулки в парке или лесу', 'Слушание записей природы 10 минут', 'Практика осознанного слушания одного звука', 'Медитация с записями воды или дождя'],
+                instruments: ['Записи природы', 'Записи воды', 'Простые колокольчики', 'Записи дождя']
+            }
+        };
+
+        function calculateResult() {
+            let totalScore = 0;
+            let allAnswered = true;
+            
+            for (let i = 1; i <= 10; i++) {
+                const ans = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!ans) { alert('Пожалуйста, ответьте на все вопросы!'); return; }
+                totalScore += scores[ans.value];
+            }
+
+            let type = 'balanced';
+            if (totalScore >= 24) type = 'critical';      // 24-30 баллов
+            else if (totalScore >= 16) type = 'elevated'; // 16-23 балла
+            else if (totalScore >= 8) type = 'moderate';  // 8-15 баллов
+            // 0-7 баллов -> balanced
+
+            const r = results[type];
+            
+            document.getElementById('quizPanel').style.display = 'none';
+            const rp = document.getElementById('resultPanel');
+            rp.innerHTML = `
+                <div class="result-title">🌲 ${r.title}</div>
+                <div class="result-desc">${r.desc}</div>
+                <div class="level-indicator">
+                    <div class="level-badge ${type==='critical'?'active':''}">Глубокая</div>
+                    <div class="level-badge ${type==='elevated'?'active':''}">Развитая</div>
+                    <div class="level-badge ${type==='moderate'?'active':''}">Умеренная</div>
+                    <div class="level-badge ${type==='balanced'?'active':''}">Начальная</div>
+                </div>
+                <div class="result-section"><h3>📋 Рекомендованные практики:</h3><ul>${r.practices.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+                <div class="result-section"><h3>🎼 Инструменты:</h3><div class="instruments-list">${r.instruments.map(i=>`<span class="instrument-tag">${i}</span>`).join('')}</div></div>
+                <div class="recommendations"><h4>💡 Совет:</h4><p>${type==='critical'?'Используйте свою чувствительность для глубоких практик на природе. Проводите больше времени в лесу, слушая звуки.':type==='elevated'?'Углубляйте связь с природой через регулярные прогулки. Слушайте записи природных звуков для восстановления.':type==='moderate'?'Начните с коротких прогулок на природе. Обращайте внимание на звуки вокруг вас.':'Начните с прослушивания записей природы 10 минут в день. Постепенно увеличивайте время.'}</p></div>
+                <div style="text-align:center;"><button class="btn-submit" onclick="resetTest()" style="max-width:300px;margin:0 auto;">🔄 Пройти заново</button><br><a href="./tests_glav.html" class="btn-secondary">← К тестам</a></div>
+            `;
+            rp.style.display = 'block';
+            rp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetTest() {
+            document.getElementById('testForm').reset();
+            document.getElementById('resultPanel').style.display = 'none';
+            document.getElementById('quizPanel').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

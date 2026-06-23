@@ -3,603 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="stylesheet/style.css">
-    <link rel="preload" href="./stylesheets/index.css" as="style">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
     <link rel="prefetch" href="./pages/zvuk.html" as="document">
-    <title>Звукотерапия - Purity of Aum</title>
-    <style>
-        /* ==================== 
-           ФОНОВЫЕ АНИМАЦИИ 
-        ==================== */
-        .forest-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-        }
-
-        .decorative-shape {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            opacity: 0.08;
-            animation: float-shape 15s infinite ease-in-out;
-        }
-
-        .decorative-shape:nth-child(1) {
-            top: 20%;
-            left: -50px;
-            background: var(--secondary-color);
-            border-radius: 50% 50% 0 50%;
-            animation-delay: 0s;
-        }
-
-        .decorative-shape:nth-child(2) {
-            top: 60%;
-            right: -50px;
-            background: var(--accent-color);
-            border-radius: 50% 50% 50% 0;
-            animation-delay: 5s;
-        }
-
-        .decorative-shape:nth-child(3) {
-            top: 40%;
-            left: -30px;
-            background: var(--secondary-color);
-            width: 100px;
-            height: 100px;
-            border-radius: 0 50% 50% 50%;
-            animation-delay: 10s;
-        }
-
-        @keyframes float-shape {
-            0%, 100% {
-                transform: translateY(0) rotate(0deg);
-            }
-            50% {
-                transform: translateY(-20px) rotate(10deg);
-            }
-        }
-
-        .pulse-circle {
-            position: absolute;
-            border: 2px solid var(--secondary-color);
-            border-radius: 50%;
-            opacity: 0.05;
-            animation: pulse 8s infinite ease-out;
-        }
-
-        .pulse-circle:nth-child(4) {
-            width: 300px;
-            height: 300px;
-            top: 10%;
-            right: 5%;
-            animation-delay: 0s;
-        }
-
-        .pulse-circle:nth-child(5) {
-            width: 200px;
-            height: 200px;
-            bottom: 20%;
-            left: 3%;
-            animation-delay: 4s;
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(0.8);
-                opacity: 0.05;
-            }
-            50% {
-                opacity: 0.1;
-            }
-            100% {
-                transform: scale(1.2);
-                opacity: 0;
-            }
-        }
-
-        /* ==================== 
-           HEADER - АДАПТИВНАЯ ШАПКА
-        ==================== */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.5rem 3rem;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(254, 255, 252, 0.95);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: all var(--transition-speed) ease;
-            border-bottom: 1px solid rgba(45, 90, 39, 0.1);
-        }
-
-        .header.scrolled {
-            padding: 1rem 3rem;
-            box-shadow: 0 2px 20px rgba(45, 90, 39, 0.1);
-        }
-
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex: 1;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            flex: 1;
-            justify-content: flex-end;
-        }
-              
-        /* ==================== 
-           ARTICLE SECTION 
-        ==================== */
-        .article-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 8rem 2rem 4rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .article-header {
-            text-align: center;
-            margin-bottom: 3rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .article-date {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .article-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--text-dark);
-            margin-bottom: 1.5rem;
-        }
-
-        .article-subtitle {
-            font-size: clamp(1.2rem, 2vw, 1.5rem);
-            color: var(--secondary-color);
-            font-weight: 400;
-            line-height: 1.4;
-        }
-
-        .audio-section {
-            margin: 3rem 0;
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(45, 90, 39, 0.05), rgba(74, 124, 67, 0.05));
-            border-radius: 15px;
-            border: 1px solid rgba(45, 90, 39, 0.1);
-            text-align: center;
-        }
-
-        .audio-section audio {
-            width: 100%;
-            max-width: 500px;
-            margin-bottom: 0.5rem;
-        }
-
-        .audio-label {
-            font-size: 0.95rem;
-            color: var(--secondary-color);
-            font-weight: 500;
-        }
-
-        .article-content {
-            margin-top: 3rem;
-        }
-
-        .content-section {
-            margin-bottom: 3rem;
-        }
-
-        .section-title {
-            font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-            font-weight: 600;
-            margin: 2.5rem 0 1.5rem 0;
-            line-height: 1.3;
-            color: var(--text-dark);
-            padding-bottom: 0.8rem;
-            border-bottom: 2px solid rgba(45, 90, 39, 0.1);
-        }
-
-        .section-text {
-            font-size: clamp(1rem, 1.2vw, 1.1rem);
-            line-height: 1.9;
-            margin-bottom: 1.5rem;
-            text-align: justify;
-            color: var(--text-dark);
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
-        }
-
-        .section-text.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .image-block {
-            margin: 3rem 0;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-
-        .image-block.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .image-block img {
-            width: 100%;
-            height: auto;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: var(--transition-speed);
-        }
-
-        .image-block img:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        .image-caption {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 1rem;
-            font-style: italic;
-        }
-
-        .conclusion {
-            margin-top: 4rem;
-            padding: 3rem;
-            border-radius: 15px;
-            border-color: rgba(45, 90, 39, 0.03);
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .conclusion .section-title {
-            margin-top: 0;
-            color: var(--text-dark);
-        }
-
-        .conclusion .section-text {
-            margin-bottom: 0;
-            font-style: italic;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ==================== 
-           SIDE MENU 
-        ==================== */
-        .side-menu {
-            position: fixed;
-            top: 0;
-            left: -400px;
-            width: 350px;
-            max-width: 85vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(15px);
-            z-index: 999;
-            transition: left var(--transition-speed) ease-in-out;
-            padding: 120px 2rem 2rem;
-            box-shadow: 2px 0 20px rgba(0,0,0,0.5);
-            overflow-y: auto;
-        }
-
-        .side-menu.active {
-            left: 0;
-        }
-
-        .side-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 998;
-            opacity: 0;
-            visibility: hidden;
-            transition: all var(--transition-speed);
-        }
-
-        .side-menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .side-menu-list {
-            list-style: none;
-        }
-
-        .side-menu-item {
-            margin-bottom: 0;
-            position: relative;
-        }
-
-        .side-menu-link {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 1.3rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: var(--transition-speed);
-            cursor: pointer;
-        }
-
-        .side-menu-link:hover {
-            color: var(--accent-color);
-        }
-
-        .side-menu-link.has-submenu::after {
-            content: '›';
-            font-size: 1.5rem;
-            transition: transform var(--transition-speed);
-        }
-
-        .side-menu-item.has-submenu:hover .side-menu-link::after {
-            transform: rotate(90deg);
-        }
-
-        .submenu {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out;
-            padding-left: 1.5rem;
-        }
-
-        .side-menu-item.has-submenu:hover .submenu {
-            max-height: 500px;
-        }
-
-        .submenu-item {
-            margin-bottom: 0;
-        }
-
-        .submenu-link {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-size: 1rem;
-            display: block;
-            padding: 0.8rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: var(--transition-speed);
-        }
-
-        .submenu-link:hover {
-            color: var(--accent-color);
-            padding-left: 10px;
-        }
-
-        /* ==================== 
-           АДАПТИВНОСТЬ - HEADER
-        ==================== */
-        
-        /* Планшеты */
-        @media (max-width: 968px) {
-            .header {
-                padding: 1.2rem 2rem;
-            }
-
-            .header.scrolled {
-                padding: 0.9rem 2rem;
-            }
-
-            .header-left,
-            .header-right {
-                gap: 1.5rem;
-            }
-
-            .nav-menu-left,
-            .nav-menu-right {
-                gap: 1.5rem;
-            }
-
-            .nav-menu-left a {
-                font-size: 0.85rem;
-            }
-
-            .nav-menu-right a {
-                font-size: 0.8rem;
-            }
-
-            .logo {
-                font-size: clamp(1.4rem, 3.5vw, 2rem);
-            }
-
-            .submenu {
-                max-height: none;
-                overflow: visible;
-                padding-left: 1.5rem;
-            }
-
-            .side-menu-item.has-submenu:hover .submenu {
-                max-height: none;
-            }
-
-            .side-menu-link.has-submenu::after {
-                display: none;
-            }
-        }
-
-        /* Мобильные */
-        @media (max-width: 768px) {
-            .header {
-                padding: 1rem 1.5rem;
-            }
-
-            .header.scrolled {
-                padding: 0.8rem 1.5rem;
-            }
-
-            .header-left {
-                gap: 1rem;
-                flex: 0;
-            }
-
-            .header-right {
-                flex: 0;
-                gap: 1rem;
-            }
-
-            /* Скрываем десктопную навигацию */
-            .nav-menu-left,
-            .nav-menu-right {
-                display: none;
-            }
-
-            .burger-menu {
-                width: 28px;
-                height: 20px;
-            }
-
-            .burger-menu span {
-                height: 2.5px;
-            }
-
-            .logo {
-                font-size: clamp(1.3rem, 5vw, 1.7rem);
-            }
-
-            .article-container {
-                padding: 6rem 1.5rem 3rem;
-            }
-
-            .fin_plashka2 {
-                flex-direction: column;
-            }
-
-            .box_fin {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .section8_fin {
-                padding: 2rem 1.5rem;
-                border-radius: 2rem 2rem 0 0;
-            }
-
-            .decorative-shape,
-            .pulse-circle {
-                display: none;
-            }
-        }
-
-        /* Маленькие мобильные */
-        @media (max-width: 480px) {
-            .header {
-                padding: 0.8rem 1rem;
-            }
-
-            .header.scrolled {
-                padding: 0.6rem 1rem;
-            }
-
-            .header-left {
-                gap: 0.7rem;
-            }
-
-            .header-right {
-                gap: 0.7rem;
-            }
-
-            .burger-menu {
-                width: 25px;
-                height: 18px;
-            }
-
-            .burger-menu span {
-                height: 2px;
-            }
-
-            .logo {
-                font-size: clamp(1.1rem, 6vw, 1.5rem);
-                letter-spacing: 0.1rem;
-            }
-
-            .article-container {
-                padding: 5rem 1rem 2rem;
-            }
-
-            .card1 form {
-                flex-direction: column;
-            }
-
-            input[type="email"],
-            .btm_fin_podpis {
-                width: 100%;
-            }
-
-            .section8_fin {
-                padding: 1.5rem 1rem;
-                border-radius: 1.5rem 1.5rem 0 0;
-            }
-
-            .conclusion {
-                padding: 2rem 1.5rem;
-            }
-        }
-
-        /* Очень маленькие экраны */
-        @media (max-width: 360px) {
-            .header {
-                padding: 0.7rem 0.8rem;
-            }
-
-            .header.scrolled {
-                padding: 0.5rem 0.8rem;
-            }
-
-            .burger-menu {
-                width: 22px;
-                height: 16px;
-            }
-
-            .burger-menu span {
-                height: 2px;
-            }
-
-            .logo {
-                font-size: clamp(1rem, 6.5vw, 1.3rem);
-            }
-        }
-    </style>
+    <title>Звукотерапия</title>
 </head>
 <body>
     <!-- Фоновые анимации -->
@@ -615,25 +22,21 @@
     <header class="header" id="header">
         <div class="header-left">
             <div class="burger-menu" id="burgerMenu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
             <nav>
                 <ul class="nav-menu-left">
                     <li><a href="./zvuk.html">Звукотерапия</a></li>
-                    <li><a href="./articles_glav.html">Статьи</a></li>
+                    <li><a href="./articles.html">Статьи</a></li>
                 </ul>
             </nav>
         </div>
-
-        <a href="./index.html" class="logo">Purity of Aum</a>
-
+        <a href="../index.html" class="logo">Purity of Aum</a>
         <div class="header-right">
             <nav>
                 <ul class="nav-menu-right">
-                    <li><a href="./vzaim_glav.html">Взаимодействие</a></li>
-                    <li><a href="#about">Тесты</a></li>
+                    <li><a href="./vzaim.html">Взаимодействие</a></li>
+                    <li><a href="./tests.html">Тесты</a></li>
                 </ul>
             </nav>
         </div>
@@ -643,53 +46,31 @@
     <div class="side-menu-overlay" id="sideMenuOverlay"></div>
     <div class="side-menu" id="sideMenu">
         <ul class="side-menu-list">
-            <li class="side-menu-item">
-                <a href="./index.html" class="side-menu-link">Главная</a>
-            </li>
-            <li class="side-menu-item">
-                <a href="./zvuk.html" class="side-menu-link">Звукотерапия</a>
-            </li>
+            <li class="side-menu-item"><a href="../index.html" class="side-menu-link">Главная</a></li>
+            <li class="side-menu-item"><a href="./zvuk.html" class="side-menu-link">Звукотерапия</a></li>
             <li class="side-menu-item has-submenu">
-                <a href="./articles_glav.html" class="side-menu-link">Статьи</a>
+                <a href="./articles.html" class="side-menu-link">Статьи</a>
                 <div class="submenu">
                     <ul class="side-menu-list">
-                        <li class="submenu-item">
-                            <a href="#scientific-research" class="submenu-link">Возникновение звука</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="#practical-guides" class="submenu-link">Влияние звука</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="#expert-interviews" class="submenu-link">Медитации</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="#practical-guides" class="submenu-link">Музыкальные инструменты</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="#expert-interviews" class="submenu-link">Интервью</a>
-                        </li>
+                        <li class="submenu-item"><a href="./articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
                     </ul>
                 </div>
             </li>
             <li class="side-menu-item has-submenu">
-                <a href="./vzaim_glav.html" class="side-menu-link">Взаимодействие</a>
+                <a href="./vzaim.html" class="side-menu-link">Взаимодействие</a>
                 <div class="submenu">
                     <ul class="side-menu-list">
-                        <li class="submenu-item">
-                            <a href="#practical-meditation" class="submenu-link">Практическая медитация</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="#modern-developments" class="submenu-link">Современные разработки</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="#sound-specialists" class="submenu-link">Специалисты в области звука</a>
-                        </li>
+                        <li class="submenu-item"><a href="./vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
                     </ul>
                 </div>
             </li>
-            <li class="side-menu-item">
-                <a href="#contact" class="side-menu-link">Тесты</a>
-            </li>
+            <li class="side-menu-item"><a href="./tests.html" class="side-menu-link">Тесты</a></li>
         </ul>
     </div>
 
@@ -697,7 +78,7 @@
     <div class="article-container">
         <div class="article-header">
             <div class="article-date">Июнь 2027</div>
-            <h1 class="article-title">Звук как тихий целитель: от древних ритуалов к нейрофизиологии гармонии</h1>
+            <h1 class="article-title-glav">Звук как тихий целитель: от древних ритуалов к нейрофизиологии гармонии</h1>
         </div>
 
         <div class="audio-section">
@@ -844,11 +225,10 @@
             </div>
             <div class="fin_plashka2">
                 <a href="./zvuk.html" class="fin1">Звукотерапия</a>
-                <a href="./articles_glav.html" class="fin1">Статьи</a>
-                <a href="./vzaim_glav.html" class="fin1">Взаимодействия</a>
-                <a href="./tests_glav.html" class="fin1">Тесты</a>
-            </div>  
-
+                <a href="./articles.html" class="fin1">Статьи</a>
+                <a href="./vzaim.html" class="fin1">Взаимодействия</a>
+                <a href="./tests.html" class="fin1">Тесты</a>
+            </div> 
             <div class="btm_fin">
                 <div class="card1">
                     <form id="thanks" method="POST">
