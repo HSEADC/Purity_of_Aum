@@ -1,173 +1,289 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
-    <title>Цифровая персонализация</title>
+    <link rel="preload" href="../stylesheets/style.css" as="style">
+    <title>Резонанс покоя: звуковые ванны</title>
 </head>
 <body>
-    <div class="section0_menu">
-        <div class="titles">
-            <a href="../pages/zvuk.html" class="q1">Звукотерапия</a>
-            <a href="../pages/articles.html" class="q2">Статьи</a>
-            <a href="../index.html" class="logo">Purity of Aum</a>
-            <a href="../pages/vzaim.html" class="q3">Взаимодействие</a>
-            <a href="../pages/tests.html" class="q4">Тесты</a>
-        </div>
+    <!-- Фоновые анимации -->
+    <div class="forest-bg">
+        <div class="decorative-shape"></div>
+        <div class="decorative-shape"></div>
+        <div class="decorative-shape"></div>
+        <div class="pulse-circle"></div>
+        <div class="pulse-circle"></div>
     </div>
 
-            <!-- menu left -->
-   <div class="menu_3">
-    <ul>
-      <!-- <li><a href="./vzaim2.html" class="pp1_3">Взаимодействие со звуком</a></li> -->
-      <li><a href="../pages/vzaim3.html" class="pp1_3">Техники медитации</a></li>
-      <li><a href="../pages/vzaim4.html" class="pp1_3">Развивающиеся направления</a></li>
-      <li><a href="../pages/vzaim5.html" class="pp1_3">Специалисты в области звука</a></li>
-    </ul>
-  </div>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="../pages/zvuk.html">Звукотерапия</a></li>
+                    <li><a href="../pages/articles.html">Статьи</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="../index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="../pages/vzaim.html">Взаимодействие</a></li>
+                    <li><a href="../pages/tests.html">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <div class="content1">
-    <!-- Содержимое страницы -->
-    <div class="content0000">
-        <div class="section3_1_arglav">
-            <div class="fiction2" id="fiction2">
-                <p class="zk1_1">Резонанс покоя: нейроакустический феномен звуковых ванн и их влияние на организм</p>
-                <!-- <p class="zk1"></p> -->
-                <p class="zk">В эпоху хронического стресса и информационной перегрузки поиск эффективных и доступных методов саморегуляции становится не просто трендом, а насущной необходимостью. В этом контексте звуковая ванна (sound bath) зарекомендовала себя как один из самых популярных и доступных видов звуковой медитации. В этой практике участники пассивно воспринимают звуковые вибрации, создаваемые с помощью различных инструментов: тибетских поющих чаш, гонгов, кристаллических чаш, колокольчиков и шейкеров. Сеанс обычно проходит в положении лежа, что позволяет телу максимально расслабиться и воспринимать вибрации не только на слух, но и через костную проводимость. </p>
-                <p class="zk">Но что именно происходит с организмом в этот момент? За кажущейся простотой и эзотерической эстетикой процесса скрываются вполне осязаемые нейрофизиологические и акустические механизмы, которые все чаще становятся предметом изучения современной науки.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
                 </div>
-                <!-- <p class="zk"></p> -->
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
 
-                <p class="zk1">Физика процесса: тело как резонатор</p>
-                <p class="zk">Человеческое тело примерно на 60% состоит из воды, которая является превосходным проводником звуковых волн. В отличие от обычной музыки, которую мы воспринимаем преимущественно слуховым анализатором, звуковая ванна задействует так называемую костную проводимость. Низкочастотные и среднечастотные вибрации, генерируемые гонгами или чашами, передаются через ткани, кости и жидкости организма, достигая внутреннего уха в обход барабанной перепонки. </p>
-                <p class="zk">Этот процесс стимулирует глубинные механорецепторы и проприоцептивную систему. По сути, тело на клеточном уровне начинает «вибрировать» в унисон с внешним источником звука. Исследования в области виброакустической терапии показывают, что такие механические колебания способствуют улучшению микроциркуляции крови, снижению мышечного тонуса и уменьшению воспалительных маркеров.</p>
-                <!-- <p class="zk"></p>
-                <p class="zk"></p> -->
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
-                <!-- <p class="zk"></p>
-                <p class="zk"></p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div> -->
+    <!-- ARTICLE CONTENT -->
+    <div class="article-container">
+        <div class="article-header">
+            <div class="article-date">Июнь 2026</div>
+            <h1 class="article-title-glav">Резонанс покоя: нейроакустический феномен звуковых ванн и их влияние на организм</h1>
+        </div>
 
-                <p class="zk1">Нейробиология расслабления: синхронизация мозговых волн</p>
-                <p class="zk">Одним из наиболее изученных эффектов звуковых ванн является явление, известное как «захват частоты» (brainwave entrainment). В состоянии бодрствования и стресса мозг человека преимущественно генерирует бета-волны (13–30 Гц), связанные с активным мышлением, тревогой и концентрацией. </p>
-                <p class="zk">Монотонные, гармонически богатые звуки поющих чаш и гонгов способствуют плавному переводу мозговой активности в альфа- (8–12 Гц) и тета-диапазон (4–7 Гц). Альфа-состояние ассоциируется с расслабленным бодрствованием и снижением тревожности, тогда как тета-состояние характерно для глубокой медитации, творческого озарения и фазы быстрого сна (REM). Пассивный характер практики делает этот переход особенно легким: человеку не нужно прикладывать волевые усилия для концентрации, как в традиционной майндфулнес-медитации, что делает звуковые ванны идеальным инструментом для новичков и людей с синдромом дефицита внимания.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
-                <p class="zk">Кроме того, функциональная МРТ-томография в схожих исследованиях демонстрирует снижение активности в дефолт-системе мозга (Default Mode Network), которая отвечает за блуждание мыслей, самокритику и руминацию. «Отключение» этой сети приносит субъективное ощущение тишины в голове и эмоционального облегчения.</p>
-                <!-- <p class="zk"></p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div> -->
+        <div class="article-content">
+            <div class="content-section">
+                <h2 class="section-title">Звуковая ванна как инструмент саморегуляции</h2>
+                
+                <p class="section-text">В эпоху хронического стресса и информационной перегрузки поиск эффективных и доступных методов саморегуляции становится не просто трендом, а насущной необходимостью. В этом контексте звуковая ванна (sound bath) зарекомендовала себя как один из самых популярных и доступных видов звуковой медитации. В этой практике участники пассивно воспринимают звуковые вибрации, создаваемые с помощью различных инструментов: тибетских поющих чаш, гонгов, кристаллических чаш, колокольчиков и шейкеров. Сеанс обычно проходит в положении лежа, что позволяет телу максимально расслабиться и воспринимать вибрации не только на слух, но и через костную проводимость.</p>
+                
+                <p class="section-text">Но что именно происходит с организмом в этот момент? За кажущейся простотой и эзотерической эстетикой процесса скрываются вполне осязаемые нейрофизиологические и акустические механизмы, которые все чаще становятся предметом изучения современной науки.</p>
+            </div>
 
-                <p class="zk1">Физиологический отклик: активация парасимпатической системы</p>
-                <p class="zk">Звуковые вибрации, особенно низкочастотные, оказывают прямое модулирующее воздействие на блуждающий нерв (nervus vagus), который является главным проводником парасимпатической нервной системы. Активация блуждающего нерва запускает каскад реакций, противоположных реакции «бей или беги»:</p>
-                <p class="zk">*   Снижается частота сердечных сокращений и артериальное давление.</p>  
-                <p class="zk">*   Замедляется дыхание, становясь более глубоким и диафрагмальным.</p> 
-                <p class="zk">*   Подавляется выработка кортизола (гормона стресса) и стимулируется секреция окситоцина и эндорфинов.</p>               
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
-                <p class="zk">Пилотные клинические исследования, проводившиеся в последние годы, подтверждают, что даже один 45-минутный сеанс звуковой терапии способен статистически значимо снизить уровень воспринимаемого стресса, уменьшить симптомы депрессии и улучшить качество последующего сна.</p>
-                <!-- <p class="zk"></p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div> -->
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
 
-                <p class="zk1">Акустика инструментов: почему именно чаши и гонги?</p>
-                <p class="zk">Инструменты, используемые в звуковых ваннах, выбраны не случайно. Их акустические свойства принципиально отличаются от стандартных музыкальных инструментов:</p>
-                <p class="zk">Тибетские поющие чаши: Создают сложный спектр обертонов. Когда звучат две чаши с немного разной частотой, возникает эффект биения (бинарные ритмы), который мозг воспринимает как пульсацию, дополнительно способствующую синхронизации полушарий.</p>                
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
-                <p class="zk">Кристаллические чаши: Изготовленные из кварцевого песка, они генерируют чрезвычайно чистые синусоидальные волны с минимальным количеством обертонов. Это создает эффект «акустического массажа», который часто описывается как пронзительно чистый и воздействующий на глубокие эмоциональные уровни.</p>
-                <p class="zk">Гонги Обладают самым широким частотным спектром. Их звук не имеет четкой тональности, создавая плотную «звуковую стену», которая эффективно блокирует внешний шум и внутренние диалоги, погружая слушателя в состояние транса.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
+            <div class="content-section">
+                <h2 class="section-title">Физика процесса: тело как резонатор</h2>
+                
+                <p class="section-text">Человеческое тело примерно на 60% состоит из воды, которая является превосходным проводником звуковых волн. В отличие от обычной музыки, которую мы воспринимаем преимущественно слуховым анализатором, звуковая ванна задействует так называемую костную проводимость. Низкочастотные и среднечастотные вибрации, генерируемые гонгами или чашами, передаются через ткани, кости и жидкости организма, достигая внутреннего уха в обход барабанной перепонки.</p>
+                
+                <p class="section-text">Этот процесс стимулирует глубинные механорецепторы и проприоцептивную систему. По сути, тело на клеточном уровне начинает «вибрировать» в унисон с внешним источником звука. Исследования в области виброакустической терапии показывают, что такие механические колебания способствуют улучшению микроциркуляции крови, снижению мышечного тонуса и уменьшению воспалительных маркеров.</p>
+            </div>
 
-                <p class="zk1">Научный контекст и ограничения</p>
-                <p class="zk">Важно отметить, что, несмотря на растущую базу доказательств, звуковая терапия рассматривается современной медициной как комплементарный (дополняющий) метод, а не как панацея. Крупномасштабные рандомизированные контролируемые исследования (РКИ) в этой области все еще находятся в стадии накопления данных. Тем не менее, профиль безопасности этой практики исключительно высок: при отсутствии тяжелых психических расстройств (таких как шизофрения или эпилепсия, где мощные сенсорные стимулы могут быть триггером) и индивидуальной непереносимости громких звуков, звуковые ванны не имеют противопоказаний.</p>             
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
 
-                <p class="zk1">Заключение</p>
-                <p class="zk3">Звуковая ванна представляет собой уникальный мост между древними созерцательными традициями и современной нейроакустикой. Это элегантный, нефармакологический способ «перезагрузки» нервной системы, который работает не вопреки законам физики и биологии, а благодаря им. В мире, где тишина становится роскошью, умение использовать звук как инструмент исцеления и глубокого отдыха выглядит не как мистика, а как рациональный и научно обоснованный ответ на вызовы XXI века.</p>
+            <div class="content-section">
+                <h2 class="section-title">Нейробиология расслабления: синхронизация мозговых волн</h2>
+                
+                <p class="section-text">Одним из наиболее изученных эффектов звуковых ванн является явление, известное как «захват частоты» (brainwave entrainment). В состоянии бодрствования и стресса мозг человека преимущественно генерирует бета-волны (13–30 Гц), связанные с активным мышлением, тревогой и концентрацией.</p>
+                
+                <p class="section-text">Монотонные, гармонически богатые звуки поющих чаш и гонгов способствуют плавному переводу мозговой активности в альфа- (8–12 Гц) и тета-диапазон (4–7 Гц). Альфа-состояние ассоциируется с расслабленным бодрствованием и снижением тревожности, тогда как тета-состояние характерно для глубокой медитации, творческого озарения и фазы быстрого сна (REM). Пассивный характер практики делает этот переход особенно легким: человеку не нужно прикладывать волевые усилия для концентрации, как в традиционной майндфулнес-медитации, что делает звуковые ванны идеальным инструментом для новичков и людей с синдромом дефицита внимания.</p>
+                
+                <p class="section-text">Кроме того, функциональная МРТ-томография в схожих исследованиях демонстрирует снижение активности в дефолт-системе мозга (Default Mode Network), которая отвечает за блуждание мыслей, самокритику и руминацию. «Отключение» этой сети приносит субъективное ощущение тишины в голове и эмоционального облегчения.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Физиологический отклик: активация парасимпатической системы</h2>
+                
+                <p class="section-text">Звуковые вибрации, особенно низкочастотные, оказывают прямое модулирующее воздействие на блуждающий нерв (nervus vagus), который является главным проводником парасимпатической нервной системы. Активация блуждающего нерва запускает каскад реакций, противоположных реакции «бей или беги»:</p>
+                
+                <p class="section-text">• Снижается частота сердечных сокращений и артериальное давление.</p>
+                <p class="section-text">• Замедляется дыхание, становясь более глубоким и диафрагмальным.</p>
+                <p class="section-text">• Подавляется выработка кортизола (гормона стресса) и стимулируется секреция окситоцина и эндорфинов.</p>
+                
+                <p class="section-text">Пилотные клинические исследования, проводившиеся в последние годы, подтверждают, что даже один 45-минутный сеанс звуковой терапии способен статистически значимо снизить уровень воспринимаемого стресса, уменьшить симптомы депрессии и улучшить качество последующего сна.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Акустика инструментов: почему именно чаши и гонги?</h2>
+                
+                <p class="section-text">Инструменты, используемые в звуковых ваннах, выбраны не случайно. Их акустические свойства принципиально отличаются от стандартных музыкальных инструментов:</p>
+                
+                <p class="section-text"><strong>Тибетские поющие чаши</strong> создают сложный спектр обертонов. Когда звучат две чаши с немного разной частотой, возникает эффект биения (бинарные ритмы), который мозг воспринимает как пульсацию, дополнительно способствующую синхронизации полушарий.</p>
+                
+                <p class="section-text"><strong>Кристаллические чаши</strong>, изготовленные из кварцевого песка, генерируют чрезвычайно чистые синусоидальные волны с минимальным количеством обертонов. Это создает эффект «акустического массажа», который часто описывается как пронзительно чистый и воздействующий на глубокие эмоциональные уровни.</p>
+                
+                <p class="section-text"><strong>Гонги</strong> обладают самым широким частотным спектром. Их звук не имеет четкой тональности, создавая плотную «звуковую стену», которая эффективно блокирует внешний шум и внутренние диалоги, погружая слушателя в состояние транса.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Научный контекст и ограничения</h2>
+                
+                <p class="section-text">Важно отметить, что, несмотря на растущую базу доказательств, звуковая терапия рассматривается современной медициной как комплементарный (дополняющий) метод, а не как панацея. Крупномасштабные рандомизированные контролируемые исследования (РКИ) в этой области все еще находятся в стадии накопления данных. Тем не менее, профиль безопасности этой практики исключительно высок: при отсутствии тяжелых психических расстройств (таких как шизофрения или эпилепсия, где мощные сенсорные стимулы могут быть триггером) и индивидуальной непереносимости громких звуков, звуковые ванны не имеют противопоказаний.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="conclusion">
+                <h2 class="section-title">Заключение</h2>
+                <p class="section-text">Звуковая ванна представляет собой уникальный мост между древними созерцательными традициями и современной нейроакустикой. Это элегантный, нефармакологический способ «перезагрузки» нервной системы, который работает не вопреки законам физики и биологии, а благодаря им. В мире, где тишина становится роскошью, умение использовать звук как инструмент исцеления и глубокого отдыха выглядит не как мистика, а как рациональный и научно обоснованный ответ на вызовы XXI века.</p>
             </div>
         </div>
     </div>
-    </div>
 
-
-
-
-
-
-  <div class="section8_fin">
+    <!-- FOOTER -->
+    <footer class="section8_fin">
         <div id="fin_plashka">
            <div class="fin_plashka1">
                 <a href="../index.html" class="logo22">Purity of Aum</a>
-                <div class="social">
-                    <a href="https://t.me/ayy_mir_zvukov" class="tg" target="_blank"><img src="../img/glav_pages/telegram.png" alt="" class="tg1"></a>
-                    <a href="https://vk.com/purity_of_aum" class="vk" target="_blank"><img src="../img/glav_pages/vk.png" alt="" class="vk"1></a>
-                </div>
-                
             </div>
             <div class="fin_plashka2">
                 <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
                 <a href="../pages/articles.html" class="fin1">Статьи</a>
                 <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
-                <a href="../pages/tests.html" class="fin1">Тесты</a>
-            </div> 
+                <a href="" class="fin1">Тесты</a>
+            </div>  
 
             <div class="btm_fin">
                 <div class="card1">
                     <form id="thanks" method="POST">
-                        <input type="email" name="email" 
-                        id="email" 
-                        placeholder="E-mail" 
-                        required>
-                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><a href="" class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</a></button>
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis">
+                            <span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span>
+                        </button>
                     </form>
                     <p class="msg" id="congo">Спасибо за подписку!</p>
                 </div>
             </div>
 
-            <script>
-                const form = document.getElementById("thanks");
-                const successMessage =
-                    document.getElementById("congo");
-
-                form.addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    successMessage.style.display = "block";
-                });
-            </script>
-
-             <hr class="line_fin">
+            <hr class="line_fin">
             <div class="box_fin">
                 <p class="PoA">2026 Purity of Aum</p>
                 <p class="NS">Настасья Звонарёва</p>
             </div>
         </div>
-    </div> 
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active');
+            sideMenu.classList.toggle('active');
+            sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+
+        document.querySelectorAll('.side-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleSideMenu();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+                toggleSideMenu();
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-text, .image-block').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const form = document.getElementById("thanks");
+        const successMessage = document.getElementById("congo");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            successMessage.style.display = "block";
+            setTimeout(() => {
+                successMessage.style.display = "none";
+                form.reset();
+            }, 3000);
+        });
+    </script>
 </body>
 </html>

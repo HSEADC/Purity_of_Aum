@@ -1,131 +1,260 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
-    <title>Статья: Асинхронный ритм</title>
+    <link rel="preload" href="../stylesheets/style.css" as="style">
+    <title>Асинхронный ритм</title>
 </head>
 <body>
-    <div class="section0_menu">
-        <div class="titles">
-            <a href="../pages/zvuk.html" class="q1">Звукотерапия</a>
-            <a href="../pages/articles.html" class="q2">Статьи</a>
-            <a href="../index.html" class="logo">Purity of Aum</a>
-            <a href="../pages/vzaim.html" class="q3">Взаимодействие</a>
-            <a href="" class="q4">Тесты</a>
-        </div>
+    <!-- Фоновые анимации -->
+    <div class="forest-bg">
+        <div class="decorative-shape"></div>
+        <div class="decorative-shape"></div>
+        <div class="decorative-shape"></div>
+        <div class="pulse-circle"></div>
+        <div class="pulse-circle"></div>
     </div>
 
-    <!-- menu left -->
-   <div class="menu_3">
-    <ul>
-        <li><a href="../pages/articles.html" class="pp1_3">Все статьи</a></li> 
-        <li><a href="../pages/articles2.html" class="pp1_3">Звук и его возникновение</a></li> 
-        <li><a href="../pages/articles3.html" class="pp1_3">Cтатьи о влиянии звука</a></li>
-        <li><a href="../pages/articles4.html" class="pp1_3">Статьи о медитации</a></li>
-        <li><a href="../pages/articles6.html" class="pp1_3">Статьи о музыкальных инструментах</a></li>
-        <li><a href="../pages/articles5.html" class="pp1_3">Интервью со специалистами</a></li>
-    </ul>
-  </div>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="../pages/zvuk.html">Звукотерапия</a></li>
+                    <li><a href="../pages/articles.html">Статьи</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="../index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="../pages/vzaim.html">Взаимодействие</a></li>
+                    <li><a href="../pages/tests.html">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <div class="content1">
-    <!-- Содержимое страницы -->
-    <div class="content0000">
-        <div class="section3_1_arglav">
-            <div class="fiction2" id="fiction2">
-                <p class="zk1_1_bl">Асинхронный ритм: тактильная медитация и телесный резонанс</p>
-                <p class="zk1_bl">Феномен тактильной медитации: от сенсорной перегрузки к телесному отклику</p>
-                <p class="zk">В эпоху, когда практики осознанности всё чаще превращаются в цифровой продукт с приложениями и рейтингами, возникает острая потребность в радикально ином подходе к внутреннему покою. Особенно это касается людей, чья нервная система перегружена сенсорным шумом: родителей новорождённых, специалистов многозадачных сред и лиц с повышенной чувствительностью. Для них даже успокаивающая музыка становится дополнительной нагрузкой, ещё одним потоком информации, требующим обработки, что делает традиционные аудиальные методы контрпродуктивными в условиях хронического стресса.</p>
-                <p class="zk">В этом контексте обретает значение феномен тактильной медитации, основанный на прямом механическом воздействии на тело через костную проводимость и субъективно неслышимые частоты в диапазоне 18–25 Гц. Эти колебания находятся на границе человеческого слуха и не воспринимаются как звук в привычном смысле, но тело чувствует их кожей, костями и фасциями. Вибрация проникает напрямую в ткани, минуя улитку внутреннего уха, что создаёт принципиально иной путь восприятия — не аудиальный, а соматический, освобождающий от необходимости «слушать» и обрабатывать информацию.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
                 </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
 
-                <p class="zk1">Физиология невидимого: механизмы костной проводимости и восприятия</p>
-                <p class="zk">Механизм тактильной медитации раскрывается при рассмотрении тела как активной резонансной системы, где костная проводимость играет ключевую роль в регуляции состояния. При воздействии колебаний в диапазоне 18–25 Гц кости черепа, позвоночник и грудная клетка начинают резонировать с собственными частотами тканей, активируя миллионы механорецепторов. Особую роль играет саккулус — часть вестибулярного аппарата, наиболее чувствительная именно к низким частотам, при активации которого снижается тонус симпатической нервной системы и усиливается активность дорсального блуждающего нерва.</p>
-                <p class="zk">Ещё один ключевой аспект заключается во влиянии на фасциальную систему, обладающую уникальной способностью проводить механические колебания с минимальными потерями энергии. При воздействии низкочастотных вибраций фасции начинают резонировать как единая система, что приводит к микроскопическому изменению тонуса тканей и своего рода «внутреннему массажу». Тактильная медитация использует этот более древний путь восприятия, существовавший задолго до развития уха, возвращая человека к первичному способу связи с миром через вибрацию плоти, а не через анализ звука.</p>
+    <!-- ARTICLE CONTENT -->
+    <div class="article-container">
+        <div class="article-header">
+            <div class="article-date">Июнь 2026</div>
+            <h1 class="article-title-glav">Асинхронный ритм: тактильная медитация и телесный резонанс</h1>
+        </div>
+
+
+        <div class="article-content">
+            <div class="content-section">
+                <h2 class="section-title">Феномен тактильной медитации: от сенсорной перегрузки к телесному отклику</h2>
                 
-                <p class="zk1">Клиническое применение: выход из ловушки тревожности и перегрузки</p>
-                <p class="zk">Клиническая ценность тактильной медитации наиболее очевидна в работе с состояниями сенсорной перегрузки, где традиционные подходы оказываются недостаточными или даже вредными. Люди, переживающие перегрузку, описывают мир как «слишком громкий», где попытки медитировать с закрытыми глазами лишь усиливают внутренний диалог и телесное напряжение. Предсказуемая стационарная вибрация создаёт «опорный пункт» для нервной системы, сигнализируя о безопасности среды и позволяя выйти из режима постоянной обработки входящих стимулов без когнитивных усилий.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
-                <p class="zk">При тревожных расстройствах метод работает через снижение гиперактивности системы «бей или беги», мягко разрывая цикл телесного напряжения, поддерживающего тревогу. Низкочастотные вибрации воздействуют напрямую на мышечные и фасциальные структуры, способствуя переходу к диафрагмальному дыханию через механический резонанс. Особенно перспективно применение в уходе за детьми, где технология может работать в фоновом режиме, обеспечивая тихое восстановление для родителя без необходимости отвлекаться от заботы или чувствовать вину за «время для себя».</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
+                <p class="section-text">В эпоху, когда практики осознанности всё чаще превращаются в цифровой продукт с приложениями и рейтингами, возникает острая потребность в радикально ином подходе к внутреннему покою. Особенно это касается людей, чья нервная система перегружена сенсорным шумом: родителей новорождённых, специалистов многозадачных сред и лиц с повышенной чувствительностью. Для них даже успокаивающая музыка становится дополнительной нагрузкой, ещё одним потоком информации, требующим обработки, что делает традиционные аудиальные методы контрпродуктивными в условиях хронического стресса.</p>
+                
+                <p class="section-text">В этом контексте обретает значение феномен тактильной медитации, основанный на прямом механическом воздействии на тело через костную проводимость и субъективно неслышимые частоты в диапазоне 18–25 Гц. Эти колебания находятся на границе человеческого слуха и не воспринимаются как звук в привычном смысле, но тело чувствует их кожей, костями и фасциями. Вибрация проникает напрямую в ткани, минуя улитку внутреннего уха, что создаёт принципиально иной путь восприятия — не аудиальный, а соматический, освобождающий от необходимости «слушать» и обрабатывать информацию.</p>
+            </div>
 
-                <p class="zk1">Этический дизайн заботы: технологии поддержки без контроля</p>
-                <p class="zk">За феноменом тактильной медитации скрывается важный этический принцип поддержки без контроля, противопоставленный современной парадигме мониторинга и управления состоянием. Устройство, реализующее этот принцип, не имеет экрана, не собирает данные и не подталкивает к действиям, становясь частью среды обитания, а не её центром. Это может быть текстильный объект, который просто присутствует в пространстве, позволяя телу самостоятельно получить поддерживающий стимул без необходимости взаимодействия с интерфейсом.</p>
-                <p class="zk">Этот подход перекликается с философией «умного дома», доведённой до логического завершения, где технологии мягко поддерживают физиологическое состояние, оставаясь в тени. Вибрации 18–25 Гц не ощущаются как технологическое вмешательство, а воспринимаются как естественное свойство пространства, подобно теплу от камина. В повседневной жизни тактильная медитация возвращает возможность тишины без усилия, создавая условия, в которых внимание может отдохнуть, а забота может течь из состояния внутренней опоры, не требуя работы над собой.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
 
-                <p class="zk1">Заключение</p>
-                <p class="zk">В конечном счёте, тактильная медитация напоминает нам, что покой не всегда рождается через усилие воли или когнитивный контроль. Иногда он приходит, когда мы перестаём делать и позволяем телу просто резонировать с миром на границе слышимого, используя древние механизмы восприятия вибрации. В этом резонансе скрыта мудрость: тело знает путь к гармонии лучше, чем разум, и иногда достаточно просто дать ему эту возможность без инструкций и ожиданий.</p>
-                <p class="zk3">Просто быть и позволить вибрации пройти сквозь плоть, как ветер через траву, незаметно, но ощутимо изменяя состояние всего существа. Это путь к восстановлению внутренней опоры без необходимости «брать перерыв» или следовать внешним предписаниям. Технология становится не инструментом достижения, а средой существования, где тишина внутреннего состояния становится доступной даже в условиях внешнего шума, подтверждая приоритет телесного опыта над цифровой обработкой информации.</p>
+            <div class="content-section">
+                <h2 class="section-title">Физиология невидимого: механизмы костной проводимости и восприятия</h2>
+                
+                <p class="section-text">Механизм тактильной медитации раскрывается при рассмотрении тела как активной резонансной системы, где костная проводимость играет ключевую роль в регуляции состояния. При воздействии колебаний в диапазоне 18–25 Гц кости черепа, позвоночник и грудная клетка начинают резонировать с собственными частотами тканей, активируя миллионы механорецепторов. Особую роль играет саккулус — часть вестибулярного аппарата, наиболее чувствительная именно к низким частотам, при активации которого снижается тонус симпатической нервной системы и усиливается активность дорсального блуждающего нерва.</p>
+                
+                <p class="section-text">Ещё один ключевой аспект заключается во влиянии на фасциальную систему, обладающую уникальной способностью проводить механические колебания с минимальными потерями энергии. При воздействии низкочастотных вибраций фасции начинают резонировать как единая система, что приводит к микроскопическому изменению тонуса тканей и своего рода «внутреннему массажу». Тактильная медитация использует этот более древний путь восприятия, существовавший задолго до развития уха, возвращая человека к первичному способу связи с миром через вибрацию плоти, а не через анализ звука.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Клиническое применение: выход из ловушки тревожности и перегрузки</h2>
+                
+                <p class="section-text">Клиническая ценность тактильной медитации наиболее очевидна в работе с состояниями сенсорной перегрузки, где традиционные подходы оказываются недостаточными или даже вредными. Люди, переживающие перегрузку, описывают мир как «слишком громкий», где попытки медитировать с закрытыми глазами лишь усиливают внутренний диалог и телесное напряжение. Предсказуемая стационарная вибрация создаёт «опорный пункт» для нервной системы, сигнализируя о безопасности среды и позволяя выйти из режима постоянной обработки входящих стимулов без когнитивных усилий.</p>
+                
+                <p class="section-text">При тревожных расстройствах метод работает через снижение гиперактивности системы «бей или беги», мягко разрывая цикл телесного напряжения, поддерживающего тревогу. Низкочастотные вибрации воздействуют напрямую на мышечные и фасциальные структуры, способствуя переходу к диафрагмальному дыханию через механический резонанс. Особенно перспективно применение в уходе за детьми, где технология может работать в фоновом режиме, обеспечивая тихое восстановление для родителя без необходимости отвлекаться от заботы или чувствовать вину за «время для себя».</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Этический дизайн заботы: технологии поддержки без контроля</h2>
+                
+                <p class="section-text">За феноменом тактильной медитации скрывается важный этический принцип поддержки без контроля, противопоставленный современной парадигме мониторинга и управления состоянием. Устройство, реализующее этот принцип, не имеет экрана, не собирает данные и не подталкивает к действиям, становясь частью среды обитания, а не её центром. Это может быть текстильный объект, который просто присутствует в пространстве, позволяя телу самостоятельно получить поддерживающий стимул без необходимости взаимодействия с интерфейсом.</p>
+                
+                <p class="section-text">Этот подход перекликается с философией «умного дома», доведённой до логического завершения, где технологии мягко поддерживают физиологическое состояние, оставаясь в тени. Вибрации 18–25 Гц не ощущаются как технологическое вмешательство, а воспринимаются как естественное свойство пространства, подобно теплу от камина. В повседневной жизни тактильная медитация возвращает возможность тишины без усилия, создавая условия, в которых внимание может отдохнуть, а забота может течь из состояния внутренней опоры, не требуя работы над собой.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="conclusion">
+                <h2 class="section-title">Заключение</h2>
+                <p class="section-text">В конечном счёте, тактильная медитация напоминает нам, что покой не всегда рождается через усилие воли или когнитивный контроль. Иногда он приходит, когда мы перестаём делать и позволяем телу просто резонировать с миром на границе слышимого, используя древние механизмы восприятия вибрации. В этом резонансе скрыта мудрость: тело знает путь к гармонии лучше, чем разум, и иногда достаточно просто дать ему эту возможность без инструкций и ожиданий.</p>
+                
+                <p class="section-text">Просто быть и позволить вибрации пройти сквозь плоть, как ветер через траву, незаметно, но ощутимо изменяя состояние всего существа. Это путь к восстановлению внутренней опоры без необходимости «брать перерыв» или следовать внешним предписаниям. Технология становится не инструментом достижения, а средой существования, где тишина внутреннего состояния становится доступной даже в условиях внешнего шума, подтверждая приоритет телесного опыта над цифровой обработкой информации.</p>
             </div>
         </div>
     </div>
-    </div>
 
-    
-
-
-
-    <div class="section8_fin">
+    <!-- FOOTER -->
+    <footer class="section8_fin">
         <div id="fin_plashka">
            <div class="fin_plashka1">
                 <a href="../index.html" class="logo22">Purity of Aum</a>
-                <div class="social">
-                    <a href="https://t.me/ayy_mir_zvukov" class="tg" target="_blank"><img src="../img/glav_pages/telegram.png" alt="" class="tg1"></a>
-                    <a href="https://vk.com/purity_of_aum" class="vk" target="_blank"><img src="../img/glav_pages/vk.png" alt="" class="vk"1></a>
-                </div>
-                
             </div>
             <div class="fin_plashka2">
                 <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
                 <a href="../pages/articles.html" class="fin1">Статьи</a>
                 <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
-                <a href="../pages/tests.html" class="fin1">Тесты</a>
-            </div> 
+                <a href="" class="fin1">Тесты</a>
+            </div>  
 
             <div class="btm_fin">
                 <div class="card1">
                     <form id="thanks" method="POST">
-                        <input type="email" name="email" 
-                        id="email" 
-                        placeholder="E-mail" 
-                        required>
-                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><a href="" class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</a></button>
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis">
+                            <span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span>
+                        </button>
                     </form>
                     <p class="msg" id="congo">Спасибо за подписку!</p>
                 </div>
             </div>
 
-            <script>
-                const form = document.getElementById("thanks");
-                const successMessage =
-                    document.getElementById("congo");
-
-                form.addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    successMessage.style.display = "block";
-                });
-            </script>
-
-             <hr class="line_fin">
+            <hr class="line_fin">
             <div class="box_fin">
                 <p class="PoA">2026 Purity of Aum</p>
                 <p class="NS">Настасья Звонарёва</p>
             </div>
         </div>
-    </div> 
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active');
+            sideMenu.classList.toggle('active');
+            sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+
+        document.querySelectorAll('.side-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleSideMenu();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+                toggleSideMenu();
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-text, .image-block').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const form = document.getElementById("thanks");
+        const successMessage = document.getElementById("congo");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            successMessage.style.display = "block";
+            setTimeout(() => {
+                successMessage.style.display = "none";
+                form.reset();
+            }, 3000);
+        });
+    </script>
 </body>
 </html>

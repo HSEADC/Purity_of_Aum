@@ -1,146 +1,279 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
-    <title>Цифровая персонализация</title>
+    <link rel="preload" href="../stylesheets/style.css" as="style">
+    <title>Бинауральные ритмы</title>
 </head>
 <body>
-    <div class="section0_menu">
-        <div class="titles">
-            <a href="../pages/zvuk.html" class="q1">Звукотерапия</a>
-            <a href="../pages/articles.html" class="q2">Статьи</a>
-            <a href="../index.html" class="logo">Purity of Aum</a>
-            <a href="../pages/vzaim.html" class="q3">Взаимодействие</a>
-            <a href="../pages/tests.html" class="q4">Тесты</a>
-        </div>
+    <!-- Фоновые анимации -->
+    <div class="forest-bg">
+        <div class="decorative-shape"></div>
+        <div class="decorative-shape"></div>
+        <div class="decorative-shape"></div>
+        <div class="pulse-circle"></div>
+        <div class="pulse-circle"></div>
     </div>
 
-            <!-- menu left -->
-   <div class="menu_3">
-    <ul>
-      <!-- <li><a href="./vzaim2.html" class="pp1_3">Взаимодействие со звуком</a></li> -->
-      <li><a href="../pages/vzaim3.html" class="pp1_3">Техники медитации</a></li>
-      <li><a href="../pages/vzaim4.html" class="pp1_3">Развивающиеся направления</a></li>
-      <li><a href="../pages/vzaim5.html" class="pp1_3">Специалисты в области звука</a></li>
-    </ul>
-  </div>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="../pages/zvuk.html">Звукотерапия</a></li>
+                    <li><a href="../pages/articles.html">Статьи</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="../index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="../pages/vzaim.html">Взаимодействие</a></li>
+                    <li><a href="../pages/tests.html">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <div class="content1">
-    <!-- Содержимое страницы -->
-    <div class="content0000">
-        <div class="section3_1_arglav">
-            <div class="fiction2" id="fiction2">
-                <p class="zk1_1">Архитектура сознания: нейроакустические механизмы и влияние бинауральных ритмов на мозг</p>
-                <p class="zk">В эпоху цифровизации и стремления к научно обоснованному биохакингу методы управления собственным психофизиологическим состоянием выходят на новый технологический уровень. Если звуковые ванны опираются на акустику физических инструментов, а мантры — на анатомию резонанса тела, то бинауральные ритмы представляют собой современный вид звуковой медитации, основанный на использовании технологий и цифровых аудиоформатов. </p>
-                <p class="zk">Бинауральные ритмы возникают, когда в каждое ухо подаются звуковые сигналы слегка различающейся частоты (например, 300 Гц в левое и 310 Гц в правое). Мозг обрабатывает эту разницу и создает третий, «фантомный» ритм (в данном случае 10 Гц), который соответствует определенному состоянию сознания (альфа, тета, дельта). Но является ли этот «фантомный» звук просто акустическим курьезом или мощным инструментом нейропластичности? Современная нейроакустика дает утвердительный ответ, раскрывая механизмы, с помощью которых цифровые сигналы могут «перенастраивать» работу мозга.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
                 </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
 
-                <p class="zk1">Нейрофизиология иллюзии: рождение ритма внутри черепной коробки</p>
-                <p class="zk">Уникальность бинауральных ритмов заключается в том, что этот звук не существует в физическом мире. Если вы включите запись бинауральных ритмов на обычном динамике, вы услышите лишь два слившихся тона. «Биение» (пульсация) рождается исключительно внутри нервной системы слушателя. </p>
-                <p class="zk">Когда два разных чистых тона (синусоидальных волны) поступают в уши по отдельным каналам, они обрабатываются улиткой внутреннего уха и передаются по слуховым нервам в ствол мозга. Там, в структуре, называемой верхним оливным ядром (nucleus olivaris superior), происходит первичная интеграция слуховой информации. Нейроны этого ядра сравнивают время прибытия и фазу звуковых волн из левого и правого уха. Обнаруживая микроскопическую разницу в частотах, мозг пытается синтезировать единый сигнал, в результате чего генерирует восприятие третьей, пульсирующей частоты, равной математической разнице между двумя исходными. </p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
-                <p class="zk">Этот феномен запускает механизм, известный как «реакция следования за частотой» (Frequency Following Response, FFR). Мозг, стремясь к гомеостазу и синхронизации, начинает подстраивать собственную электрическую активность под ритм этого «фантомного» биения.</p>
+    <!-- ARTICLE CONTENT -->
+    <div class="article-container">
+        <div class="article-header">
+            <div class="article-date">Июнь 2026</div>
+            <h1 class="article-title-glav">Архитектура сознания: нейроакустические механизмы и влияние бинауральных ритмов на мозг</h1>
+        </div>
 
-                <p class="zk1">Дирижирование мозговыми волнами: от бета к дельта</p>
-                <p class="zk">В состоянии покоя или медитации электроэнцефалограмма (ЭЭГ) человека демонстрирует преобладание определенных типов мозговых волн. Бинауральные ритмы позволяют целенаправленно стимулировать переход между этими состояниями (процесс, называемый brainwave entrainment или «захват частоты»).</p>
-                <p class="zk">Альфа-ритм в диапазоне 8–12 Гц соответствует состоянию расслабленного бодрствования, легкой медитации, снижению тревожности и улучшению креативного мышления. Именно этот диапазон достигается при разнице частот в 10 Гц. Тета-ритм (4–7 Гц) ассоциируется с глубокой медитацией, фазой быстрого сна (REM), доступом к подсознательным процессам, усилением интуиции и консолидацией памяти. Дельта-ритм (0,5–4 Гц) характерен для фазы глубокого, безсновидческого сна, критически важной для физического восстановления, регенерации тканей и работы иммунной системы. Особого внимания заслуживает гамма-ритм (30–100 Гц), который связан с состоянием пиковой концентрации, когнитивной обработки информации и озарения.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
-                <p class="zk">Путем подбора конкретной разницы частот цифровая аудиозапись выступает в роли внешнего дирижера, мягко «подтягивающего» хаотичную мозговую активность к заданному, более упорядоченному паттерну.</p>
+        <div class="article-content">
+            <div class="content-section">
+                <h2 class="section-title">Бинауральные ритмы: цифровой инструмент управления состоянием</h2>
                 
-                <p class="zk1">Психофизиологические эффекты: что говорит наука</p>
-                <p class="zk">К 2026 году накоплен значительный массив данных, подтверждающих влияние бинауральных ритмов на организм. Исследования с использованием ЭЭГ и функциональной МРТ демонстрируют выраженный эффект снижения тревожности и стресса: метаанализы клинических испытаний показывают, что прослушивание альфа- и тета-бинауральных ритмов достоверно снижает уровень кортизола в слюне и субъективные показатели тревоги по шкалам психологического тестирования.</p>
-                <p class="zk">Параллельно фиксируется улучшение когнитивных функций. Стимуляция бета- и гамма-диапазонов ассоциируется с улучшением рабочей памяти, скорости реакции и способности к концентрации внимания, что делает эту практику популярной среди студентов и специалистов умственного труда. В сочетании с традиционными методами обезболивания бинауральные ритмы, особенно в тета- и дельта-диапазонах, способствуют повышению болевого порога. Это объясняется как общим расслаблением, так и активацией нисходящих обезболивающих путей мозга.</p>                
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
-                <p class="zk">Отдельного внимания заслуживает коррекция нарушений сна. Дельта-стимуляция перед сном помогает сократить время засыпания и увеличить долю глубокого сна, что особенно актуально при бессоннице, вызванной гипервозбуждением нервной системы.</p>
+                <p class="section-text">В эпоху цифровизации и стремления к научно обоснованному биохакингу методы управления собственным психофизиологическим состоянием выходят на новый технологический уровень. Если звуковые ванны опираются на акустику физических инструментов, а мантры — на анатомию резонанса тела, то бинауральные ритмы представляют собой современный вид звуковой медитации, основанный на использовании технологий и цифровых аудиоформатов.</p>
                 
-                <p class="zk1">Технологические нюансы: почему стереонаушники обязательны</p>
-                <p class="zk">Ключевым условием эффективности бинауральных ритмов является строгая изоляция каналов. Практика невозможна без стереонаушников, так как именно разделение сигналов (левый/правый) создает необходимую для верхнего оливного ядра интерференцию. </p>
-                <p class="zk">В современных цифровых продуктах «чистые» бинауральные тоны редко используются в одиночестве, так как они могут восприниматься как раздражающий технический гул. Для маскировки и усиления эффекта их накладывают на «несущую частоту» (carrier frequency) или смешивают с розовым шумом, звуками природы или эмбиент-музыкой. Важно отметить, что существует альтернатива, не требующая наушников, — изохронные тона (isochronic tones). Они представляют собой одиночные звуковые импульсы, которые включаются и выключаются с заданной частотой. За счет резкой амплитудной модуляции они также вызывают реакцию следования за частотой, но задействуют иные механизмы слухового восприятия.</p>                
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
+                <p class="section-text">Бинауральные ритмы возникают, когда в каждое ухо подаются звуковые сигналы слегка различающейся частоты (например, 300 Гц в левое и 310 Гц в правое). Мозг обрабатывает эту разницу и создает третий, «фантомный» ритм (в данном случае 10 Гц), который соответствует определенному состоянию сознания (альфа, тета, дельта). Но является ли этот «фантомный» звук просто акустическим курьезом или мощным инструментом нейропластичности? Современная нейроакустика дает утвердительный ответ, раскрывая механизмы, с помощью которых цифровые сигналы могут «перенастраивать» работу мозга.</p>
+            </div>
 
-                <p class="zk1">Научный контекст и ограничения</p>
-                <p class="zk">Несмотря на впечатляющие результаты, нейроакустика остается областью, требующей дальнейших масштабных рандомизированных контролируемых исследований (РКИ). Эффект бинауральных ритмов подвержен высокой индивидуальной вариабельности: мозг некоторых людей легко поддается «захвату частоты», в то время как другие могут не ощущать никакого эффекта. Значительную роль играет и эффект плацебо: ожидание расслабления само по себе запускает парасимпатические реакции.</p>
-                <p class="zk">Существуют и строгие противопоказания. Лицам с аудиогенной или фотосенситивной эпилепсией, тяжелыми психическими расстройствами (например, шизофренией со слуховыми галлюцинациями), а также людям с кардиостимуляторами следует избегать использования бинауральных ритмов или применять их исключительно под наблюдением специалиста, так как ритмичная слуховая стимуляция может спровоцировать нежелательные нейрофизиологические реакции.</p>                
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
+            <div class="image-block">
+                <img src="../img/zvuk/3.png" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Нейрофизиология иллюзии: рождение ритма внутри черепной коробки</h2>
                 
-                <p class="zk1">Заключение</p>
-                <p class="zk3">Бинауральные ритмы представляют собой элегантный синтез нейробиологии, психоакустики и цифровых технологий. Они предлагают своего рода «ярлык» к медитативным состояниям, на достижение которых в традиционных практиках могут уйти годы тренировок. Безусловно, цифровая стимуляция не заменяет глубокую внутреннюю работу, осознанность и здоровый образ жизни. Однако как безопасный, доступный и научно верифицируемый инструмент для быстрой «перезагрузки» операционной системы нашего мозга, бинауральная медитация прочно занимает свое место в арсенале современного человека, стремящегося к ментальному здоровью и когнитивной эффективности.</p>
+                <p class="section-text">Уникальность бинауральных ритмов заключается в том, что этот звук не существует в физическом мире. Если вы включите запись бинауральных ритмов на обычном динамике, вы услышите лишь два слившихся тона. «Биение» (пульсация) рождается исключительно внутри нервной системы слушателя.</p>
+                
+                <p class="section-text">Когда два разных чистых тона (синусоидальных волны) поступают в уши по отдельным каналам, они обрабатываются улиткой внутреннего уха и передаются по слуховым нервам в ствол мозга. Там, в структуре, называемой верхним оливным ядром (nucleus olivaris superior), происходит первичная интеграция слуховой информации. Нейроны этого ядра сравнивают время прибытия и фазу звуковых волн из левого и правого уха. Обнаруживая микроскопическую разницу в частотах, мозг пытается синтезировать единый сигнал, в результате чего генерирует восприятие третьей, пульсирующей частоты, равной математической разнице между двумя исходными.</p>
+                
+                <p class="section-text">Этот феномен запускает механизм, известный как «реакция следования за частотой» (Frequency Following Response, FFR). Мозг, стремясь к гомеостазу и синхронизации, начинает подстраивать собственную электрическую активность под ритм этого «фантомного» биения.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Дирижирование мозговыми волнами: от бета к дельта</h2>
+                
+                <p class="section-text">В состоянии покоя или медитации электроэнцефалограмма (ЭЭГ) человека демонстрирует преобладание определенных типов мозговых волн. Бинауральные ритмы позволяют целенаправленно стимулировать переход между этими состояниями (процесс, называемый brainwave entrainment или «захват частоты»).</p>
+                
+                <p class="section-text">Альфа-ритм в диапазоне 8–12 Гц соответствует состоянию расслабленного бодрствования, легкой медитации, снижению тревожности и улучшению креативного мышления. Именно этот диапазон достигается при разнице частот в 10 Гц. Тета-ритм (4–7 Гц) ассоциируется с глубокой медитацией, фазой быстрого сна (REM), доступом к подсознательным процессам, усилением интуиции и консолидацией памяти. Дельта-ритм (0,5–4 Гц) характерен для фазы глубокого, безсновидческого сна, критически важной для физического восстановления, регенерации тканей и работы иммунной системы. Особого внимания заслуживает гамма-ритм (30–100 Гц), который связан с состоянием пиковой концентрации, когнитивной обработки информации и озарения.</p>
+                
+                <p class="section-text">Путем подбора конкретной разницы частот цифровая аудиозапись выступает в роли внешнего дирижера, мягко «подтягивающего» хаотичную мозговую активность к заданному, более упорядоченному паттерну.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Психофизиологические эффекты: что говорит наука</h2>
+                
+                <p class="section-text">К 2026 году накоплен значительный массив данных, подтверждающих влияние бинауральных ритмов на организм. Исследования с использованием ЭЭГ и функциональной МРТ демонстрируют выраженный эффект снижения тревожности и стресса: метаанализы клинических испытаний показывают, что прослушивание альфа- и тета-бинауральных ритмов достоверно снижает уровень кортизола в слюне и субъективные показатели тревоги по шкалам психологического тестирования.</p>
+                
+                <p class="section-text">Параллельно фиксируется улучшение когнитивных функций. Стимуляция бета- и гамма-диапазонов ассоциируется с улучшением рабочей памяти, скорости реакции и способности к концентрации внимания, что делает эту практику популярной среди студентов и специалистов умственного труда. В сочетании с традиционными методами обезболивания бинауральные ритмы, особенно в тета- и дельта-диапазонах, способствуют повышению болевого порога. Это объясняется как общим расслаблением, так и активацией нисходящих обезболивающих путей мозга.</p>
+                
+                <p class="section-text">Отдельного внимания заслуживает коррекция нарушений сна. Дельта-стимуляция перед сном помогает сократить время засыпания и увеличить долю глубокого сна, что особенно актуально при бессоннице, вызванной гипервозбуждением нервной системы.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Технологические нюансы: почему стереонаушники обязательны</h2>
+                
+                <p class="section-text">Ключевым условием эффективности бинауральных ритмов является строгая изоляция каналов. Практика невозможна без стереонаушников, так как именно разделение сигналов (левый/правый) создает необходимую для верхнего оливного ядра интерференцию.</p>
+                
+                <p class="section-text">В современных цифровых продуктах «чистые» бинауральные тоны редко используются в одиночестве, так как они могут восприниматься как раздражающий технический гул. Для маскировки и усиления эффекта их накладывают на «несущую частоту» (carrier frequency) или смешивают с розовым шумом, звуками природы или эмбиент-музыкой. Важно отметить, что существует альтернатива, не требующая наушников, — изохронные тона (isochronic tones). Они представляют собой одиночные звуковые импульсы, которые включаются и выключаются с заданной частотой. За счет резкой амплитудной модуляции они также вызывают реакцию следования за частотой, но задействуют иные механизмы слухового восприятия.</p>
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Научный контекст и ограничения</h2>
+                
+                <p class="section-text">Несмотря на впечатляющие результаты, нейроакустика остается областью, требующей дальнейших масштабных рандомизированных контролируемых исследований (РКИ). Эффект бинауральных ритмов подвержен высокой индивидуальной вариабельности: мозг некоторых людей легко поддается «захвату частоты», в то время как другие могут не ощущать никакого эффекта. Значительную роль играет и эффект плацебо: ожидание расслабления само по себе запускает парасимпатические реакции.</p>
+                
+                <p class="section-text">Существуют и строгие противопоказания. Лицам с аудиогенной или фотосенситивной эпилепсией, тяжелыми психическими расстройствами (например, шизофренией со слуховыми галлюцинациями), а также людям с кардиостимуляторами следует избегать использования бинауральных ритмов или применять их исключительно под наблюдением специалиста, так как ритмичная слуховая стимуляция может спровоцировать нежелательные нейрофизиологические реакции.</p>
+            </div>
+
+            <div class="conclusion">
+                <h2 class="section-title">Заключение</h2>
+                <p class="section-text">Бинауральные ритмы представляют собой элегантный синтез нейробиологии, психоакустики и цифровых технологий. Они предлагают своего рода «ярлык» к медитативным состояниям, на достижение которых в традиционных практиках могут уйти годы тренировок. Безусловно, цифровая стимуляция не заменяет глубокую внутреннюю работу, осознанность и здоровый образ жизни. Однако как безопасный, доступный и научно верифицируемый инструмент для быстрой «перезагрузки» операционной системы нашего мозга, бинауральная медитация прочно занимает свое место в арсенале современного человека, стремящегося к ментальному здоровью и когнитивной эффективности.</p>
             </div>
         </div>
     </div>
-    </div>
 
-
-
-
-
-  <div class="section8_fin">
+    <!-- FOOTER -->
+    <footer class="section8_fin">
         <div id="fin_plashka">
            <div class="fin_plashka1">
                 <a href="../index.html" class="logo22">Purity of Aum</a>
-                <div class="social">
-                    <a href="https://t.me/ayy_mir_zvukov" class="tg" target="_blank"><img src="../img/glav_pages/telegram.png" alt="" class="tg1"></a>
-                    <a href="https://vk.com/purity_of_aum" class="vk" target="_blank"><img src="../img/glav_pages/vk.png" alt="" class="vk"1></a>
-                </div>
-                
             </div>
             <div class="fin_plashka2">
                 <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
                 <a href="../pages/articles.html" class="fin1">Статьи</a>
                 <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
-                <a href="../pages/tests.html" class="fin1">Тесты</a>
-            </div> 
+                <a href="" class="fin1">Тесты</a>
+            </div>  
 
             <div class="btm_fin">
                 <div class="card1">
                     <form id="thanks" method="POST">
-                        <input type="email" name="email" 
-                        id="email" 
-                        placeholder="E-mail" 
-                        required>
-                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><a href="" class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</a></button>
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis">
+                            <span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span>
+                        </button>
                     </form>
                     <p class="msg" id="congo">Спасибо за подписку!</p>
                 </div>
             </div>
 
-            <script>
-                const form = document.getElementById("thanks");
-                const successMessage =
-                    document.getElementById("congo");
-
-                form.addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    successMessage.style.display = "block";
-                });
-            </script>
-
-             <hr class="line_fin">
+            <hr class="line_fin">
             <div class="box_fin">
                 <p class="PoA">2026 Purity of Aum</p>
                 <p class="NS">Настасья Звонарёва</p>
             </div>
         </div>
-    </div> 
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active');
+            sideMenu.classList.toggle('active');
+            sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+
+        document.querySelectorAll('.side-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleSideMenu();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+                toggleSideMenu();
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-text, .image-block').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const form = document.getElementById("thanks");
+        const successMessage = document.getElementById("congo");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            successMessage.style.display = "block";
+            setTimeout(() => {
+                successMessage.style.display = "none";
+                form.reset();
+            }, 3000);
+        });
+    </script>
 </body>
 </html>

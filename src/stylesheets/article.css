@@ -363,3 +363,43 @@
         font-size: 1.2rem;
     }
 }
+
+
+/* ИНТЕРВЬЮ */
+
+/* Видео-блок */
+        .video-block {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .interview-subtitle {
+            font-size: 1.2em;
+            color: #5a7a65;
+            font-style: italic;
+            margin-top: -10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }

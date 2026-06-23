@@ -458,3 +458,174 @@
             .fiction2 { padding: 20px 15px; }
             .btm_mix1 { width: 100%; text-align: center; box-sizing: border-box; }
         }
+
+
+/* МЕДИТАЦИЯ */
+
+        /* Очень светлый фон со звуковыми волнами */
+        .wave-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            /* background: linear-gradient(180deg, #f5f9fc 0%, #e8f4f8 50%, #f0f7fa 100%); */
+        }
+
+        /* Звуковые волны — синусоиды */
+        .sound-wave {
+            position: absolute;
+            width: 200%;
+            left: -50%;
+            opacity: 0.25;
+            animation: waveMove 18s linear infinite;
+        }
+
+        .sound-wave svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .sound-wave:nth-child(1) {
+            top: 15%;
+            animation-duration: 22s;
+        }
+
+        .sound-wave:nth-child(2) {
+            top: 35%;
+            animation-duration: 28s;
+            animation-delay: -5s;
+            opacity: 0.22;
+        }
+
+        .sound-wave:nth-child(3) {
+            top: 55%;
+            animation-duration: 25s;
+            animation-delay: -10s;
+            opacity: 0.23;
+        }
+
+        .sound-wave:nth-child(4) {
+            top: 75%;
+            animation-duration: 30s;
+            animation-delay: -3s;
+            opacity: 0.2;
+        }
+
+        .sound-wave:nth-child(5) {
+            top: 88%;
+            animation-duration: 20s;
+            animation-delay: -8s;
+            opacity: 0.22;
+        }
+
+        @keyframes waveMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(50%); }
+        }
+
+        /* Расходящиеся круги — как волны от чаши */
+        .bowl-ripple {
+            position: absolute;
+            border-radius: 50%;
+            border: 1.5px solid rgba(120, 180, 220, 0.5);
+            animation: rippleExpand 8s ease-out infinite;
+        }
+
+        .bowl-ripple:nth-child(6) {
+            width: 80px;
+            height: 80px;
+            top: 25%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .bowl-ripple:nth-child(7) {
+            width: 100px;
+            height: 100px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 3s;
+            border-color: rgba(100, 170, 215, 0.5);
+        }
+
+        .bowl-ripple:nth-child(8) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 50%;
+            animation-delay: 5s;
+            border-color: rgba(130, 190, 225, 0.5);
+        }
+
+        @keyframes rippleExpand {
+            0% {
+                transform: scale(0.3);
+                opacity: 0;
+            }
+            20% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: scale(6);
+                opacity: 0;
+            }
+        }
+
+        /* Плавающие частицы — как пыльца света */
+        .light-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(180, 220, 245, 0.4));
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
+            animation: particleFloat 12s ease-in-out infinite;
+        }
+
+        .light-particle:nth-child(9) { top: 10%; left: 25%; animation-delay: 0s; }
+        .light-particle:nth-child(10) { top: 30%; left: 75%; animation-delay: 2s; }
+        .light-particle:nth-child(11) { top: 50%; left: 15%; animation-delay: 4s; }
+        .light-particle:nth-child(12) { top: 70%; left: 85%; animation-delay: 6s; }
+        .light-particle:nth-child(13) { top: 85%; left: 40%; animation-delay: 8s; }
+
+        @keyframes particleFloat {
+            0%, 100% {
+                transform: translate(0, 0);
+                opacity: 0.5;
+            }
+            50% {
+                transform: translate(20px, -30px);
+                opacity: 1;
+            }
+        }
+
+        /* Видео-блок */
+        .video-block {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 40px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(120, 180, 220, 0.25);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+
+        .video-wrapper iframe,
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }

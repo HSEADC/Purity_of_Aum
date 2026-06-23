@@ -1,135 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
     <title>Глобальная доступность</title>
 </head>
 <body>
-    <div class="section0_menu">
-        <div class="titles">
-            <a href="../pages/zvuk.html" class="q1">Звукотерапия</a>
-            <a href="../pages/articles.html" class="q2">Статьи</a>
-            <a href="../index.html" class="logo">Purity of Aum</a>
-            <a href="../pages/vzaim.html" class="q3">Взаимодействие</a>
-            <a href="../pages/tests.html" class="q4">Тесты</a>
-        </div>
+    <!-- Фоновые анимации -->
+    <div class="forest-bg">
+        <div class="decorative-shape"></div>
+        <div class="decorative-shape"></div>
+        <div class="decorative-shape"></div>
+        <div class="pulse-circle"></div>
+        <div class="pulse-circle"></div>
     </div>
 
-            <!-- menu left -->
-   <div class="menu_3">
-    <ul>
-      <!-- <li><a href="./vzaim2.html" class="pp1_3">Взаимодействие со звуком</a></li> -->
-      <li><a href="../pages/vzaim3.html" class="pp1_3">Техники медитации</a></li>
-      <li><a href="../pages/vzaim4.html" class="pp1_3">Развивающиеся направления</a></li>
-      <li><a href="../pages/vzaim5.html" class="pp1_3">Специалисты в области звука</a></li>
-    </ul>
-  </div>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="../pages/zvuk.html">Звукотерапия</a></li>
+                    <li><a href="../pages/articles.html">Статьи</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="../index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="../pages/vzaim.html">Взаимодействие</a></li>
+                    <li><a href="../pages/tests.html">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<div class="content1">
-    <!-- Содержимое страницы -->
-    <div class="content0000">
-        <div class="section3_1_arglav">
-            <div class="fiction2" id="fiction2">
-                <p class="zk1_1">Архитектура доступного исцеления: глобальная интеграция звуковой терапии в цифровые экосистемы</p>
-                <p class="zk">Тренд на демократизацию звуковой терапии знаменует собой переход этой дисциплины из узкоспециализированных клинических кабинетов и эзотерических студий в повседневную жизнь миллионов людей. Этот сдвиг парадигмы обеспечивается стремительным развитием мобильных приложений, потоковых сервисов и, что наиболее важно, глубокой интеграцией терапевтических звуковых протоколов в привычные цифровые среды. Звук перестает быть просто объектом пассивного потребления и превращается в активный инструмент управления психофизиологическим состоянием, встроенный непосредственно в технологическую ткань современного общества.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
                 </div>
-
-                <p class="zk1">Инфраструктура повседневности: от смартфонов до умных автомобилей</p>
-                <p class="zk">Фундаментальным изменением в распространении звуковой терапии является ее внедрение в концепцию «повсеместных вычислений» (ubiquitous computing). Терапевтические алгоритмы больше не требуют от пользователя приобретения специализированного медицинского оборудования. Вместо этого они seamlessly (незаметно) встраиваются в устройства, которые уже являются неотъемлемой частью быта. Умные колонки анализируют акустику помещения и адаптируют частотные характеристики расслабляющих паттернов под конкретную комнату, создавая эффект звуковой ванны прямо в гостиной. </p>
-                <p class="zk">Наушники с активным шумоподавлением трансформируются из средств изоляции в персональные капсулы для нейроакустической стимуляции, где алгоритмы не просто гасят внешний шум, но и заполняют образовавшуюся тишину бинауральными ритмами или изохронными тонами. Автомобильные аудиосистемы, оснащенные многоканальным объемным звучанием и биометрическими датчиками водителя, способны в реальном времени генерировать бодрящие или успокаивающие звуковые ландшафты, предотвращая усталость и снижая уровень стресса в пробках. Таким образом, цифровая экосистема становится невидимым терапевтом, обеспечивающим непрерывную поддержку ментального здоровья в фоновом режиме.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
                 </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
 
-                <p class="zk1">Глобальная демократизация и преодоление географических барьеров</p>
-                <p class="zk">Переход звуковой терапии в онлайн-формат решает одну из самых острых проблем современного здравоохранения — географическое и экономическое неравенство в доступе к специализированной помощи. Цифровые терапевтические интервенции (Digital Therapeutics, DTx) позволяют доставлять научно обоснованные звуковые вмешательства глобально с минимальными предельными затратами. Для пользователей, проживающих в удаленных регионах, странах с развивающейся экономикой или зонах с дефицитом квалифицированных психотерапевтов и неврологов, смартфон становится единственным окном в мир доказательной медицины.</p>
-                <p class="zk">Этот формат демократизации не только снижает финансовую нагрузку на системы здравоохранения, но и преодолевает стигматизацию, часто сопровождающую обращение за психиатрической или психологической помощью. Получение терапевтического звукового протокола через привычное приложение воспринимается пользователем как естественная часть заботы о себе, а не как медицинское вмешательство. Это значительно повышает комплаенс (приверженность лечению) и позволяет охватить профилактической помощью миллионы людей, которые ранее никогда не пересекались с традиционной системой здравоохранения.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
+    <!-- ARTICLE CONTENT -->
+    <div class="article-container">
+        <div class="article-header">
+            <div class="article-date">Июнь 2026</div>
+            <h1 class="article-title-glav">Архитектура доступного исцеления: глобальная интеграция звуковой терапии в цифровые экосистемы</h1>
+        </div>
 
-                <p class="zk1">Парадокс масштабирования: проблема сохранения клинической эффективности</p>
-                <p class="zk">Однако массовое распространение звуковой терапии порождает серьезный методологический вызов, известный как парадокс масштабирования. Ключевой проблемой этого направления становится сохранение терапевтической эффективности при переходе от индивидуальных клинических сеансов к массовым цифровым продуктам. В условиях клиники терапевт контролирует акустику помещения, точность калибровки аппаратуры и физиологический отклик пациента. В потребительском сегменте эти переменные выходят из-под контроля: звук, идеально сгенерированный алгоритмом, может быть искажен дешевыми динамиками смартфона или неправильно подобранными наушниками, полностью нивелируя терапевтический эффект.</p>
-                <p class="zk">Кроме того, рынок наводнен приложениями, которые позиционируют себя как средства для медитации или снижения стресса, но не имеют под собой научной базы. Многие из них используют случайные наборы частот или просто накладывают звуки природы на музыкальный фон, не обеспечивая необходимого механизма захвата частоты или вагусной стимуляции. Ключевой вызов для индустрии заключается в обеспечении строгой научной валидации массовых продуктов, доказательстве того, что конкретное цифровое решение действительно вызывает измеримые нейрофизиологические изменения, а не просто работает за счет эффекта плацебо.</p>                
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
+        <div class="article-content">
+            <div class="content-section">
+                <h2 class="section-title">Демократизация звуковой терапии</h2>
+                
+                <p class="section-text">Тренд на демократизацию звуковой терапии знаменует собой переход этой дисциплины из узкоспециализированных клинических кабинетов и эзотерических студий в повседневную жизнь миллионов людей. Этот сдвиг парадигмы обеспечивается стремительным развитием мобильных приложений, потоковых сервисов и, что наиболее важно, глубокой интеграцией терапевтических звуковых протоколов в привычные цифровые среды. Звук перестает быть просто объектом пассивного потребления и превращается в активный инструмент управления психофизиологическим состоянием, встроенный непосредственно в технологическую ткань современного общества.</p>
+            </div>
 
+            <div class="image-block">
+                <img src="../img/zvuk/3.png" alt="">
+            </div>
 
-                <p class="zk1">Архитектура доверия: стандарты, сертификация и телемедицина</p>
-                <p class="zk">Для решения проблем качества и эффективности индустрия движется к созданию жесткой регуляторной и технологической инфраструктуры. Перспективным решением является разработка открытых стандартов качества для цифровых терапевтических звуков. Эти стандарты должны регламентировать не только исходный аудиокод, но и требования к аппаратному обеспечению, гарантируя, что звуковой сигнал определенной частоты и интенсивности будет корректно воспроизведен на устройстве конечного пользователя.</p>
-                <p class="zk">Параллельно формируется система сертификации приложений, аналогичная той, что применяется в сфере цифрового здравоохранения. Независимые экспертные советы и регуляторные органы начинают внедрять маркировки, подтверждающие, что алгоритмы приложения прошли клинические испытания и соответствуют принципам доказательной медицины. Важнейшим вектором развития становится интеграция потребительских приложений с телемедицинскими платформами. Это позволяет врачам назначать конкретные звуковые протоколы в качестве дополнения к основному лечению, а также удаленно мониторить биометрические данные пациента, собираемые приложением, и корректировать терапию в режиме реального времени.</p>
-                <div class="zk_img_text">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="zk_img">
-                    <p class="zk_img_text1">Описание прекрасной картинки</p>
-                </div>
+            <div class="content-section">
+                <h2 class="section-title">Инфраструктура повседневности: от смартфонов до умных автомобилей</h2>
+                
+                <p class="section-text">Фундаментальным изменением в распространении звуковой терапии является ее внедрение в концепцию «повсеместных вычислений» (ubiquitous computing). Терапевтические алгоритмы больше не требуют от пользователя приобретения специализированного медицинского оборудования. Вместо этого они seamlessly (незаметно) встраиваются в устройства, которые уже являются неотъемлемой частью быта. Умные колонки анализируют акустику помещения и адаптируют частотные характеристики расслабляющих паттернов под конкретную комнату, создавая эффект звуковой ванны прямо в гостиной.</p>
+                
+                <p class="section-text">Наушники с активным шумоподавлением трансформируются из средств изоляции в персональные капсулы для нейроакустической стимуляции, где алгоритмы не просто гасят внешний шум, но и заполняют образовавшуюся тишину бинауральными ритмами или изохронными тонами. Автомобильные аудиосистемы, оснащенные многоканальным объемным звучанием и биометрическими датчиками водителя, способны в реальном времени генерировать бодрящие или успокаивающие звуковые ландшафты, предотвращая усталость и снижая уровень стресса в пробках. Таким образом, цифровая экосистема становится невидимым терапевтом, обеспечивающим непрерывную поддержку ментального здоровья в фоновом режиме.</p>
+            </div>
 
-                <p class="zk1">Заключение</p>
-                <p class="zk3">Глобальная интеграция звуковой терапии в повседневные цифровые экосистемы представляет собой неизбежный и крайне важный этап эволюции превентивной медицины. Превращение смартфонов, наушников и умных устройств в инструменты нейроакустической регуляции открывает беспрецедентные возможности для поддержания ментального здоровья в масштабах всей планеты. Однако успех этой трансформации напрямую зависит от нашей способности выстроить надежную архитектуру доверия. Только через внедрение строгих стандартов качества, научную валидацию алгоритмов и глубокую интеграцию с клинической телемедициной мы сможем гарантировать, что демократизация звуковой терапии не пойдет в ущерб ее терапевтической силе, сделав передовые методы нейромодуляции по-настоящему доступными, безопасными и эффективными для каждого.</p>
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Глобальная демократизация и преодоление географических барьеров</h2>
+                
+                <p class="section-text">Переход звуковой терапии в онлайн-формат решает одну из самых острых проблем современного здравоохранения — географическое и экономическое неравенство в доступе к специализированной помощи. Цифровые терапевтические интервенции (Digital Therapeutics, DTx) позволяют доставлять научно обоснованные звуковые вмешательства глобально с минимальными предельными затратами. Для пользователей, проживающих в удаленных регионах, странах с развивающейся экономикой или зонах с дефицитом квалифицированных психотерапевтов и неврологов, смартфон становится единственным окном в мир доказательной медицины.</p>
+                
+                <p class="section-text">Этот формат демократизации не только снижает финансовую нагрузку на системы здравоохранения, но и преодолевает стигматизацию, часто сопровождающую обращение за психиатрической или психологической помощью. Получение терапевтического звукового протокола через привычное приложение воспринимается пользователем как естественная часть заботы о себе, а не как медицинское вмешательство. Это значительно повышает комплаенс (приверженность лечению) и позволяет охватить профилактической помощью миллионы людей, которые ранее никогда не пересекались с традиционной системой здравоохранения.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Парадокс масштабирования: проблема сохранения клинической эффективности</h2>
+                
+                <p class="section-text">Однако массовое распространение звуковой терапии порождает серьезный методологический вызов, известный как парадокс масштабирования. Ключевой проблемой этого направления становится сохранение терапевтической эффективности при переходе от индивидуальных клинических сеансов к массовым цифровым продуктам. В условиях клиники терапевт контролирует акустику помещения, точность калибровки аппаратуры и физиологический отклик пациента. В потребительском сегменте эти переменные выходят из-под контроля: звук, идеально сгенерированный алгоритмом, может быть искажен дешевыми динамиками смартфона или неправильно подобранными наушниками, полностью нивелируя терапевтический эффект.</p>
+                
+                <p class="section-text">Кроме того, рынок наводнен приложениями, которые позиционируют себя как средства для медитации или снижения стресса, но не имеют под собой научной базы. Многие из них используют случайные наборы частот или просто накладывают звуки природы на музыкальный фон, не обеспечивая необходимого механизма захвата частоты или вагусной стимуляции. Ключевой вызов для индустрии заключается в обеспечении строгой научной валидации массовых продуктов, доказательстве того, что конкретное цифровое решение действительно вызывает измеримые нейрофизиологические изменения, а не просто работает за счет эффекта плацебо.</p>
+            </div>
+
+            <div class="image-block">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="">
+            </div>
+
+            <div class="content-section">
+                <h2 class="section-title">Архитектура доверия: стандарты, сертификация и телемедицина</h2>
+                
+                <p class="section-text">Для решения проблем качества и эффективности индустрия движется к созданию жесткой регуляторной и технологической инфраструктуры. Перспективным решением является разработка открытых стандартов качества для цифровых терапевтических звуков. Эти стандарты должны регламентировать не только исходный аудиокод, но и требования к аппаратному обеспечению, гарантируя, что звуковой сигнал определенной частоты и интенсивности будет корректно воспроизведен на устройстве конечного пользователя.</p>
+                
+                <p class="section-text">Параллельно формируется система сертификации приложений, аналогичная той, что применяется в сфере цифрового здравоохранения. Независимые экспертные советы и регуляторные органы начинают внедрять маркировки, подтверждающие, что алгоритмы приложения прошли клинические испытания и соответствуют принципам доказательной медицины. Важнейшим вектором развития становится интеграция потребительских приложений с телемедицинскими платформами. Это позволяет врачам назначать конкретные звуковые протоколы в качестве дополнения к основному лечению, а также удаленно мониторить биометрические данные пациента, собираемые приложением, и корректировать терапию в режиме реального времени.</p>
+            </div>
+
+            <div class="conclusion">
+                <h2 class="section-title">Заключение</h2>
+                <p class="section-text">Глобальная интеграция звуковой терапии в повседневные цифровые экосистемы представляет собой неизбежный и крайне важный этап эволюции превентивной медицины. Превращение смартфонов, наушников и умных устройств в инструменты нейроакустической регуляции открывает беспрецедентные возможности для поддержания ментального здоровья в масштабах всей планеты. Однако успех этой трансформации напрямую зависит от нашей способности выстроить надежную архитектуру доверия. Только через внедрение строгих стандартов качества, научную валидацию алгоритмов и глубокую интеграцию с клинической телемедициной мы сможем гарантировать, что демократизация звуковой терапии не пойдет в ущерб ее терапевтической силе, сделав передовые методы нейромодуляции по-настоящему доступными, безопасными и эффективными для каждого.</p>
             </div>
         </div>
     </div>
-    </div>
 
-
-
-
-
-  <div class="section8_fin">
+    <!-- FOOTER -->
+    <footer class="section8_fin">
         <div id="fin_plashka">
            <div class="fin_plashka1">
                 <a href="../index.html" class="logo22">Purity of Aum</a>
-                <div class="social">
-                    <a href="https://t.me/ayy_mir_zvukov" class="tg" target="_blank"><img src="../img/glav_pages/telegram.png" alt="" class="tg1"></a>
-                    <a href="https://vk.com/purity_of_aum" class="vk" target="_blank"><img src="../img/glav_pages/vk.png" alt="" class="vk"1></a>
-                </div>
-                
             </div>
             <div class="fin_plashka2">
                 <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
                 <a href="../pages/articles.html" class="fin1">Статьи</a>
                 <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
-                <a href="../pages/tests.html" class="fin1">Тесты</a>
-            </div> 
+                <a href="" class="fin1">Тесты</a>
+            </div>  
 
             <div class="btm_fin">
                 <div class="card1">
                     <form id="thanks" method="POST">
-                        <input type="email" name="email" 
-                        id="email" 
-                        placeholder="E-mail" 
-                        required>
-                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><a href="" class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</a></button>
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis">
+                            <span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span>
+                        </button>
                     </form>
                     <p class="msg" id="congo">Спасибо за подписку!</p>
                 </div>
             </div>
 
-            <script>
-                const form = document.getElementById("thanks");
-                const successMessage =
-                    document.getElementById("congo");
-
-                form.addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    successMessage.style.display = "block";
-                });
-            </script>
-
-             <hr class="line_fin">
+            <hr class="line_fin">
             <div class="box_fin">
                 <p class="PoA">2026 Purity of Aum</p>
                 <p class="NS">Настасья Звонарёва</p>
             </div>
         </div>
-    </div> 
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active');
+            sideMenu.classList.toggle('active');
+            sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+
+        document.querySelectorAll('.side-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleSideMenu();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+                toggleSideMenu();
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-text, .image-block').forEach(el => {
+            observer.observe(el);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const form = document.getElementById("thanks");
+        const successMessage = document.getElementById("congo");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            successMessage.style.display = "block";
+            setTimeout(() => {
+                successMessage.style.display = "none";
+                form.reset();
+            }, 3000);
+        });
+    </script>
 </body>
 </html>
