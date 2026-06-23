@@ -1,149 +1,418 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stylesheets/style.css">
-    <title>Тесты</title>
+    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="preload" href="./stylesheets/index.css" as="style">
+    <link rel="prefetch" href="./pages/zvuk.html" as="document">
+    <title>Purity of Aum - Тесты</title>
     <style>
-        .fony {
-            width: 100vw;
-        }
-
-        .section1_testglav {
+        /* Стили для блока тестов */
+        .tests-wrapper {
             position: relative;
-            width: 60vw;
-            margin-left: 15vw;
-            padding-bottom: 7vw;
+            z-index: 5;
+            max-width: 1200px;
+            margin: 120px auto 60px;
+            padding: 0 20px;
         }
 
-        .section4_1_arglav {
-            width: 60vw;
-            margin-top: 3vw;
-            margin-left: 0vw;
+        .tests-title {
+            text-align: center;
+            font-family: var(--font-logo, serif);
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--text-dark, #1a1a1a);
+            margin-bottom: 50px;
+            opacity: 0;
+            animation: fadeInDown 1s ease forwards;
+        }
+
+        .tests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            perspective: 1000px;
+        }
+
+        .test-card {
+            position: relative;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(45, 90, 39, 0.2);
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-decoration: none;
+            color: var(--text-dark, #1a1a1a);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Каскадная анимация для всех 18 карточек */
+        .test-card:nth-child(1) { animation-delay: 0.05s; }
+        .test-card:nth-child(2) { animation-delay: 0.1s; }
+        .test-card:nth-child(3) { animation-delay: 0.15s; }
+        .test-card:nth-child(4) { animation-delay: 0.2s; }
+        .test-card:nth-child(5) { animation-delay: 0.25s; }
+        .test-card:nth-child(6) { animation-delay: 0.3s; }
+        .test-card:nth-child(7) { animation-delay: 0.35s; }
+        .test-card:nth-child(8) { animation-delay: 0.4s; }
+        .test-card:nth-child(9) { animation-delay: 0.45s; }
+        .test-card:nth-child(10) { animation-delay: 0.5s; }
+        .test-card:nth-child(11) { animation-delay: 0.55s; }
+        .test-card:nth-child(12) { animation-delay: 0.6s; }
+        .test-card:nth-child(13) { animation-delay: 0.65s; }
+        .test-card:nth-child(14) { animation-delay: 0.7s; }
+        .test-card:nth-child(15) { animation-delay: 0.75s; }
+        .test-card:nth-child(16) { animation-delay: 0.8s; }
+        .test-card:nth-child(17) { animation-delay: 0.85s; }
+        .test-card:nth-child(18) { animation-delay: 0.9s; }
+
+        .test-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            background: rgba(255, 255, 255, 0.95);
+            border-color: var(--secondary-color, #2d5a27);
+            box-shadow: 0 15px 30px rgba(45, 90, 39, 0.15);
+        }
+
+        .test-card::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 100px; height: 100px;
+            background: radial-gradient(circle, rgba(45, 90, 39, 0.1) 0%, transparent 70%);
+            transform: translate(-50%, -50%) scale(0);
+            border-radius: 50%;
+            transition: transform 0.6s ease;
+            z-index: 0;
+        }
+
+        .test-card:hover::before {
+            transform: translate(-50%, -50%) scale(2.5);
+        }
+
+        .test-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            z-index: 1;
+            transition: transform 0.4s ease;
+            filter: grayscale(100%);
+            opacity: 0.7;
+        }
+
+        .test-card:hover .test-icon {
+            transform: scale(1.2) rotate(10deg);
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        .test-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            z-index: 1;
+            font-family: var(--font-main, sans-serif);
+        }
+
+        .test-desc {
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.5;
+            z-index: 1;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .test-card:hover .test-desc {
+            opacity: 1;
+            color: var(--secondary-color, #2d5a27);
+        }
+
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .tests-wrapper { margin-top: 100px; }
+            .tests-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+            .test-card { padding: 30px 20px; }
+            .test-icon { font-size: 2.5rem; }
+            .test-name { font-size: 1.2rem; }
         }
     </style>
 </head>
 <body>
-
-    <!-- <div>
-        <img src="../img/Тесты.png" alt="" class="fony">
-    </div> -->
-    <div class="section0_menu">
-        <div class="titles">
-            <a href="./zvuk.html" class="q1">Звукотерапия</a>
-            <a href="./articles.html" class="q2">Статьи</a>
-            <a href="../index.html" class="logo">Purity of Aum</a>
-            <a href="./vzaim.html" class="q3">Взаимодействие</a>
-            <a href="./tests.html" class="q4">Тесты</a>
-        </div>
+    <!-- Фоновые анимации -->
+    <div class="forest-bg">
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
+        <div class="floating-leaf"></div>
     </div>
 
-    <div class="section1_testglav">
-        <div class="section4_1_arglav">
-            <div class="fiction1" id="fiction1">
-                <div class="bbox_box">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="bbox_img">
-                    <a href="../tests/test1.html" class="bbox_text">Тип личности и звуковая практика</a>
-                </div>
-
-                <div class="bbox_box">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="bbox_img">
-                    <a href="../tests/test2.html" class="bbox_text">Уровень вашего напряжения</a>
-                </div>
-
-                <div class="bbox_box">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="bbox_img">
-                    <a href="../tests/test3.html" class="bbox_text">Персональный план звукотерапии</a>
-                    
-                </div>
-
-                <div class="bbox_box">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="bbox_img">
-                    <a href="../tests/test4.html" class="bbox_text">Комплексный анализ</a>
-                    
-                </div>
-
-                <div class="bbox_box">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="bbox_img">
-                    <a href="../error.html" class="bbox_text">Тест 5</a>
-                    
-                </div>
-
-                <div class="bbox_box">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="bbox_img">
-                    <a href="../error.html" class="bbox_text">Тест 6</a>
-                    
-                </div>
-
-                <div class="bbox_box">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="bbox_img">
-                    <a href="../error.html" class="bbox_text">Тест 7</a>
-                </div>
-
-                <div class="bbox_box">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="bbox_img">
-                    <a href="../error.html" class="bbox_text">Тест 8</a>
-                </div>
-
-                <div class="bbox_box">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="" class="bbox_img">
-                    <a href="../error.html" class="bbox_text">Тест 9</a>
-                </div>
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
             </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="./zvuk.html">Звукотерапия</a></li>
+                    <li><a href="#about">Статьи</a></li>
+                </ul>
+            </nav>
         </div>
+        <a href="./index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="./vzaim_glav.html">Взаимодействие</a></li>
+                    <li><a href="#about">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item"><a href="./index.html" class="side-menu-link">Главная</a></li>
+            <li class="side-menu-item"><a href="./zvuk.html" class="side-menu-link">Звукотерапия</a></li>
+            <li class="side-menu-item has-submenu">
+                <a href="#articles" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="#" class="submenu-link">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Медитации</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Интервью</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./vzaim_glav.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="#" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Специалисты в области звука</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item"><a href="#contact" class="side-menu-link">Тесты</a></li>
+        </ul>
     </div>
-    </div>
 
+    <main class="tests-wrapper">
+        <h1 class="tests-title">Испытания Леса</h1>
+        
+        <div class="tests-grid">
+            <!-- Оригинальные 9 тестов -->
+            <a href="./test1.html" class="test-card">
+                <div class="test-icon">🌊</div>
+                <h3 class="test-name">Резонанс Тела</h3>
+                <p class="test-desc">Узнайте, какая звуковая практика вам подходит больше по типу личности.</p>
+            </a>
+            <a href="./test2.html" class="test-card">
+                <div class="test-icon">🍃</div>
+                <h3 class="test-name">Уровень Стресса</h3>
+                <p class="test-desc">Оцените текущий уровень напряжения и подберите звук для снятия.</p>
+            </a>
+            <a href="./tests/test_sleep.html" class="test-card">
+                <div class="test-icon">🌙</div>
+                <h3 class="test-name">Качество Сна</h3>
+                <p class="test-desc">Проверьте фазы вашего сна и получите рекомендации по звуковой терапии.</p>
+            </a>
+            <a href="./tests/test_focus.html" class="test-card">
+                <div class="test-icon">🎯</div>
+                <h3 class="test-name">Фокус Внимания</h3>
+                <p class="test-desc">Насколько хорошо вы концентрируетесь? Тест на когнитивную гибкость.</p>
+            </a>
+            <a href="./tests/test_emotion.html" class="test-card">
+                <div class="test-icon">❤️‍🔥</div>
+                <h3 class="test-name">Эмоциональный Фон</h3>
+                <p class="test-desc">Диагностика эмоционального состояния через восприятие звуков.</p>
+            </a>
+            <a href="./tests/test_energy.html" class="test-card">
+                <div class="test-icon">⚡</div>
+                <h3 class="test-name">Энергетический Баланс</h3>
+                <p class="test-desc">Определите источники утечки энергии и способы их восстановления.</p>
+            </a>
+            <a href="./tests/test_hearing.html" class="test-card">
+                <div class="test-icon">👂</div>
+                <h3 class="test-name">Слуховое Восприятие</h3>
+                <p class="test-desc">Насколько чувствителен ваш слух к тонким частотам и нюансам?</p>
+            </a>
+            <a href="./tests/test_meditation.html" class="test-card">
+                <div class="test-icon">🧘</div>
+                <h3 class="test-name">Глубина Медитации</h3>
+                <p class="test-desc">Составь план звукотерапии, которая подходит именно тебе.</p>
+            </a>
+            <a href="./tests/test_archetype.html" class="test-card">
+                <div class="test-icon">🌳</div>
+                <h3 class="test-name">Звуковой Архетип</h3>
+                <p class="test-desc">Изучите, как звучит ваш организм на клеточном уровне.</p>
+            </a>
 
+            <!-- 9 НОВЫХ ТЕСТОВ -->
+            <a href="./tests/test_rhythm.html" class="test-card">
+                <div class="test-icon">🥁</div>
+                <h3 class="test-name">Внутренний Ритм</h3>
+                <p class="test-desc">Определите свой природный темп жизни и подходящие ритмические практики.</p>
+            </a>
+            <a href="./tests/test_nature.html" class="test-card">
+                <div class="test-icon">🌲</div>
+                <h3 class="test-name">Связь с Природой</h3>
+                <p class="test-desc">Насколько глубоко вы чувствуете звуки леса, воды и ветра?</p>
+            </a>
+            <a href="./tests/test_voice.html" class="test-card">
+                <div class="test-icon">🎤</div>
+                <h3 class="test-name">Сила Голоса</h3>
+                <p class="test-desc">Раскройте потенциал своего голоса как инструмента исцеления.</p>
+            </a>
+            <a href="./tests/test_silence.html" class="test-card">
+                <div class="test-icon">🤫</div>
+                <h3 class="test-name">Отношение к Тишине</h3>
+                <p class="test-desc">Комфортно ли вам в тишине или она вызывает тревогу?</p>
+            </a>
+            <a href="./tests/test_instrument.html" class="test-card">
+                <div class="test-icon">🎻</div>
+                <h3 class="test-name">Ваш Инструмент</h3>
+                <p class="test-desc">Какой музыкальный инструмент резонирует с вашей душой?</p>
+            </a>
+            <a href="./tests/test_chakra.html" class="test-card">
+                <div class="test-icon">🌀</div>
+                <h3 class="test-name">Баланс Чакр</h3>
+                <p class="test-desc">Диагностика энергетических центров через звуковые ассоциации.</p>
+            </a>
+            <a href="./tests/test_memory.html" class="test-card">
+                <div class="test-icon">🧠</div>
+                <h3 class="test-name">Звуковая Память</h3>
+                <p class="test-desc">Как звуки из прошлого влияют на ваше настоящее состояние?</p>
+            </a>
+            <a href="./tests/test_group.html" class="test-card">
+                <div class="test-icon">👥</div>
+                <h3 class="test-name">Групповой Резонанс</h3>
+                <p class="test-desc">Предпочитаете ли вы индивидуальные практики или групповые сеансы?</p>
+            </a>
+            <a href="./tests/test_intuition.html" class="test-card">
+                <div class="test-icon">🔮</div>
+                <h3 class="test-name">Звуковая Интуиция</h3>
+                <p class="test-desc">Насколько хорошо вы доверяете внутреннему голосу при выборе музыки?</p>
+            </a>
+        </div>
+    </main>
 
-    <div class="section8_fin">
+    <!-- FOOTER -->
+    <footer class="section8_fin">
         <div id="fin_plashka">
            <div class="fin_plashka1">
-                <a href="./index.html" class="logo22">Purity of Aum</a>
-                <div class="social">
-                    <!-- <a href="https://t.me/ayy_mir_zvukov" class="tg" target="_blank"><img src="../img/glav_pages/telegram.png" alt="" class="tg1"></a>
-                    <a href="https://vk.com/purity_of_aum" class="vk" target="_blank"><img src="../img/glav_pages/vk.png" alt="" class="vk"1></a> -->
-                </div>
-                
+                <a href="#" class="logo22">Purity of Aum</a>
             </div>
             <div class="fin_plashka2">
-                <a href="./pages/zvuk.html" class="fin1">Звукотерапия</a>
-                <a href="./pages/articles.html" class="fin1">Статьи</a>
-                <a href="./pages/vzaim.html" class="fin1">Взаимодействия</a>
-                <a href="" class="fin1">Тесты</a>
+                <a href="./zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="./articles_glav.html" class="fin1">Статьи</a>
+                <a href="./vzaim_glav.html" class="fin1">Взаимодействия</a>
+                <a href="./" class="fin1">Тесты</a>
             </div> 
-
             <div class="btm_fin">
                 <div class="card1">
                     <form id="thanks" method="POST">
-                        <input type="email" name="email" 
-                        id="email" 
-                        placeholder="E-mail" 
-                        required>
-                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><a href="" class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</a></button>
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis">
+                            <span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span>
+                        </button>
                     </form>
                     <p class="msg" id="congo">Спасибо за подписку!</p>
                 </div>
             </div>
-
-            <script>
-                const form = document.getElementById("thanks");
-                const successMessage =
-                    document.getElementById("congo");
-
-                form.addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    successMessage.style.display = "block";
-                });
-            </script>
-
-             <hr class="line_fin">
+            <hr class="line_fin">
             <div class="box_fin">
                 <p class="PoA">2026 Purity of Aum</p>
                 <p class="NS">Настасья Звонарёва</p>
             </div>
         </div>
-    </div> 
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active');
+            sideMenu.classList.toggle('active');
+            sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+
+        document.querySelectorAll('.side-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                toggleSideMenu();
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+                toggleSideMenu();
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('visible'); }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-text, .image-block').forEach(el => { observer.observe(el); });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+
+        const form = document.getElementById("thanks");
+        const successMessage = document.getElementById("congo");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            successMessage.style.display = "block";
+            setTimeout(() => { successMessage.style.display = "none"; form.reset(); }, 3000);
+        });
+    </script>
 </body>
 </html>

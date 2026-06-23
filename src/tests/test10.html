@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="stylesheet/style.css">
     <link rel="preload" href="./stylesheets/index.css" as="style">
-    <title>Тест: Слуховое Восприятие - Purity of Aum</title>
+    <title>Тест: Звуковая Интуиция - Purity of Aum</title>
     <style>
         /* Стили идентичны первому тесту для сохранения единства */
         .tree-silhouette { position: absolute; bottom: -20px; opacity: 0.04; fill: var(--secondary-color); transform-origin: bottom center; }
@@ -52,7 +52,7 @@
         .result-section h3 { color: var(--secondary-color); margin-bottom: 1.5rem; font-size: 1.4rem; }
         .result-section ul { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; text-align: left; }
         .result-section li { padding: 1rem 0 1rem 2.5rem; position: relative; line-height: 1.7; border-bottom: 1px solid rgba(45, 90, 39, 0.08); }
-        .result-section li:before { content: "👂"; position: absolute; left: 0; font-size: 1.2rem; }
+        .result-section li:before { content: "🔮"; position: absolute; left: 0; font-size: 1.2rem; }
         
         .instruments-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 1.5rem; }
         .instrument-tag { background: rgba(45, 90, 39, 0.1); color: var(--secondary-color); padding: 0.6rem 1.8rem; border-radius: 50px; font-size: 0.95rem; font-weight: 600; border: 1px solid rgba(45, 90, 39, 0.15); transition: all 0.3s; }
@@ -104,32 +104,32 @@
     <!-- TEST CONTENT -->
     <div class="test-container">
         <div id="quizPanel">
-            <div class="test-header"><h1 class="test-title">👂 Слуховое Восприятие и Тонкая Настройка</h1></div>
-            <div class="info-box">Ответьте на 10 вопросов о вашем слуховом восприятии, чтобы мы могли оценить вашу чувствительность к звуковым нюансам и подобрать практики для развития слуха.</div>
+            <div class="test-header"><h1 class="test-title">🔮 Звуковая Интуиция и Доверие Внутреннему Голосу</h1></div>
+            <div class="info-box">Ответьте на 10 вопросов, чтобы мы могли оценить, насколько вы доверяете своей интуиции при выборе звуковых практик и как развить эту способность.</div>
             
             <form id="testForm">
                 <div class="question-block">
-                    <div class="question"><div class="question-text">1. Насколько хорошо вы различаете высокие частоты в музыке?</div><div class="answers"><label><input type="radio" name="q1" value="high"> Отлично, слышу каждую деталь</label><label><input type="radio" name="q1" value="mid"> Хорошо, но не все нюансы</label><label><input type="radio" name="q1" value="low"> С трудом различаю</label><label><input type="radio" name="q1" value="none"> Почти не слышу высокие частоты</label></div></div>
+                    <div class="question"><div class="question-text">1. Как вы выбираете музыку для расслабления?</div><div class="answers"><label><input type="radio" name="q1" value="high"> Слушаю внутреннее чувство, что сейчас нужно</label><label><input type="radio" name="q1" value="mid"> Выбираю из проверенного списка</label><label><input type="radio" name="q1" value="low"> Читаю рекомендации и отзывы</label><label><input type="radio" name="q1" value="none"> Беру первую попавшуюся</label></div></div>
                     
-                    <div class="question"><div class="question-text">2. Насколько хорошо вы различаете низкие частоты (басы)?</div><div class="answers"><label><input type="radio" name="q2" value="high"> Отлично, чувствую их телом</label><label><input type="radio" name="q2" value="mid"> Хорошо различаю</label><label><input type="radio" name="q2" value="low"> С трудом улавливаю</label><label><input type="radio" name="q2" value="none"> Почти не слышу</label></div></div>
+                    <div class="question"><div class="question-text">2. Доверяете ли вы своему первому впечатлению от нового звука?</div><div class="answers"><label><input type="radio" name="q2" value="high"> Полностью, это мой внутренний компас</label><label><input type="radio" name="q2" value="mid"> В основном да, но проверяю</label><label><input type="radio" name="q2" value="low"> Скорее нет, нужны доказательства</label><label><input type="radio" name="q2" value="none"> Совсем не доверяю</label></div></div>
                     
-                    <div class="question"><div class="question-text">3. Легко ли вам определить направление источника звука?</div><div class="answers"><label><input type="radio" name="q3" value="high"> Да, мгновенно и точно</label><label><input type="radio" name="q3" value="mid"> Обычно да, но иногда ошибаюсь</label><label><input type="radio" name="q3" value="low"> С трудом определяю</label><label><input type="radio" name="q3" value="none"> Очень сложно</label></div></div>
+                    <div class="question"><div class="question-text">3. Как вы понимаете, что звук вам подходит?</div><div class="answers"><label><input type="radio" name="q3" value="high"> Чувствую телом сразу, мурашки или тепло</label><label><input type="radio" name="q3" value="mid"> Замечаю после некоторого времени</label><label><input type="radio" name="q3" value="low"> Анализирую свои ощущения логически</label><label><input type="radio" name="q3" value="none"> Не могу определить</label></div></div>
                     
-                    <div class="question"><div class="question-text">4. Часто ли вы замечаете очень тихие звуки, которые другие не слышат?</div><div class="answers"><label><input type="radio" name="q4" value="high"> Постоянно, мой слух очень чувствителен</label><label><input type="radio" name="q4" value="mid"> Иногда замечаю</label><label><input type="radio" name="q4" value="low"> Редко</label><label><input type="radio" name="q4" value="none"> Почти никогда</label></div></div>
+                    <div class="question"><div class="question-text">4. Часто ли вы экспериментируете с новыми звуковыми практиками?</div><div class="answers"><label><input type="radio" name="q4" value="high"> Постоянно, интуиция ведёт меня</label><label><input type="radio" name="q4" value="mid"> Иногда, когда чувствую готовность</label><label><input type="radio" name="q4" value="low"> Редко, предпочитаю проверенное</label><label><input type="radio" name="q4" value="none"> Никогда, боюсь нового</label></div></div>
                     
-                    <div class="question"><div class="question-text">5. Какой диапазон частот вам наиболее приятен?</div><div class="answers"><label><input type="radio" name="q5" value="high"> Высокие (флейта, колокольчики, птичье пение)</label><label><input type="radio" name="q5" value="mid"> Средние (голос, большинство инструментов)</label><label><input type="radio" name="q5" value="low"> Низкие (басы, гул, барабаны)</label><label><input type="radio" name="q5" value="none"> Мне всё равно</label></div></div>
+                    <div class="question"><div class="question-text">5. Как вы реагируете, если звук вызывает сильные эмоции?</div><div class="answers"><label><input type="radio" name="q5" value="high"> Принимаю это как знак, следую за ощущениями</label><label><input type="radio" name="q5" value="mid"> Наблюдаю, но не всегда понимаю</label><label><input type="radio" name="q5" value="low"> Пытаюсь контролировать эмоции</label><label><input type="radio" name="q5" value="none"> Избегаю сильных переживаний</label></div></div>
                     
-                    <div class="question"><div class="question-text">6. Легко ли вам выделить один звук из множества (например, голос друга в шумной компании)?</div><div class="answers"><label><input type="radio" name="q6" value="high"> Да, очень легко</label><label><input type="radio" name="q6" value="mid"> Обычно да, с усилием</label><label><input type="radio" name="q6" value="low"> С трудом</label><label><input type="radio" name="q6" value="none"> Очень сложно</label></div></div>
+                    <div class="question"><div class="question-text">6. Насколько легко вам принять решение о звуковой практике без внешних советов?</div><div class="answers"><label><input type="radio" name="q6" value="high"> Очень легко, я знаю что мне нужно</label><label><input type="radio" name="q6" value="mid"> Обычно легко, но иногда сомневаюсь</label><label><input type="radio" name="q6" value="low"> Сложно, нужны рекомендации</label><label><input type="radio" name="q6" value="none"> Очень сложно, нужна помощь специалиста</label></div></div>
                     
-                    <div class="question"><div class="question-text">7. Часто ли вы чувствуете дискомфорт от громких звуков?</div><div class="answers"><label><input type="radio" name="q7" value="high"> Да, даже умеренная громкость вызывает боль</label><label><input type="radio" name="q7" value="mid"> Иногда, при очень громких звуках</label><label><input type="radio" name="q7" value="low"> Редко</label><label><input type="radio" name="q7" value="none"> Почти никогда</label></div></div>
+                    <div class="question"><div class="question-text">7. Чувствуете ли вы связь между звуком и своим внутренним состоянием?</div><div class="answers"><label><input type="radio" name="q7" value="high"> Глубокую и очевидную связь</label><label><input type="radio" name="q7" value="mid"> Чувствую, но не всегда понимаю</label><label><input type="radio" name="q7" value="low"> Иногда замечаю связь</label><label><input type="radio" name="q7" value="none"> Не чувствую никакой связи</label></div></div>
                     
-                    <div class="question"><div class="question-text">8. Какой тембр голоса вам наиболее приятен?</div><div class="answers"><label><input type="radio" name="q8" value="high"> Тенор (высокий мужской) / сопрано (высокий женский)</label><label><input type="radio" name="q8" value="mid"> Баритон / меццо-сопрано (средние)</label><label><input type="radio" name="q8" value="low"> Бас / контральто (низкие)</label><label><input type="radio" name="q8" value="none"> Мне всё равно</label></div></div>
+                    <div class="question"><div class="question-text">8. Как вы относитесь к интуитивному выбору инструментов?</div><div class="answers"><label><input type="radio" name="q8" value="high"> Доверяю внутреннему голосу полностью</label><label><input type="radio" name="q8" value="mid"> Пробую разные, пока не найду свой</label><label><input type="radio" name="q8" value="low"> Выбираю по описаниям и отзывам</label><label><input type="radio" name="q8" value="none"> Беру то, что рекомендуют другие</label></div></div>
                     
-                    <div class="question"><div class="question-text">9. Легко ли вам имитировать услышанные звуки или мелодии?</div><div class="answers"><label><input type="radio" name="q9" value="high"> Да, очень легко и точно</label><label><input type="radio" name="q9" value="mid"> Могу, но не идеально</label><label><input type="radio" name="q9" value="low"> С трудом</label><label><input type="radio" name="q9" value="none"> Почти невозможно</label></div></div>
+                    <div class="question"><div class="question-text">9. Бывает ли, что звук «выбирает» вас?</div><div class="answers"><label><input type="radio" name="q9" value="high"> Да, часто чувствую зов определённого звука</label><label><input type="radio" name="q9" value="mid"> Иногда бывает</label><label><input type="radio" name="q9" value="low"> Редко, но случается</label><label><input type="radio" name="q9" value="none"> Никогда такого не было</label></div></div>
                     
-                    <div class="question"><div class="question-text">10. Часто ли вы узнаете людей только по голосу, не видя их?</div><div class="answers"><label><input type="radio" name="q10" value="high"> Да, почти всегда</label><label><input type="radio" name="q10" value="mid"> Часто, если голос знакомый</label><label><input type="radio" name="q10" value="low"> Редко</label><label><input type="radio" name="q10" value="none"> Почти никогда</label></div></div>
+                    <div class="question"><div class="question-text">10. Насколько вы открыты к новым звуковым опытам?</div><div class="answers"><label><input type="radio" name="q10" value="high"> Полностью открыт, интуиция ведёт</label><label><input type="radio" name="q10" value="mid"> Открыт, но с осторожностью</label><label><input type="radio" name="q10" value="low"> Скорее закрыт, предпочитаю известное</label><label><input type="radio" name="q10" value="none"> Закрыт, боюсь нового</label></div></div>
                 </div>
-                <button type="button" class="btn-submit" onclick="calculateResult()">👂 Узнать результат</button>
+                <button type="button" class="btn-submit" onclick="calculateResult()">🔮 Узнать результат</button>
             </form>
         </div>
 
@@ -180,28 +180,28 @@
 
         const results = {
             critical: { 
-                title: 'Высокая слуховая чувствительность', 
-                desc: 'Ваш слух очень чувствителен к звуковым нюансам. Это дар, но он требует защиты от звуковой перегрузки.',
-                practices: ['Практика осознанного слушания в тихой обстановке 10-15 минут', 'Звуковая медитация с фокусом на одном инструменте', 'Практика «Звуковой фильтр» — обучение фильтрации нежелательных звуков', 'Ежедневная 5-минутная тишина для восстановления слуха'],
-                instruments: ['Тибетские чаши (для тонкой настройки)', 'Камертоны', 'Колокольчики', 'Тихие записи природы']
+                title: 'Развитая звуковая интуиция', 
+                desc: 'У вас сильная связь с внутренним голосом. Вы доверяете своей интуиции при выборе звуковых практик и следуете за внутренним зовом.',
+                practices: ['Интуитивная звуковая медитация — следуйте за внутренним зовом', 'Свободное звукоизвлечение без ограничений', 'Практика «Звуковой диалог» — общение с инструментами', 'Медитация с выбором инструмента по внутреннему чувству'],
+                instruments: ['Любые инструменты по интуиции', 'Экспериментальные звуки', 'Импровизационные инструменты', 'Голос']
             },
             elevated: { 
-                title: 'Хорошее слуховое восприятие', 
-                desc: 'У вас развитый слух. Используйте эту чувствительность для углубления звуковых практик.',
-                practices: ['Практика различения тонких звуковых нюансов', 'Медитация на множественных звуковых источниках', 'Практика «Один звук» — удержание внимания на одном инструменте', 'Развитие пространственного слуха'],
-                instruments: ['Поющие чаши', 'Флейта', 'Кристаллические чаши', 'Записи природы']
+                title: 'Хорошая звуковая интуиция', 
+                desc: 'Вы доверяете своей интуиции, но иногда сомневаетесь. Развивайте эту способность через регулярные практики.',
+                practices: ['Практика осознанного выбора звука — слушайте тело перед выбором', 'Медитация с одним инструментом на выбор', 'Практика «Внутренний компас» — определение нужного звука', 'Эксперименты с новыми звуками в безопасной обстановке'],
+                instruments: ['Поющие чаши', 'Колокольчики', 'Флейта', 'Голос']
             },
             moderate: { 
-                title: 'Умеренное слуховое восприятие', 
-                desc: 'Ваш слух в норме. Развивайте чувствительность через регулярные звуковые практики.',
-                practices: ['Слушание музыки с осознанием различных частотных диапазонов', 'Практика различения инструментов в оркестре', 'Медитация со звуками природы', 'Развитие внимания к тихим звукам'],
-                instruments: ['Кристаллические чаши', 'Колокольчики', 'Записи леса', 'Лёгкие барабаны']
+                title: 'Умеренная звуковая интуиция', 
+                desc: 'Ваша интуиция развита, но вы часто полагаетесь на логику и рекомендации. Учитесь доверять внутреннему голосу.',
+                practices: ['Практика «Слушание тела» — определение реакций на звуки', 'Медитация с постепенным расширением звукового репертуара', 'Практика интуитивного выбора из 2-3 вариантов', 'Ведение звукового дневника ощущений'],
+                instruments: ['Кристаллические чаши', 'Колокольчики', 'Записи природы', 'Камертоны']
             },
             balanced: { 
-                title: 'Базовое слуховое восприятие', 
-                desc: 'Ваш слух требует развития. Начните с простых практик для улучшения слуховой чувствительности.',
-                practices: ['Практика осознанного слушания 5 минут ежедневно', 'Различение высоких и низких частот', 'Медитация с простыми звуками (камертон, чаша)', 'Прогулки с вниманием к звукам природы'],
-                instruments: ['Камертоны', 'Тибетские чаши', 'Простые записи природы', 'Колокольчики']
+                title: 'Базовая звуковая интуиция', 
+                desc: 'Вам сложно доверять своей интуиции при выборе звуков. Начните с простых практик для развития этой способности.',
+                practices: ['Практика «Первое впечатление» — выбор звука без анализа', 'Медитация с одним простым звуком (камертон, чаша)', 'Практика осознанного слушания без оценки', 'Ведение дневника звуковых ощущений'],
+                instruments: ['Камертоны', 'Тибетские чаши (одна)', 'Простые записи природы', 'Колокольчики']
             }
         };
 
@@ -226,17 +226,17 @@
             document.getElementById('quizPanel').style.display = 'none';
             const rp = document.getElementById('resultPanel');
             rp.innerHTML = `
-                <div class="result-title">👂 ${r.title}</div>
+                <div class="result-title">🔮 ${r.title}</div>
                 <div class="result-desc">${r.desc}</div>
                 <div class="level-indicator">
-                    <div class="level-badge ${type==='critical'?'active':''}">Высокая</div>
+                    <div class="level-badge ${type==='critical'?'active':''}">Развитая</div>
                     <div class="level-badge ${type==='elevated'?'active':''}">Хорошая</div>
                     <div class="level-badge ${type==='moderate'?'active':''}">Умеренная</div>
                     <div class="level-badge ${type==='balanced'?'active':''}">Базовая</div>
                 </div>
                 <div class="result-section"><h3>📋 Рекомендованные практики:</h3><ul>${r.practices.map(p=>`<li>${p}</li>`).join('')}</ul></div>
                 <div class="result-section"><h3>🎼 Инструменты:</h3><div class="instruments-list">${r.instruments.map(i=>`<span class="instrument-tag">${i}</span>`).join('')}</div></div>
-                <div class="recommendations"><h4>💡 Совет:</h4><p>${type==='critical'?'Защищайте свой слух от перегрузки. Практикуйте в тихих помещениях. Используйте беруши в шумных местах.':type==='elevated'?'Развивайте свою чувствительность через сложные звуковые практики. Слушайте многоголосную музыку.':type==='moderate'?'Регулярно практикуйте осознанное слушание. Обращайте внимание на тихие звуки в повседневной жизни.':'Начните с простых практик. Слушайте музыку с вниманием к деталям. Гуляйте на природе, слушая звуки.'}</p></div>
+                <div class="recommendations"><h4>💡 Совет:</h4><p>${type==='critical'?'Доверяйте своей интуиции полностью. Она ваш лучший проводник в мире звуков. Следуйте за внутренним зовом.':type==='elevated'?'Развивайте доверие к интуиции через регулярные практики. Слушайте тело перед выбором звука.':type==='moderate'?'Начните с простых практик выбора звука. Ведите дневник ощущений, чтобы лучше понимать свою интуицию.':'Начните с практики «Первое впечатление» — выбирайте звук без анализа. Доверяйте первому импульсу.'}</p></div>
                 <div style="text-align:center;"><button class="btn-submit" onclick="resetTest()" style="max-width:300px;margin:0 auto;">🔄 Пройти заново</button><br><a href="./tests_glav.html" class="btn-secondary">← К тестам</a></div>
             `;
             rp.style.display = 'block';

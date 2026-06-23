@@ -3,473 +3,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../stylesheets/style.css">
-    <title>Тест 1: Тип личности</title>
+    <link rel="stylesheet" href="stylesheet/style.css">
+    <link rel="preload" href="./stylesheets/index.css" as="style">
+    <link rel="prefetch" href="./pages/zvuk.html" as="document">
+    <title>Тест: Тип личности</title>
     <style>
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #fff;
-            border-radius: 1.5vw;
-            box-shadow: 0 1vw 4vw rgba(0,0,0,0.3);
-            padding: 4vw;
-            margin-top: 3vw;
-            font-family: Raleway;
-        }
         
-        h1 {
-            color: #1e3c1e;
-            text-align: center;
-            margin-bottom: 1vw;
-            font-size: 1.5vw;
-            font-weight: 500vw;
-            padding-bottom: 1vw;
-        }
-        
-        .subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3vw;
-            font-style: italic;
-        }
-        
-        .info-box {
-            background: linear-gradient(135deg, #f0f9f0 0%, #e0f0e0 100%);
-            padding: 2vw;
-            border-radius: 1vw;
-            margin-bottom: 3vw;
-            border-left: 0.4vw solid #2d5a2d;
-        }
-        
-        .question-block {
-            margin-bottom: 2.5vw;
-            padding: 2vw;
-            background: #f9f9f9;
-            border-radius: 1vw;
-            border-left: 0.4vw solid #2d5a2d;
-        }
-        
-        .question {
-            margin-bottom: 2vw;
-            padding: 1.5vw;
-            background: white;
-            border-radius: 0.8vw;
-        }
-        
-        .question-text {
-            font-weight: 600;
-            margin-bottom: 1vw;
-            color: #2d5a2d;
-        }
-        
-        .answers label {
-            display: block;
-            padding: 1vw;
-            margin: 0.5vw;
-            background: #f0f0f0;
-            border-radius: 0.5vw;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .answers label:hover {
-            background: #e0e0e0;
-            transform: translateX(5px);
-        }
-        
-        input[type="radio"] {
-            margin-right: 1vw;
-        }
-        
-        .btn {
-            display: block;
-            width: 100%;
-            padding: 1.5vw;
-            background: linear-gradient(135deg, #2d5a2d 0%, #1e3c1e 100%);
-            color: white;
-            border: none;
-            border-radius: 1vw;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 3vw;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 0.5vw 2vw rgba(30, 60, 30, 0.4);
-        }
-        
-        .result {
-            display: none;
-            margin-top: 3vw;
-            padding: 3vw;
-            background: linear-gradient(135deg, #f0f9f0 0%, #e0f0e0 100%);
-            border-radius: 1.5vw;
-            border: 0.2vw solid #2d5a2d;
-        }
-        
-        .result-title {
-            color: #1e3c1e;
-            font-size: 1.8em;
-            margin-bottom: 2vw;
-            text-align: center;
-        }
-        
-        .type-indicator {
-            display: flex;
-            justify-content: space-between;
-            margin: 2vw 0;
-            padding: 1vw;
-            background: white;
-            border-radius: 1vw;
-        }
-        
-        .type {
-            text-align: center;
-            flex: 1;
-            padding: 1vw;
-            border-radius: 0.5vw;
-            margin: 0 0.5vw;
-            font-size: 0.85em;
-        }
-        
-        .type.active {
-            background: #2d5a2d;
-            color: white;
-        }
-        
-        .result-program {
-            margin: 2vw 0;
-        }
-        
-        .result-program h3 {
-            color: #2d5a2d;
-            margin-bottom: 1vw;
-        }
-        
-        .result-program ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .result-program li {
-            padding: 0.8vw 0;
-            padding-left: 2.5vw;
-            position: relative;
-        }
-        
-        .result-program li:before {
-            content: "🎵";
-            position: absolute;
-            left: 0;
-        }
-        
-        .instruments {
-            background: white;
-            padding: 1.5vw;
-            border-radius: 0.8vw;
-            margin-top: 1.5vw;
-        }
-        
-        .instruments h3 {
-            color: #2d5a2d;
-            margin-bottom: 1vw;
-        }
-        
-        .instruments-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1vw;
-        }
-        
-        .instrument-tag {
-            background: #2d5a2d;
-            color: white;
-            padding: 0.5vw 1.5vw;
-            border-radius: 2vw;
-            font-size: 0.9em;
-        }
-        
-        .recommendations {
-            background: #fff3cd;
-            border: 0.1vw solid #ffc107;
-            padding: 1.5vw;
-            border-radius: 1vw;
-            margin-top: 1.5vw;
-        }
-        
-        .recommendations h4 {
-            color: #856404;
-            margin-bottom: 1vw;
-        }
-        
-        .score-display {
-            text-align: center;
-            font-size: 1.2em;
-            margin: 2vw 0;
-            padding: 1.5vw;
-            background: white;
-            border-radius: 1vw;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 2vw;
-            }
-            
-            h1 {
-                font-size: 1.5em;
-            }
-            
-            .type-indicator {
-                flex-direction: column;
-            }
-        }
     </style>
 </head>
 <body>
-    <div class="section0_menu">
-        <div class="titles">
-            <a href="../pages/zvuk.html" class="q1">Звукотерапия</a>
-            <a href="../pages/articles.html" class="q2">Статьи</a>
-            <a href="../index.html" class="logo">Purity of Aum</a>
-            <a href="../pages/vzaim.html" class="q3">Взаимодействие</a>
-            <a href="../pages/tests.html" class="q4">Тесты</a>
-        </div>
+    <!-- Живой лесной фон -->
+    <div class="forest-bg">
+        <svg class="tree-silhouette tree-1" viewBox="0 0 200 400"><path d="M100,20 L180,380 L20,380 Z M100,20 L100,380"/></svg>
+        <svg class="tree-silhouette tree-2" viewBox="0 0 200 400"><path d="M100,30 Q160,200 180,380 L20,380 Q40,200 100,30 Z"/></svg>
+        <svg class="tree-silhouette tree-3" viewBox="0 0 200 400"><path d="M100,10 L170,380 L30,380 Z M100,10 L100,380"/></svg>
+        <div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div>
     </div>
 
-    <div class="container">
-        <h1>🎵 Ваш тип личности и идеальная звуковая практика</h1>
-        
-        <div class="info-box">
-            <strong>📋 Инструкция:</strong> Выберите вариант ответа, который наиболее точно описывает ваши предпочтения и особенности. 
-            На основе ваших ответов мы подберём оптимальные практики звукотерапии для вашего типа личности.
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="./zvuk.html">Звукотерапия</a></li>
+                    <li><a href="#about">Статьи</a></li>
+                </ul>
+            </nav>
         </div>
-        
-        <form id="testForm">
-            <div class="question-block">
-                <div class="question">
-                    <div class="question-text">1. Как вы предпочитаете проводить свободное время?</div>
-                    <div class="answers">
-                        <label><input type="radio" name="q1" value="а"> а) В одиночестве, занимаясь творчеством или чтением</label>
-                        <label><input type="radio" name="q1" value="б"> б) В компании близких друзей, общаясь</label>
-                        <label><input type="radio" name="q1" value="в"> в) На природе, созерцая окружающий мир</label>
-                        <label><input type="radio" name="q1" value="г"> г) Занимаясь активными видами деятельности</label>
-                    </div>
+        <a href="./index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="./vzaim_glav.html">Взаимодействие</a></li>
+                    <li><a href="./tests_glav.html">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item"><a href="./index.html" class="side-menu-link">Главная</a></li>
+            <li class="side-menu-item"><a href="./zvuk.html" class="side-menu-link">Звукотерапия</a></li>
+            <li class="side-menu-item has-submenu">
+                <a href="#articles" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="#" class="submenu-link">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Медитации</a></li>
+                    </ul>
                 </div>
-                
-                <div class="question">
-                    <div class="question-text">2. Как вы реагируете на стресс?</div>
-                    <div class="answers">
-                        <label><input type="radio" name="q2" value="а"> а) Замыкаюсь в себе, нуждаюсь в тишине</label>
-                        <label><input type="radio" name="q2" value="б"> б) Ищу поддержки у близких, говорю о проблемах</label>
-                        <label><input type="radio" name="q2" value="в"> в) Выхожу на прогулку, переключаюсь на природу</label>
-                        <label><input type="radio" name="q2" value="г"> г) Занимаюсь спортом или активной деятельностью</label>
-                    </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./vzaim_glav.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="#" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="#" class="submenu-link">Специалисты</a></li>
+                    </ul>
                 </div>
-                
-                <div class="question">
-                    <div class="question-text">3. Какой звук вам наиболее приятен?</div>
-                    <div class="answers">
-                        <label><input type="radio" name="q3" value="а"> а) Тихая классическая музыка или звуки природы</label>
-                        <label><input type="radio" name="q3" value="б"> б) Живое общение, смех, музыка с вокалом</label>
-                        <label><input type="radio" name="q3" value="в"> в) Шум леса, пение птиц, журчание воды</label>
-                        <label><input type="radio" name="q3" value="г"> г) Ритмичная, энергичная музыка</label>
-                    </div>
+            </li>
+            <li class="side-menu-item"><a href="#contact" class="side-menu-link">Тесты</a></li>
+        </ul>
+    </div>
+
+    <!-- TEST CONTENT -->
+    <div class="test-container">
+        <div id="quizPanel">
+            <div class="test-header"><h1 class="test-title">🎵 Ваш тип личности и идеальная звуковая практика</h1></div>
+            <div class="info-box">Выберите вариант ответа, который наиболее точно описывает ваши предпочтения. Мы подберём оптимальные практики звукотерапии для вашего типа.</div>
+            
+            <form id="testForm">
+                <div class="question-block">
+                    <div class="question"><div class="question-text">1. Как вы предпочитаете проводить свободное время?</div><div class="answers"><label><input type="radio" name="q1" value="а"> а) В одиночестве, творчеством или чтением</label><label><input type="radio" name="q1" value="б"> б) В компании близких друзей</label><label><input type="radio" name="q1" value="в"> в) На природе, созерцая мир</label><label><input type="radio" name="q1" value="г"> г) Активными видами деятельности</label></div></div>
+                    <div class="question"><div class="question-text">2. Как вы реагируете на стресс?</div><div class="answers"><label><input type="radio" name="q2" value="а"> а) Замыкаюсь, нужна тишина</label><label><input type="radio" name="q2" value="б"> б) Ищу поддержки, говорю о проблемах</label><label><input type="radio" name="q2" value="в"> в) Гуляю, переключаюсь на природу</label><label><input type="radio" name="q2" value="г"> г) Спорт или активность</label></div></div>
+                    <div class="question"><div class="question-text">3. Какой звук вам наиболее приятен?</div><div class="answers"><label><input type="radio" name="q3" value="а"> а) Тихая классика или звуки природы</label><label><input type="radio" name="q3" value="б"> б) Общение, смех, музыка с вокалом</label><label><input type="radio" name="q3" value="в"> в) Шум леса, птицы, вода</label><label><input type="radio" name="q3" value="г"> г) Ритмичная, энергичная музыка</label></div></div>
+                    <div class="question"><div class="question-text">4. В какое время суток вам комфортнее?</div><div class="answers"><label><input type="radio" name="q4" value="а"> а) Раннее утро или поздний вечер</label><label><input type="radio" name="q4" value="б"> б) День, когда много людей</label><label><input type="radio" name="q4" value="в"> в) Закат или рассвет</label><label><input type="radio" name="q4" value="г"> г) Ночь, для активных действий</label></div></div>
+                    <div class="question"><div class="question-text">5. Как вы принимаете решения?</div><div class="answers"><label><input type="radio" name="q5" value="а"> а) Долго обдумываю, слушаю интуицию</label><label><input type="radio" name="q5" value="б"> б) Советуюсь с окружающими</label><label><input type="radio" name="q5" value="в"> в) Наблюдаю, затем действую</label><label><input type="radio" name="q5" value="г"> г) Быстро и решительно</label></div></div>
+                    <div class="question"><div class="question-text">6. Какой цвет вам ближе?</div><div class="answers"><label><input type="radio" name="q6" value="а"> а) Синий, фиолетовый</label><label><input type="radio" name="q6" value="б"> б) Желтый, оранжевый</label><label><input type="radio" name="q6" value="в"> в) Зеленый, коричневый</label><label><input type="radio" name="q6" value="г"> г) Красный, черный</label></div></div>
+                    <div class="question"><div class="question-text">7. Как вы относитесь к изменениям?</div><div class="answers"><label><input type="radio" name="q7" value="а"> а) Осторожно, нужно время</label><label><input type="radio" name="q7" value="б"> б) Положительно, если есть поддержка</label><label><input type="radio" name="q7" value="в"> в) Спокойно, как естественный процесс</label><label><input type="radio" name="q7" value="г"> г) С энтузиазмом, ищу новизну</label></div></div>
+                    <div class="question"><div class="question-text">8. Что важнее в музыке?</div><div class="answers"><label><input type="radio" name="q8" value="а"> а) Глубина и смысл</label><label><input type="radio" name="q8" value="б"> б) Мелодичность и эмоции</label><label><input type="radio" name="q8" value="в"> в) Естественность и гармония</label><label><input type="radio" name="q8" value="г"> г) Ритм и энергия</label></div></div>
+                    <div class="question"><div class="question-text">9. Как восстанавливаете силы?</div><div class="answers"><label><input type="radio" name="q9" value="а"> а) В тишине и покое</label><label><input type="radio" name="q9" value="б"> б) В общении</label><label><input type="radio" name="q9" value="в"> в) На природе</label><label><input type="radio" name="q9" value="г"> г) Через физическую активность</label></div></div>
+                    <div class="question"><div class="question-text">10. Что вас больше раздражает?</div><div class="answers"><label><input type="radio" name="q10" value="а"> а) Громкие резкие звуки</label><label><input type="radio" name="q10" value="б"> б) Одиночество и тишина</label><label><input type="radio" name="q10" value="в"> в) Ограничение свободы</label><label><input type="radio" name="q10" value="г"> г) Монотонность и рутина</label></div></div>
                 </div>
-                
-                <div class="question">
-                    <div class="question-text">4. В какое время суток вы чувствуете себя наиболее комфортно?</div>
-                    <div class="answers">
-                        <label><input type="radio" name="q4" value="а"> а) Раннее утро или поздний вечер</label>
-                        <label><input type="radio" name="q4" value="б"> б) День, когда вокруг много людей</label>
-                        <label><input type="radio" name="q4" value="в"> в) Закат или рассвет</label>
-                        <label><input type="radio" name="q4" value="г"> г) Ночь, когда можно активно действовать</label>
-                    </div>
-                </div>
-                
-                <div class="question">
-                    <div class="question-text">5. Как вы принимаете решения?</div>
-                    <div class="answers">
-                        <label><input type="radio" name="q5" value="а"> а) Долго обдумываю, прислушиваюсь к интуиции</label>
-                        <label><input type="radio" name="q5" value="б"> б) Советуюсь с окружающими</label>
-                        <label><input type="radio" name="q5" value="в"> в) Наблюдаю за ситуацией, затем действую</label>
-                        <label><input type="radio" name="q5" value="г"> г) Быстро, решительно</label>
-                    </div>
-                </div>
-                
-                <div class="question">
-                    <div class="question-text">6. Какой цвет вам ближе?</div>
-                    <div class="answers">
-                        <label><input type="radio" name="q6" value="а"> а) Синий, фиолетовый</label>
-                        <label><input type="radio" name="q6" value="б"> б) Желтый, оранжевый</label>
-                        <label><input type="radio" name="q6" value="в"> в) Зеленый, коричневый</label>
-                        <label><input type="radio" name="q6" value="г"> г) Красный, черный</label>
-                    </div>
-                </div>
-                
-                <div class="question">
-                    <div class="question-text">7. Как вы относитесь к изменениям?</div>
-                    <div class="answers">
-                        <label><input type="radio" name="q7" value="а"> а) Осторожно, нуждаюсь во времени для адаптации</label>
-                        <label><input type="radio" name="q7" value="б"> б) Положительно, если рядом поддержка</label>
-                        <label><input type="radio" name="q7" value="в"> в) Спокойно, как к естественному процессу</label>
-                        <label><input type="radio" name="q7" value="г"> г) С энтузиазмом, ищу новизну</label>
-                    </div>
-                </div>
-                
-                <div class="question">
-                    <div class="question-text">8. Что для вас важнее в музыке?</div>
-                    <div class="answers">
-                        <label><input type="radio" name="q8" value="а"> а) Глубина и смысл</label>
-                        <label><input type="radio" name="q8" value="б"> б) Мелодичность и эмоциональность</label>
-                        <label><input type="radio" name="q8" value="в"> в) Естественность и гармония</label>
-                        <label><input type="radio" name="q8" value="г"> г) Ритм и энергия</label>
-                    </div>
-                </div>
-                
-                <div class="question">
-                    <div class="question-text">9. Как вы восстанавливаете силы?</div>
-                    <div class="answers">
-                        <label><input type="radio" name="q9" value="а"> а) В тишине и покое</label>
-                        <label><input type="radio" name="q9" value="б"> б) В общении с людьми</label>
-                        <label><input type="radio" name="q9" value="в"> в) На природе</label>
-                        <label><input type="radio" name="q9" value="г"> г) Через физическую активность</label>
-                    </div>
-                </div>
-                
-                <div class="question">
-                    <div class="question-text">10. Что вас больше всего раздражает?</div>
-                    <div class="answers">
-                        <label><input type="radio" name="q10" value="а"> а) Громкие резкие звуки</label>
-                        <label><input type="radio" name="q10" value="б"> б) Одиночество и тишина</label>
-                        <label><input type="radio" name="q10" value="в"> в) Ограничение свободы</label>
-                        <label><input type="radio" name="q10" value="г"> г) Монотонность и рутина</label>
-                    </div>
+                <button type="button" class="btn-submit" onclick="calculateResult()">🎵 Получить результат</button>
+            </form>
+        </div>
+
+        <div id="resultPanel" class="result-panel"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="section8_fin">
+        <div id="fin_plashka">
+           <div class="fin_plashka1">
+                <a href="#" class="logo22">Purity of Aum</a>
+            </div>
+            <div class="fin_plashka2">
+                <a href="./zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="./articles_glav.html" class="fin1">Статьи</a>
+                <a href="./vzaim_glav.html" class="fin1">Взаимодействия</a>
+                <a href="./tests_glav.html" class="fin1">Тесты</a>
+            </div>  
+
+            <div class="btm_fin">
+                <div class="card1">
+                    <form id="thanks" method="POST">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis">
+                            <span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span>
+                        </button>
+                    </form>
+                    <p class="msg" id="congo">Спасибо за подписку!</p>
                 </div>
             </div>
-            
-            <button type="button" class="btn" onclick="calculateResult()">🎵 Получить результат</button>
-        </form>
-        
-        <div id="result" class="result"></div>
-    </div>
+
+            <hr class="line_fin">
+            <div class="box_fin">
+                <p class="PoA">2026 Purity of Aum</p>
+                <p class="NS">Настасья Звонарёва</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
-        const typeDescriptions = {
-            'а': {
-                name: 'ИНТРОВЕРТ-МЫСЛИТЕЛЬ',
-                description: 'Ваш тип личности: глубокий, чувствительный, склонный к рефлексии.',
-                practices: [
-                    'Звуковая ванна с тибетскими поющими чашами (60-180 Гц) — низкие частоты помогут расслабиться без необходимости социального взаимодействия',
-                    'Бинауральные ритмы (альфа-диапазон 8-13 Гц) — для глубокой медитации в одиночестве',
-                    'Терапия камертонами — точечная работа с энергетическими центрами'
-                ],
-                recommendations: 'Избегайте громких коллективных практик. Вам подходят индивидуальные сеансы продолжительностью 45-60 минут в тихом помещении.',
-                instruments: ['Тибетские чаши', 'Бинауральные ритмы', 'Камертоны']
-            },
-            'б': {
-                name: 'ЭКСПРЕССИВНЫЙ СОЦИАЛ',
-                description: 'Ваш тип личности: эмоциональный, общительный, нуждающийся в контакте.',
-                practices: [
-                    'Мантра-медитация — групповое пение мантр (особенно «Ом») создаст чувство единства',
-                    'Вокальный тонинг — свободное звукоизвлечение в группе',
-                    'Шаманское барабанение — ритмичные практики в кругу единомышленников'
-                ],
-                recommendations: 'Выбирайте групповые форматы звукотерапии. Вам важны совместные практики продолжительностью 30-45 минут с возможностью обмена переживаниями.',
-                instruments: ['Поющие чаши', 'Барабаны', 'Флейты', 'Групповое пение']
-            },
-            'в': {
-                name: 'ГАРМОНИЧНЫЙ НАБЛЮДАТЕЛЬ',
-                description: 'Ваш тип личности: уравновешенный, созерцательный, близкий к природе.',
-                practices: [
-                    'Звуки природы в записи или на природе (шум моря, пение птиц, дождь)',
-                    'Флейта и духовые инструменты (240-2500 Гц) — средние и высокие частоты',
-                    'Экологическая медитация — практики на открытом воздухе'
-                ],
-                recommendations: 'Сочетайте звукотерапию с пребыванием на природе. Оптимальная продолжительность — 40-60 минут в естественной среде.',
-                instruments: ['Флейты', 'Кристаллические чаши', 'Записи природы']
-            },
-            'г': {
-                name: 'АКТИВНЫЙ ДЕЯТЕЛЬ',
-                description: 'Ваш тип личности: энергичный, решительный, ориентированный на действие.',
-                practices: [
-                    'Шаманское барабанение (4-7 ударов в секунду) — для входа в транс через активный ритм',
-                    'Гонг-медитация (24-66 Гц) — мощные вибрации для глубокой разрядки',
-                    'Активное вокальное тонирование — громкое, энергичное звукоизвлечение'
-                ],
-                recommendations: 'Вам подходят интенсивные практики продолжительностью 20-30 минут с возможностью активного участия. Чередуйте с периодами тишины для восстановления.',
-                instruments: ['Гонги', 'Большие барабаны', 'Активное вокализирование']
-            }
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active'); sideMenu.classList.toggle('active'); sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+        document.querySelectorAll('.side-menu-link').forEach(link => { link.addEventListener('click', () => { toggleSideMenu(); }); });
+        window.addEventListener('scroll', () => { if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
+
+        const types = {
+            'а': { name: 'Интроверт-Мыслитель', desc: 'Глубокий, чувствительный, склонный к рефлексии.', practices: ['Звуковая ванна с чашами (60-180 Гц)', 'Бинауральные ритмы (8-13 Гц)', 'Терапия камертонами'], instruments: ['Тибетские чаши', 'Камертоны'] },
+            'б': { name: 'Экспрессивный Социал', desc: 'Эмоциональный, общительный, нуждается в контакте.', practices: ['Мантра-медитация в группе', 'Вокальный тонинг', 'Шаманское барабанение'], instruments: ['Поющие чаши', 'Барабаны', 'Флейты'] },
+            'в': { name: 'Гармоничный Наблюдатель', desc: 'Уравновешенный, созерцательный, близок к природе.', practices: ['Звуки природы', 'Флейта и духовые', 'Экологическая медитация'], instruments: ['Флейты', 'Кристаллические чаши'] },
+            'г': { name: 'Активный Деятель', desc: 'Энергичный, решительный, ориентирован на действие.', practices: ['Шаманское барабанение', 'Гонг-медитация (24-66 Гц)', 'Активное вокализирование'], instruments: ['Гонги', 'Большие барабаны'] }
         };
 
         function calculateResult() {
-            let userAnswers = {};
-            let allAnswered = true;
-            let answerCounts = { 'а': 0, 'б': 0, 'в': 0, 'г': 0 };
-            
+            let counts = { 'а': 0, 'б': 0, 'в': 0, 'г': 0 };
             for (let i = 1; i <= 10; i++) {
-                let answer = document.querySelector(`input[name="q${i}"]:checked`);
-                if (!answer) {
-                    allAnswered = false;
-                    break;
-                }
-                userAnswers[i] = answer.value;
-                answerCounts[answer.value]++;
+                let ans = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!ans) { alert('Пожалуйста, ответьте на все вопросы!'); return; }
+                counts[ans.value]++;
             }
+            let dom = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
+            const r = types[dom];
             
-            if (!allAnswered) {
-                alert('Пожалуйста, ответьте на все вопросы!');
-                return;
-            }
-            
-            // Определение доминирующего типа
-            let dominantType = 'а';
-            let maxCount = 0;
-            
-            for (let type in answerCounts) {
-                if (answerCounts[type] > maxCount) {
-                    maxCount = answerCounts[type];
-                    dominantType = type;
-                }
-            }
-            
-            const resultData = typeDescriptions[dominantType];
-            
-            let resultHTML = `
-                <div class="result-title">🎵 Ваш тип: ${resultData.name}</div>
-                <div class="score-display">
-                    <p><strong>${resultData.description}</strong></p>
-                    <p>Распределение ответов: а=${answerCounts['а']}, б=${answerCounts['б']}, в=${answerCounts['в']}, г=${answerCounts['г']}</p>
-                </div>
+            document.getElementById('quizPanel').style.display = 'none';
+            const rp = document.getElementById('resultPanel');
+            rp.innerHTML = `
+                <div class="result-title">🎵 ${r.name}</div>
+                <div class="result-desc">${r.desc}</div>
                 <div class="type-indicator">
-                    <div class="type ${dominantType === 'а' ? 'active' : ''}">Интроверт<br>Мыслитель</div>
-                    <div class="type ${dominantType === 'б' ? 'active' : ''}">Экспрессивный<br>Социал</div>
-                    <div class="type ${dominantType === 'в' ? 'active' : ''}">Гармоничный<br>Наблюдатель</div>
-                    <div class="type ${dominantType === 'г' ? 'active' : ''}">Активный<br>Деятель</div>
+                    <div class="type-badge ${dom==='а'?'active':''}">Интроверт</div>
+                    <div class="type-badge ${dom==='б'?'active':''}">Социал</div>
+                    <div class="type-badge ${dom==='в'?'active':''}">Наблюдатель</div>
+                    <div class="type-badge ${dom==='г'?'active':''}">Деятель</div>
                 </div>
-                <div class="result-program">
-                    <h3>📋 Рекомендованные практики:</h3>
-                    <ul>
-                        ${resultData.practices.map(p => `<li>${p}</li>`).join('')}
-                    </ul>
-                </div>
-                <div class="instruments">
-                    <h3>🎼 Рекомендуемые инструменты:</h3>
-                    <div class="instruments-list">
-                        ${resultData.instruments.map(i => `<span class="instrument-tag">${i}</span>`).join('')}
-                    </div>
-                </div>
-                <div class="recommendations">
-                    <h4>💡 Важные рекомендации:</h4>
-                    <p>${resultData.recommendations}</p>
-                </div>
+                <div class="result-section"><h3>📋 Практики:</h3><ul>${r.practices.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+                <div class="result-section"><h3>🎼 Инструменты:</h3><div class="instruments-list">${r.instruments.map(i=>`<span class="instrument-tag">${i}</span>`).join('')}</div></div>
+                <div class="recommendations"><h4>💡 Совет:</h4><p>${dom==='а'?'Индивидуальные сеансы 45-60 мин в тишине.':dom==='б'?'Групповые форматы 30-45 мин с обменом.':dom==='в'?'Практики на природе 40-60 мин.':'Интенсив 20-30 мин с чередованием тишины.'}</p></div>
+                <div style="text-align:center;"><button class="btn-submit" onclick="resetTest()" style="max-width:300px;margin:0 auto;">🔄 Пройти заново</button><br><a href="./tests_glav.html" class="btn-secondary">← К тестам</a></div>
             `;
-            
-            document.getElementById('result').innerHTML = resultHTML;
-            document.getElementById('result').style.display = 'block';
-            document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+            rp.style.display = 'block';
+            rp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetTest() {
+            document.getElementById('testForm').reset();
+            document.getElementById('resultPanel').style.display = 'none';
+            document.getElementById('quizPanel').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
 </body>
