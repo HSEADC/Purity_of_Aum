@@ -75,7 +75,7 @@ body {
     margin-left: 1.5vw;
 }
 
-.w1.1 {
+.w1_1 {
     position: absolute;
 }
 
@@ -564,7 +564,7 @@ body {
 /* FINAL */
 .section8_fin {
     width: 100vw;
-    height: 14vw;
+    height: 13vw;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -585,10 +585,10 @@ body {
     position: absolute;
     text-decoration: none;
     color: #FEFFFC;
-    padding-top: 0.5vw;
+    padding-top: 0.8vw;
     padding-left: 3vw;
     font-family: Ruina;
-    font-size: 2.5vw;
+    font-size: 4.5vw;
     letter-spacing: 0.2vw;
 }
 
@@ -642,7 +642,7 @@ body {
 
 .line_fin {
     position: relative;
-    margin-top: 7vw;
+    margin-top: 6vw;
     color: #FEFFFC;
 }
 
@@ -737,4 +737,25 @@ input[type="email"] {
     color: #E4E4E4;
     border: 0.1vw solid #ccc; 
     border-radius: 0.7vw;
+}
+
+
+
+
+.screen1_1 {
+    width: 100vw;
+    height: 51vw;
+    overflow-x: hidden;
+}
+
+.water_image_bg {
+    overflow-x: hidden;
+    width: 100vw;
+    height: 90vh;
+    background-image: url(../img/glav_pages/glav_fon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    margin-top: 0vw;
+    margin-left: 0vw;
 }

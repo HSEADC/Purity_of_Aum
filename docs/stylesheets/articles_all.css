@@ -25,6 +25,18 @@
     font-family: RalewaySB;
     font-size: 1.8vw;
     border: 0.2vw;
+    margin-top: 4vw;
+    padding-bottom: 2vw;
+}
+
+.zk1_1_bl {
+    position: relative;
+    width: 60vw;
+    font-family: RalewaySB;
+    font-size: 1.8vw;
+    border: 0.2vw;
+    /* margin-top: 2vw; */
+    padding-bottom: 2vw;
 }
 
 .zk1_11 {
@@ -34,6 +46,15 @@
     text-align: center;
     font-size: 1.8vw;
     border: 0.2vw;
+}
+
+.zk1_bl {
+    position: relative;
+    width: 60vw;
+    padding-bottom: 1vw;
+    text-align: justify;
+    font-family: RalewayM;
+    font-size: 1.4vw;
 }
 
 .zk1 {
@@ -101,10 +122,28 @@
     font-size: 1vw;
 }
 
+.zv_img_text {
+    position: relative;
+    width: 60vw;
+}
+
+.zk_img_text {
+    position: relative;
+    width: 60vw;
+}
+
 .zk_img {
     width: 60vw;
     height: 30vw;
     padding-top: 0.5vw;
+}
+
+.zv_img_text1 {
+    text-align: center;
+    font-family: Raleway;
+    font-size: 0.6vw;
+    color: black;
+    padding-bottom: 1.5vw;
 }
 
 .zk_img_text1 {
