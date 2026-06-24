@@ -6,68 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
     <link rel="preload" href="../stylesheets/style.css" as="style">
-    <title>Тест: Эмоциональный Фон - Purity of Aum</title>
-    <style>
-        /* Стили идентичны первому тесту для сохранения единства */
-        .tree-silhouette { position: absolute; bottom: -20px; opacity: 0.04; fill: var(--secondary-color); transform-origin: bottom center; }
-        .tree-1 { left: 5%; width: 300px; animation: sway 15s infinite ease-in-out alternate; }
-        .tree-2 { right: 8%; width: 260px; animation: sway 18s infinite ease-in-out alternate-reverse; }
-        .tree-3 { left: 35%; width: 180px; animation: sway 20s infinite ease-in-out alternate; animation-delay: -5s; }
-        @keyframes sway { 0% { transform: rotate(-1.5deg); } 100% { transform: rotate(1.5deg); } }
-
-        .firefly { position: absolute; width: 4px; height: 4px; background: radial-gradient(circle, rgba(74, 124, 67, 0.9), transparent); border-radius: 50%; box-shadow: 0 0 12px rgba(74, 124, 67, 0.5); animation: rise 20s infinite linear; opacity: 0; }
-        .firefly:nth-child(4) { left: 20%; animation-duration: 18s; animation-delay: 0s; }
-        .firefly:nth-child(5) { left: 50%; animation-duration: 22s; animation-delay: 5s; }
-        .firefly:nth-child(6) { left: 80%; animation-duration: 19s; animation-delay: 10s; }
-        .firefly:nth-child(7) { left: 35%; animation-duration: 24s; animation-delay: 2s; }
-        .firefly:nth-child(8) { left: 65%; animation-duration: 21s; animation-delay: 7s; }
-        @keyframes rise { 0% { transform: translateY(100vh) translateX(0); opacity: 0; } 20% { opacity: 0.7; } 80% { opacity: 0.7; } 100% { transform: translateY(-10vh) translateX(40px); opacity: 0; } }
-
-        .test-container { max-width: 800px; margin: 0 auto; padding: 10rem 2rem 4rem; position: relative; z-index: 1; }
-        .test-header { text-align: center; margin-bottom: 4rem; animation: fadeInUp 1s ease forwards; }
-        .test-title { font-size: clamp(2.2rem, 5vw, 3.2rem); font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem; letter-spacing: -0.02em; }
-        .info-box { text-align: center; font-size: 1.1rem; line-height: 1.7; color: #555; max-width: 600px; margin: 0 auto 4rem; animation: fadeInUp 1s ease 0.2s forwards; opacity: 0; }
-        
-        .question-block { margin-bottom: 3rem; }
-        .question { margin-bottom: 2.5rem; padding: 0 0 2rem 0; border-bottom: 1px solid rgba(45, 90, 39, 0.15); animation: fadeInUp 0.8s ease forwards; opacity: 0; }
-        .question:nth-child(1) { animation-delay: 0.3s; } .question:nth-child(2) { animation-delay: 0.4s; } .question:nth-child(3) { animation-delay: 0.5s; } .question:nth-child(4) { animation-delay: 0.6s; } .question:nth-child(5) { animation-delay: 0.7s; } .question:nth-child(6) { animation-delay: 0.8s; } .question:nth-child(7) { animation-delay: 0.9s; } .question:nth-child(8) { animation-delay: 1.0s; } .question:nth-child(9) { animation-delay: 1.1s; } .question:nth-child(10) { animation-delay: 1.2s; }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } from { transform: translateY(20px); } }
-
-        .question-text { font-weight: 600; margin-bottom: 1.5rem; color: var(--text-dark); font-size: 1.2rem; }
-        .answers label { display: flex; align-items: center; padding: 1rem 1.5rem; margin: 0.8rem 0; background: rgba(255, 255, 255, 0.4); border-radius: 16px; cursor: pointer; transition: all 0.3s ease; border: 1px solid rgba(45, 90, 39, 0.05); }
-        .answers label:hover { background: rgba(255, 255, 255, 0.8); border-color: rgba(45, 90, 39, 0.2); transform: translateX(5px); box-shadow: 0 4px 15px rgba(45, 90, 39, 0.05); }
-        input[type="radio"] { margin-right: 12px; accent-color: var(--secondary-color); width: 18px; height: 18px; }
-
-        .btn-submit { display: block; width: 100%; padding: 1.5rem; background: var(--secondary-color); color: white; border: none; border-radius: 50px; font-size: 1.2rem; font-weight: 600; cursor: pointer; transition: all 0.4s ease; margin-top: 3rem; box-shadow: 0 8px 30px rgba(45, 90, 39, 0.2); }
-        .btn-submit:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(45, 90, 39, 0.3); background: #23471e; }
-
-        .result-panel { display: none; animation: fadeInUp 1s ease forwards; }
-        .result-title { color: var(--secondary-color); font-size: clamp(2rem, 5vw, 2.8rem); margin-bottom: 1rem; text-align: center; font-weight: 700; }
-        .result-desc { text-align: center; font-size: 1.2rem; color: #555; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; }
-        
-        .level-indicator { display: flex; justify-content: center; gap: 15px; margin: 3rem 0; flex-wrap: wrap; }
-        .level-badge { padding: 1rem 2rem; border-radius: 50px; font-size: 0.95rem; font-weight: 600; background: rgba(255, 255, 255, 0.4); color: #666; border: 1px solid rgba(45, 90, 39, 0.1); transition: all 0.4s ease; }
-        .level-badge.active { background: var(--secondary-color); color: white; transform: scale(1.1); box-shadow: 0 8px 25px rgba(45, 90, 39, 0.25); border-color: transparent; }
-
-        .result-section { margin: 3rem 0; text-align: center; }
-        .result-section h3 { color: var(--secondary-color); margin-bottom: 1.5rem; font-size: 1.4rem; }
-        .result-section ul { list-style: none; padding: 0; max-width: 600px; margin: 0 auto; text-align: left; }
-        .result-section li { padding: 1rem 0 1rem 2.5rem; position: relative; line-height: 1.7; border-bottom: 1px solid rgba(45, 90, 39, 0.08); }
-        .result-section li:before { content: "❤️‍🔥"; position: absolute; left: 0; font-size: 1.2rem; }
-        
-        .instruments-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 1.5rem; }
-        .instrument-tag { background: rgba(45, 90, 39, 0.1); color: var(--secondary-color); padding: 0.6rem 1.8rem; border-radius: 50px; font-size: 0.95rem; font-weight: 600; border: 1px solid rgba(45, 90, 39, 0.15); transition: all 0.3s; }
-        .instrument-tag:hover { background: var(--secondary-color); color: white; transform: translateY(-2px); }
-
-        .recommendations { background: rgba(255, 243, 205, 0.3); border: 1px solid rgba(255, 193, 7, 0.2); padding: 2rem; border-radius: 24px; margin: 3rem auto; max-width: 600px; text-align: center; }
-        .recommendations h4 { color: #856404; margin-bottom: 1rem; font-size: 1.1rem; }
-
-        .btn-secondary { display: inline-block; margin-top: 2rem; padding: 1rem 2.5rem; background: transparent; color: var(--secondary-color); border: 1px solid rgba(45, 90, 39, 0.3); border-radius: 50px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease; text-decoration: none; }
-        .btn-secondary:hover { background: rgba(45, 90, 39, 0.05); border-color: var(--secondary-color); }
-
-        @media (max-width: 768px) { .test-container { padding: 8rem 1.5rem 3rem; } .tree-silhouette { display: none; } }
-        @media (max-width: 480px) { .test-container { padding: 7rem 1rem 2rem; } .question-text { font-size: 1.1rem; } .answers label { padding: 0.8rem 1rem; font-size: 0.95rem; } .firefly { display: none; } }
-    </style>
+    <title>Тест: Эмоциональный Фон</title>
 </head>
 <body>
     <!-- Живой лесной фон -->
@@ -81,12 +20,24 @@
     <!-- HEADER -->
     <header class="header" id="header">
         <div class="header-left">
-            <div class="burger-menu" id="burgerMenu"><span></span><span></span><span></span></div>
-            <nav><ul class="nav-menu-left"><li><a href="./zvuk.html">Звукотерапия</a></li><li><a href="#about">Статьи</a></li></ul></nav>
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="../pages/zvuk.html">Звукотерапия</a></li>
+                    <li><a href="../pages/articles.html">Статьи</a></li>
+                </ul>
+            </nav>
         </div>
-        <a href="./index.html" class="logo">Purity of Aum</a>
+        <a href="../index.html" class="logo">Purity of Aum</a>
         <div class="header-right">
-            <nav><ul class="nav-menu-right"><li><a href="./vzaim_glav.html">Взаимодействие</a></li><li><a href="./tests_glav.html">Тесты</a></li></ul></nav>
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="../pages/vzaim.html">Взаимодействие</a></li>
+                    <li><a href="../pages/tests.html">Тесты</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
