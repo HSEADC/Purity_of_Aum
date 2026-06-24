@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
+    <title>Тест: Звуковая Интуиция</title>
+</head>
+<body>
+    <!-- Живой лесной фон -->
+    <div class="forest-bg">
+        <svg class="tree-silhouette tree-1" viewBox="0 0 200 400"><path d="M100,20 L180,380 L20,380 Z M100,20 L100,380"/></svg>
+        <svg class="tree-silhouette tree-2" viewBox="0 0 200 400"><path d="M100,30 Q160,200 180,380 L20,380 Q40,200 100,30 Z"/></svg>
+        <svg class="tree-silhouette tree-3" viewBox="0 0 200 400"><path d="M100,10 L170,380 L30,380 Z M100,10 L100,380"/></svg>
+        <div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="../pages/zvuk.html">Звукотерапия</a></li>
+                    <li><a href="../pages/articles.html">Статьи</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="../index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="../pages/vzaim.html">Взаимодействие</a></li>
+                    <li><a href="../pages/tests.html">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- TEST CONTENT -->
+    <div class="test-container">
+        <div id="quizPanel">
+            <div class="test-header"><h1 class="test-title">🔮 Ваша звуковая интуиция</h1></div>
+            <div class="info-box">Ответьте на 10 вопросов, чтобы понять, как вы доверяете внутреннему голосу при выборе звуков, и укрепить связь с вашей звуковой интуицией.</div>
+            
+            <form id="testForm">
+                <div class="question-block">
+                    <div class="question"><div class="question-text">1. Как вы обычно выбираете музыку для себя?</div><div class="answers"><label><input type="radio" name="q1" value="body"> Интуитивно — слушаю, что откликается в теле</label><label><input type="radio" name="q1" value="heart"> По настроению — что подходит моменту</label><label><input type="radio" name="q1" value="mind"> По рекомендациям — анализирую, что подойдёт</label><label><input type="radio" name="q1" value="silence"> Случайно — часто вообще не выбираю</label></div></div>
+                    
+                    <div class="question"><div class="question-text">2. Доверяете ли вы своему первому впечатлению от нового звука?</div><div class="answers"><label><input type="radio" name="q2" value="body"> Да, тело реагирует мгновенно</label><label><input type="radio" name="q2" value="heart"> Да, чувствую сердцем</label><label><input type="radio" name="q2" value="mind"> Слушаю внимательно, потом решаю</label><label><input type="radio" name="q2" value="silence"> Не доверяю — нужно время привыкнуть</label></div></div>
+                    
+                    <div class="question"><div class="question-text">3. Как вы понимаете, что звук «ваш»?</div><div class="answers"><label><input type="radio" name="q3" value="body"> Тело расслабляется или вибрирует</label><label><input type="radio" name="q3" value="heart"> Возникают эмоции, мурашки</label><label><input type="radio" name="q3" value="mind"> Ум говорит — это правильно</label><label><input type="radio" name="q3" value="silence"> Не знаю, просто тихо внутри</label></div></div>
+                    
+                    <div class="question"><div class="question-text">4. Часто ли вы ошибаетесь в выборе музыки?</div><div class="answers"><label><input type="radio" name="q4" value="body"> Редко — тело не обманывает</label><label><input type="radio" name="q4" value="heart"> Иногда — настроение меняется быстро</label><label><input type="radio" name="q4" value="mind"> Бывает — анализ не всегда точен</label><label><input type="radio" name="q4" value="silence"> Часто — не понимаю, что мне нужно</label></div></div>
+                    
+                    <div class="question"><div class="question-text">5. Как вы корректируете выбор, если звук не подходит?</div><div class="answers"><label><input type="radio" name="q5" value="body"> Сразу переключаю — тело подсказывает</label><label><input type="radio" name="q5" value="heart"> Даю время — вдруг привыкну</label><label><input type="radio" name="q5" value="mind"> Анализирую, почему не подошло</label><label><input type="radio" name="q5" value="silence"> Выключаю всё — тишина лучше</label></div></div>
+                    
+                    <div class="question"><div class="question-text">6. Доверяете ли вы ощущениям в теле при выборе звука?</div><div class="answers"><label><input type="radio" name="q6" value="body"> Полностью — это мой главный компас</label><label><input type="radio" name="q6" value="heart"> Иногда — если они совпадают с чувствами</label><label><input type="radio" name="q6" value="mind"> Редко — больше доверяю уму</label><label><input type="radio" name="q6" value="silence"> Не замечаю ощущений в теле</label></div></div>
+                    
+                    <div class="question"><div class="question-text">7. Как вы отличаете «свой» звук от «чужого»?</div><div class="answers"><label><input type="radio" name="q7" value="body"> По физическим ощущениям — расширение или сжатие</label><label><input type="radio" name="q7" value="heart"> По эмоциональному отклику — радость или тяжесть</label><label><input type="radio" name="q7" value="mind"> По логике — подходит или нет моим целям</label><label><input type="radio" name="q7" value="silence"> Не отличаю — всё звучит одинаково</label></div></div>
+                    
+                    <div class="question"><div class="question-text">8. Часто ли вы игнорируете свою интуицию при выборе музыки?</div><div class="answers"><label><input type="radio" name="q8" value="body"> Почти никогда — слушаю себя</label><label><input type="radio" name="q8" value="heart"> Иногда — когда тороплюсь</label><label><input type="radio" name="q8" value="mind"> Часто — боюсь ошибиться</label><label><input type="radio" name="q8" value="silence"> Всегда — не знаю, что выбрать</label></div></div>
+                    
+                    <div class="question"><div class="question-text">9. Как вы возвращаетесь к своей интуиции, если потеряли связь?</div><div class="answers"><label><input type="radio" name="q9" value="body"> Через тело — дышу, сканирую ощущения</label><label><input type="radio" name="q9" value="heart"> Через чувства — вспоминаю, что радует</label><label><input type="radio" name="q9" value="mind"> Через анализ — читаю, изучаю</label><label><input type="radio" name="q9" value="silence"> Через тишину — ухожу в себя</label></div></div>
+                    
+                    <div class="question"><div class="question-text">10. Доверяете ли вы своей интуиции больше, чем мнению других?</div><div class="answers"><label><input type="radio" name="q10" value="body"> Да — моё тело знает лучше</label><label><input type="radio" name="q10" value="heart"> Да — мои чувства важнее</label><label><input type="radio" name="q10" value="mind"> Зависит — иногда совет полезен</label><label><input type="radio" name="q10" value="silence"> Нет — не верю себе</label></div></div>
+                </div>
+                <button type="button" class="btn-submit" onclick="calculateResult()">🔮 Узнать свою интуицию</button>
+            </form>
+        </div>
+
+        <div id="resultPanel" class="result-panel"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="section8_fin">
+        <div id="fin_plashka">
+           <div class="fin_plashka1"><a href="#" class="logo22">Purity of Aum</a></div>
+           <div class="fin_plashka2">
+                <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="../pages/articles.html" class="fin1">Статьи</a>
+                <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
+                <a href="../pages/tests.html" class="fin1">Тесты</a>
+            </div>    
+           <div class="btm_fin">
+                <div class="card1">
+                    <form id="thanks" method="POST">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span></button>
+                    </form>
+                    <p class="msg" id="congo">Спасибо за подписку!</p>
+                </div>
+            </div>
+            <hr class="line_fin">
+            <div class="box_fin"><p class="PoA">2026 Purity of Aum</p><p class="NS">Настасья Звонарёва</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active'); sideMenu.classList.toggle('active'); sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+        document.querySelectorAll('.side-menu-link').forEach(link => { link.addEventListener('click', () => { toggleSideMenu(); }); });
+        window.addEventListener('scroll', () => { if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
+
+        // Результаты по 4 типам звуковой интуиции
+        const results = {
+            body: { 
+                title: '🧘 Телесная интуиция', 
+                desc: 'Ваша звуковая интуиция живёт в теле. Вы чувствуете звук физически — через вибрации, расслабление, расширение или сжатие. Тело — ваш главный компас.',
+                practices: ['Сканирование тела перед выбором музыки', 'Вибрационные практики с поющими чашами', 'Танец под интуитивно выбранную музыку', 'Практика «телесного резонанса» — слушать, что отзывается'],
+                instruments: ['Тибетские чаши', 'Гонги', 'Диджериду', 'Барабаны (низкие частоты)'],
+                advice: 'Доверяйте телу. Перед выбором звука закройте глаза, сделайте глубокий вдох и спросите: «Что сейчас нужно моему телу?» Ответ придёт через ощущения — мурашки, тепло, расслабление.'
+            },
+            heart: { 
+                title: '💖 Сердечная интуиция', 
+                desc: 'Ваша звуковая интуиция рождается в сердце. Вы выбираете звук по настроению, по эмоциональному отклику. Чувства — ваш проводник в мире звуков.',
+                practices: ['Эмоциональная настройка перед прослушиванием', 'Ведение «звукового дневника настроений»', 'Практика «сердечного резонанса» — что радует сейчас', 'Медитация на открытие сердечной чакры под музыку'],
+                instruments: ['Арфа', 'Флейта', 'Поющие чаши (средние частоты)', 'Колокольчики'],
+                advice: 'Слушайте своё сердце. Спросите себя: «Что я чувствую?» и выберите звук, который усиливает это чувство или трансформирует его. Ваши эмоции — мудрый советник.'
+            },
+            mind: { 
+                title: '🧠 Осознанная интуиция', 
+                desc: 'Ваша звуковая интуиция работает через анализ. Вы тщательно выбираете звуки, изучаете их влияние, ищете логику. Ум помогает вам находить правильное звучание.',
+                practices: ['Осознанное прослушивание с анализом эффектов', 'Изучение влияния разных частот на состояние', 'Создание плейлистов под конкретные задачи', 'Практика «звукового исследования» — тестирование нового'],
+                instruments: ['Камертон', 'Бинауральные ритмы', 'Кристаллические чаши', 'Программируемые звуковые устройства'],
+                advice: 'Ваша сила — в осознанности. Но не забывайте иногда отключать ум и просто слушать. Попробуйте раз в неделю выбирать музыку «не думая» — доверьтесь случайности.'
+            },
+            silence: { 
+                title: '🌙 Тихая интуиция', 
+                desc: 'Ваша звуковая интуиция проявляется в тишине. Вы не всегда понимаете, что вам нужно, но в паузах между звуками приходит знание. Тишина — ваш учитель.',
+                practices: ['Практика тишины перед выбором звука', 'Медитация «слушание тишины» — различение её слоёв', 'Звуковой пост — день без музыки для восстановления чувствительности', 'Практика «внутреннего звука» — слышать тишину внутри'],
+                instruments: ['Камертон', 'Одна поющая чаша', 'Монохорда', 'Тишина как инструмент'],
+                advice: 'Не торопитесь выбирать. Ваша интуиция говорит тихо. Перед включением музыки посидите в тишине 5 минут — и услышите, какой звук действительно нужен. Иногда ответ — это отсутствие звука.'
+            }
+        };
+
+        function calculateResult() {
+            let counts = { body: 0, heart: 0, mind: 0, silence: 0 };
+            let allAnswered = true;
+            
+            for (let i = 1; i <= 10; i++) {
+                const ans = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!ans) { alert('Пожалуйста, ответьте на все вопросы!'); return; }
+                counts[ans.value]++;
+            }
+
+            // Находим тип с максимальным количеством ответов
+            let type = 'body';
+            let maxCount = 0;
+            for (let key in counts) {
+                if (counts[key] > maxCount) {
+                    maxCount = counts[key];
+                    type = key;
+                }
+            }
+
+            const r = results[type];
+            
+            document.getElementById('quizPanel').style.display = 'none';
+            const rp = document.getElementById('resultPanel');
+            rp.innerHTML = `
+                <div class="result-title">${r.title}</div>
+                <div class="result-desc">${r.desc}</div>
+                <div class="level-indicator">
+                    <div class="level-badge ${type==='body'?'active':''}">Телесная</div>
+                    <div class="level-badge ${type==='heart'?'active':''}">Сердечная</div>
+                    <div class="level-badge ${type==='mind'?'active':''}">Осознанная</div>
+                    <div class="level-badge ${type==='silence'?'active':''}">Тихая</div>
+                </div>
+                <div class="result-section"><h3>📋 Рекомендованные практики:</h3><ul>${r.practices.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+                <div class="result-section"><h3>🎼 Ваши инструменты:</h3><div class="instruments-list">${r.instruments.map(i=>`<span class="instrument-tag">${i}</span>`).join('')}</div></div>
+                <div class="recommendations"><h4>💡 Совет:</h4><p>${r.advice}</p></div>
+                <div style="text-align:center;"><button class="btn-submit" onclick="resetTest()" style="max-width:300px;margin:0 auto;">🔄 Пройти заново</button><br><a href="./tests_glav.html" class="btn-secondary">← К тестам</a></div>
+            `;
+            rp.style.display = 'block';
+            rp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetTest() {
+            document.getElementById('testForm').reset();
+            document.getElementById('resultPanel').style.display = 'none';
+            document.getElementById('quizPanel').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

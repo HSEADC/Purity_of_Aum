@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
+    <title>Тест: Отношение к Тишине</title>
+</head>
+<body>
+    <!-- Живой лесной фон -->
+    <div class="forest-bg">
+        <svg class="tree-silhouette tree-1" viewBox="0 0 200 400"><path d="M100,20 L180,380 L20,380 Z M100,20 L100,380"/></svg>
+        <svg class="tree-silhouette tree-2" viewBox="0 0 200 400"><path d="M100,30 Q160,200 180,380 L20,380 Q40,200 100,30 Z"/></svg>
+        <svg class="tree-silhouette tree-3" viewBox="0 0 200 400"><path d="M100,10 L170,380 L30,380 Z M100,10 L100,380"/></svg>
+        <div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="../pages/zvuk.html">Звукотерапия</a></li>
+                    <li><a href="../pages/articles.html">Статьи</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="../index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="../pages/vzaim.html">Взаимодействие</a></li>
+                    <li><a href="../pages/tests.html">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- TEST CONTENT -->
+    <div class="test-container">
+        <div id="quizPanel">
+            <div class="test-header"><h1 class="test-title">🤫 Отношение к Тишине и Внутренний Диалог</h1></div>
+            <div class="info-box">Ответьте на 10 вопросов, чтобы мы могли оценить ваш комфорт в тишине и подобрать практики для развития способности к внутреннему слушанию.</div>
+            
+            <form id="testForm">
+                <div class="question-block">
+                    <div class="question"><div class="question-text">1. Можете ли вы провести час в полной тишине?</div><div class="answers"><label><input type="radio" name="q1" value="high"> Легко, это время для себя</label><label><input type="radio" name="q1" value="mid"> Могу, но с трудом</label><label><input type="radio" name="q1" value="low"> Очень сложно</label><label><input type="radio" name="q1" value="none"> Невозможно, нужен фоновый звук</label></div></div>
+                    
+                    <div class="question"><div class="question-text">2. Что вы чувствуете в тишине?</div><div class="answers"><label><input type="radio" name="q2" value="high"> Покой и связь с собой</label><label><input type="radio" name="q2" value="mid"> Немного тревоги, но терпимо</label><label><input type="radio" name="q2" value="low"> Пустоту и дискомфорт</label><label><input type="radio" name="q2" value="none"> Скуку и беспокойство</label></div></div>
+                    
+                    <div class="question"><div class="question-text">3. Часто ли вы ищете тишину?</div><div class="answers"><label><input type="radio" name="q3" value="high"> Да, постоянно</label><label><input type="radio" name="q3" value="mid"> Иногда</label><label><input type="radio" name="q3" value="low"> Редко</label><label><input type="radio" name="q3" value="none"> Никогда, избегаю тишины</label></div></div>
+                    
+                    <div class="question"><div class="question-text">4. Нравится ли вам тишина в библиотеке или храме?</div><div class="answers"><label><input type="radio" name="q4" value="high"> Обожаю такую атмосферу</label><label><input type="radio" name="q4" value="mid"> Нравится, если недолго</label><label><input type="radio" name="q4" value="low"> Некомфортно</label><label><input type="radio" name="q4" value="none"> Ненавижу тишину</label></div></div>
+                    
+                    <div class="question"><div class="question-text">5. Часто ли вы включаете телевизор или музыку фоном?</div><div class="answers"><label><input type="radio" name="q5" value="high"> Никогда, люблю тишину</label><label><input type="radio" name="q5" value="mid"> Иногда</label><label><input type="radio" name="q5" value="low"> Часто</label><label><input type="radio" name="q5" value="none"> Всегда, тишина давит</label></div></div>
+                    
+                    <div class="question"><div class="question-text">6. Что для вас тишина?</div><div class="answers"><label><input type="radio" name="q6" value="high"> Наполненность и присутствие</label><label><input type="radio" name="q6" value="mid"> Отсутствие звука</label><label><input type="radio" name="q6" value="low"> Пустота</label><label><input type="radio" name="q6" value="none"> Нечто пугающее</label></div></div>
+                    
+                    <div class="question"><div class="question-text">7. Часто ли вы медитируете в тишине?</div><div class="answers"><label><input type="radio" name="q7" value="high"> Да, это моя любимая практика</label><label><input type="radio" name="q7" value="mid"> Иногда пробую</label><label><input type="radio" name="q7" value="low"> Редко</label><label><input type="radio" name="q7" value="none"> Никогда, нужен звук</label></div></div>
+                    
+                    <div class="question"><div class="question-text">8. Нравится ли вам тишина ночью?</div><div class="answers"><label><input type="radio" name="q8" value="high"> Да, это лучшее время</label><label><input type="radio" name="q8" value="mid"> Нормально</label><label><input type="radio" name="q8" value="low"> Немного тревожно</label><label><input type="radio" name="q8" value="none"> Пугает тишина ночи</label></div></div>
+                    
+                    <div class="question"><div class="question-text">9. Часто ли вы избегаете шумных мест?</div><div class="answers"><label><input type="radio" name="q9" value="high"> Да, предпочитаю тихие места</label><label><input type="radio" name="q9" value="mid"> Иногда устаю от шума</label><label><input type="radio" name="q9" value="low"> Терпимо</label><label><input type="radio" name="q9" value="none"> Люблю шум и суету</label></div></div>
+                    
+                    <div class="question"><div class="question-text">10. Что вы слышите в тишине?</div><div class="answers"><label><input type="radio" name="q10" value="high"> Свой внутренний голос, мысли</label><label><input type="radio" name="q10" value="mid"> Тихие звуки вокруг</label><label><input type="radio" name="q10" value="low"> Ничего особенного</label><label><input type="radio" name="q10" value="none"> Не слышу ничего, тишина пугает</label></div></div>
+                </div>
+                <button type="button" class="btn-submit" onclick="calculateResult()">🤫 Узнать результат</button>
+            </form>
+        </div>
+
+        <div id="resultPanel" class="result-panel"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="section8_fin">
+        <div id="fin_plashka">
+           <div class="fin_plashka1"><a href="#" class="logo22">Purity of Aum</a></div>
+           <div class="fin_plashka2">
+                <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="../pages/articles.html" class="fin1">Статьи</a>
+                <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
+                <a href="../pages/tests.html" class="fin1">Тесты</a>
+            </div>   
+           <div class="btm_fin">
+                <div class="card1">
+                    <form id="thanks" method="POST">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span></button>
+                    </form>
+                    <p class="msg" id="congo">Спасибо за подписку!</p>
+                </div>
+            </div>
+            <hr class="line_fin">
+            <div class="box_fin"><p class="PoA">2026 Purity of Aum</p><p class="NS">Настасья Звонарёва</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active'); sideMenu.classList.toggle('active'); sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+        document.querySelectorAll('.side-menu-link').forEach(link => { link.addEventListener('click', () => { toggleSideMenu(); }); });
+        window.addEventListener('scroll', () => { if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
+
+        // Баллы: high=3 (глубокая связь с тишиной), mid=2, low=1, none=0 (дискомфорт)
+        const scores = { 'high': 3, 'mid': 2, 'low': 1, 'none': 0 };
+
+        const results = {
+            deep: { 
+                title: 'Глубокая связь с тишиной', 
+                desc: 'Вы обладаете редкой способностью находить покой и мудрость в тишине. Тишина для вас — это пространство для внутреннего диалога и глубокой медитации.',
+                practices: ['Медитация в полной тишине 30-60 минут ежедневно', 'Практика осознанной тишины на природе', 'Випассана — медитация прозрения через тишину', 'Практика внутреннего слушания без звуковых опор'],
+                instruments: ['Тишина', 'Тибетские чаши (для начала и окончания практики)', 'Камертоны', 'Записи природы (очень тихие)']
+            },
+            comfortable: { 
+                title: 'Комфорт в тишине', 
+                desc: 'Вы хорошо чувствуете себя в тишине, но иногда она вызывает лёгкую тревогу. Развивайте эту способность через постепенные практики.',
+                practices: ['Медитация в тишине 15-20 минут с постепенным увеличением', 'Практика «Тишина между звуками» — фокус на паузах', 'Прогулки в тишине на природе', 'Вечерняя практика тишины перед сном'],
+                instruments: ['Тихие записи природы', 'Кристаллические чаши', 'Колокольчики', 'Камертоны']
+            },
+            moderate: { 
+                title: 'Умеренное отношение к тишине', 
+                desc: 'Ваше отношение к тишине развивается. Вам нужен фоновый звук, но вы можете учиться находить покой в тишине.',
+                practices: ['Медитация с тихим фоновым звуком 10-15 минут', 'Практика постепенного уменьшения громкости', 'Прогулки в относительно тихих местах', 'Практика осознанного слушания тишины'],
+                instruments: ['Записи природы', 'Тихие колокольчики', 'Записи воды', 'Лёгкие звуки природы']
+            },
+            challenging: { 
+                title: 'Дискомфорт в тишине', 
+                desc: 'Тишина вызывает у вас тревогу или скуку. Начните с очень коротких практик тишины, постепенно увеличивая время.',
+                practices: ['Практика тишины 2-3 минуты ежедневно', 'Медитация с очень тихим фоновым звуком', 'Прогулки в парке с вниманием к тихим звукам', 'Практика «Один звук» — фокус на одном тихом звуке'],
+                instruments: ['Очень тихие записи природы', 'Одиночные колокольчики', 'Тихие записи воды', 'Камертоны']
+            }
+        };
+
+        function calculateResult() {
+            let totalScore = 0;
+            let allAnswered = true;
+            
+            for (let i = 1; i <= 10; i++) {
+                const ans = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!ans) { alert('Пожалуйста, ответьте на все вопросы!'); return; }
+                totalScore += scores[ans.value];
+            }
+
+            let type = 'challenging';
+            if (totalScore >= 24) type = 'deep';           // 24-30 баллов
+            else if (totalScore >= 16) type = 'comfortable'; // 16-23 балла
+            else if (totalScore >= 8) type = 'moderate';     // 8-15 баллов
+            // 0-7 баллов -> challenging
+
+            const r = results[type];
+            
+            document.getElementById('quizPanel').style.display = 'none';
+            const rp = document.getElementById('resultPanel');
+            rp.innerHTML = `
+                <div class="result-title">🤫 ${r.title}</div>
+                <div class="result-desc">${r.desc}</div>
+                <div class="level-indicator">
+                    <div class="level-badge ${type==='deep'?'active':''}">Глубокая</div>
+                    <div class="level-badge ${type==='comfortable'?'active':''}">Комфорт</div>
+                    <div class="level-badge ${type==='moderate'?'active':''}">Умеренная</div>
+                    <div class="level-badge ${type==='challenging'?'active':''}">Дискомфорт</div>
+                </div>
+                <div class="result-section"><h3>📋 Рекомендованные практики:</h3><ul>${r.practices.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+                <div class="result-section"><h3>🎼 Инструменты:</h3><div class="instruments-list">${r.instruments.map(i=>`<span class="instrument-tag">${i}</span>`).join('')}</div></div>
+                <div class="recommendations"><h4>💡 Совет:</h4><p>${type==='deep'?'Используйте свою способность к тишине для глубокой медитации. Тишина — ваш лучший учитель.':type==='comfortable'?'Развивайте комфорт в тишине через постепенные практики. Начните с 15 минут и увеличивайте время.':type==='moderate'?'Начните с медитации с тихим фоновым звуком. Постепенно уменьшайте громкость, приближаясь к тишине.':'Начните с очень коротких практик тишины 2-3 минуты. Не бойтесь тишины — она ваш друг.'}</p></div>
+                <div style="text-align:center;"><button class="btn-submit" onclick="resetTest()" style="max-width:300px;margin:0 auto;">🔄 Пройти заново</button><br><a href="./tests_glav.html" class="btn-secondary">← К тестам</a></div>
+            `;
+            rp.style.display = 'block';
+            rp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetTest() {
+            document.getElementById('testForm').reset();
+            document.getElementById('resultPanel').style.display = 'none';
+            document.getElementById('quizPanel').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

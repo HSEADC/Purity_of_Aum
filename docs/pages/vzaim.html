@@ -1,105 +1,690 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
     <title>Взаимодействие</title>
 </head>
 <body>
-    <div class="section0_menu">
-        <div class="titles">
-            <a href="./zvuk.html" class="q1">Звукотерапия</a>
-            <a href="./articles.html" class="q2">Статьи</a>
-            <a href="../index.html" class="logo">Purity of Aum</a>
-            <a href="./vzaim.html" class="q3">Взаимодействие</a>
-            <a href="./tests.html" class="q4">Тесты</a>
+    <!-- Фоновые анимации с плавающими спорами -->
+    <div class="spores-container" id="sporesContainer"></div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="./zvuk.html">Звукотерапия</a></li>
+                    <li><a href="./articles.html">Статьи</a></li>
+                </ul>
+            </nav>
         </div>
+        <a href="../index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="./vzaim.html">Взаимодействие</a></li>
+                    <li><a href="./tests.html">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item"><a href="../index.html" class="side-menu-link">Главная</a></li>
+            <li class="side-menu-item"><a href="./zvuk.html" class="side-menu-link">Звукотерапия</a></li>
+            <li class="side-menu-item has-submenu">
+                <a href="./articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item"><a href="./tests.html" class="side-menu-link">Тесты</a></li>
+        </ul>
     </div>
 
-    <div class="section4_1">
-        <!-- <div class="img_art_glav1">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGAWjR9awAAAABJRU5ErkJggg==" alt="..." />
-            <div class="artic2_glav">
-                <p class="art1_gl">Взаимодействие со звуком</p>
-                <p class="art2_gl">Пройдите этот тест, чтобы понять, что вашему организму требуется в данный момент — энергия, глубокое расслабление или снятие напряжения. Вы получите персонализированную подборку звуковых треков и практик.</p>
-                <a href="./vzaim2.html" class="pod_glav">Подробнее...</a>
-            </div>
-        </div> -->
-        <div class="img_art_glav1">
-            <img src="../img/glav_pages/Screenshot_11.png" alt="" class="img_art_glav" id="img_art_glav2">
-            <div class="artic2_glav">
-                <p class="art1_gl">Практическая медитация</p>
-                <p class="art2_gl">Узнайте свой уровень звуковой чувствительности. Это поможет вам лучше понимать свои реакции на шум и тишину, подобрать комфортную звуковую среду и избегать звукового стресса.</p>
-                <a href="./vzaim3.html" class="pod_glav">Подробнее...</a>
-            </div>
-        </div>
-        <div class="img_art_glav1">
-            <img src="../img/glav_pages/IMG_8706.jpg" alt="" class="img_art_glav" id="img_art_glav1">
-            <div class="artic2_glav">
-                <p class="art1_gl">Современные разработки</p>
-                <p class="art2_gl">Вы любите низкие вибрации или высокие? Ответьте на 5 вопросов, и мы подскажем, звучание какого инструмента (поющая чаша, гонг, диджериду) может оказать на вас самое благоприятное воздействие.</p>
-                <a href="./vzaim4.html" class="pod_glav">Подробнее...</a>
-            </div>
-        </div>
-        <div class="img_art_glav2">
-            <img src="../img/glav_pages/_27-10-2024_120606.png" alt="" class="img_art_glav" id="img_art_glav1">
-            <div class="artic2_glav">
-                <p class="art1_gl">Специалисты в области звука</p>
-                <p class="art2_gl">Вы любите низкие вибрации или высокие? Ответьте на 5 вопросов, и мы подскажем, звучание какого инструмента (поющая чаша, гонг, диджериду) может оказать на вас самое благоприятное воздействие.</p>
-                <a href="./vzaim5.html" class="pod_glav">Подробнее...</a>
-            </div>
-        </div>
-    </div>
+    <!-- MAIN CONTENT WITH TABS -->
+    <main class="main-content">
+        
+        <!-- Top Navigation Tabs -->
+        <nav class="tabs-nav" id="tabsNav">
+            <a href="#" class="tab-link active" data-target="tab-meditation">Медитация</a>
+            <a href="#" class="tab-link" data-target="tab-developments">Разработки</a>
+            <a href="#" class="tab-link" data-target="tab-specialists">Специалисты</a>
+        </nav>
 
+        <!-- TAB 1: Практическая медитация -->
+        <div id="tab-meditation" class="tab-content active">
+            <!-- Sub-tabs for Meditation -->
+            <div class="sub-tabs-container">
+                <a href="#" class="sub-tab-link active" data-subtarget="subtab-articles">Статьи</a>
+                <a href="#" class="sub-tab-link" data-subtarget="subtab-practice">Практика</a>
+            </div>
 
-    <div class="section8_fin">
+            <!-- Grid Content: Статьи (12 шт) -->
+            <div id="subtab-articles" class="subtab-content active">
+                <div class="grid-container">
+                    <a href="../meditation/1Sound_bath.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Звуковая ванна/1-6.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Звуковая ванна является одним из самых популярных и доступных видов звуковой медитации. В этой практике участники пассивно воспринимают звуковые вибрации.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Звуковая ванна</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/2Mantra_meditation.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Мантра-медитация/2-7.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Мантра-медитация использует повторяющиеся звуки для фокусировки ума и достижения глубокого состояния покоя.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Мантра-медитация</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/3Binaural_rhythms.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Бинауральные ритмы и нейроакустика/3-2.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Использование бинауральных ритмов для синхронизации работы полушарий мозга и входа в нужное состояние сознания.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Бинауральные ритмы</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/4Therapy_camberton.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Терапия камертонами/4-2.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Терапия камертонами основана на точных частотах, которые помогают восстановить энергетический баланс тела.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Терапия камертонами</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/5Vocal_toning.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Вокальный тонинг/5-2.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Вокальный тонинг — практика использования собственного голоса для резонанса и исцеления внутренних органов.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Вокальный тонинг</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/6Shamany_barabanenie.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Барабан/6-2.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Шаманское барабанение помогает войти в трансовое состояние и соединиться с глубинными слоями подсознания.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Шаманское барабанение</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/7m.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Нейроакустика/7-3.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Глубокое погружение в мир нейроакустики и влияния звуковых волн на структуру мозга.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Нейроакустика</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/8m.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Голос как инструмент/8-3.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Голос как уникальный инструмент самопознания и выражения внутренних состояний.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Голос как инструмент</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/9m.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Шум и стресс/9-5.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Влияние шумового загрязнения на уровень стресса и методы защиты от него.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Шум и стресс</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/10m.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Музыка природы/10-5.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Целебные свойства природных звуков: шума моря, пения птиц и ветра.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Музыка природы</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/11m.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Мантры и смыслы/11-3.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Сакральные смыслы, заложенные в древних мантрах разных культур мира.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Мантры и смыслы</h3>
+                        </div>
+                    </a>
+
+                    <a href="../meditation/12m.html" class="grid-card">
+                        <div class="card-image-wrapper">
+                            <img src="../img/звук/Цифровой детокс/12-2.png" alt="">
+                            <div class="card-overlay">
+                                <div class="overlay-desc">Практики тишины и отказа от цифрового шума для восстановления ментального здоровья.</div>
+                            </div>
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Цифровой детокс</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Grid Content: Практика (12 шт) -->
+            <div id="subtab-practice" class="subtab-content" style="display: none;">
+                <div class="grid-container">
+                    <a href="../meditation_work/med1.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук1.png" alt=""><div class="card-overlay"><div class="overlay-desc">Короткая практика для бодрого начала дня.</div></div></div><div class="card-info"><h3 class="card-title">Утренний настрой</h3></div></a>
+                    <a href="../meditation_work/med2.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук2.png" alt=""><div class="card-overlay"><div class="overlay-desc">Глубокое расслабление перед сном.</div></div></div><div class="card-info"><h3 class="card-title">Глубокий сон</h3></div></a>
+                    <a href="../meditation_work/med3.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук3.png" alt=""><div class="card-overlay"><div class="overlay-desc">Тренировка концентрации внимания.</div></div></div><div class="card-info"><h3 class="card-title">Фокус внимания</h3></div></a>
+                    <a href="../meditation_work/med4.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук4.png" alt=""><div class="card-overlay"><div class="overlay-desc">Снижение уровня тревожности.</div></div></div><div class="card-info"><h3 class="card-title">Снятие тревоги</h3></div></a>
+                    <a href="../meditation_work/med5.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук5.png" alt=""><div class="card-overlay"><div class="overlay-desc">Быстрый заряд энергии.</div></div></div><div class="card-info"><h3 class="card-title">Энергия дня</h3></div></a>
+                    <a href="../meditation_work/med6.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук6.png" alt=""><div class="card-overlay"><div class="overlay-desc">Синхронизация дыхания и звука.</div></div></div><div class="card-info"><h3 class="card-title">Дыхание звуком</h3></div></a>
+                    <a href="../meditation_work/med7.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук7.png" alt=""><div class="card-overlay"><div class="overlay-desc">Техника заземления через стопы.</div></div></div><div class="card-info"><h3 class="card-title">Вибрация стоп</h3></div></a>
+                    <a href="../meditation_work/med8.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук8.png" alt=""><div class="card-overlay"><div class="overlay-desc">Очищение мыслей и перезагрузка.</div></div></div><div class="card-info"><h3 class="card-title">Очищение ума</h3></div></a>
+                    <a href="../meditation_work/med9.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук9.png" alt=""><div class="card-overlay"><div class="overlay-desc">Гармонизация сердечного ритма.</div></div></div><div class="card-info"><h3 class="card-title">Сердечный ритм</h3></div></a>
+                    <a href="../meditation_work/med10.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук10.png" alt=""><div class="card-overlay"><div class="overlay-desc">Активация творческого потенциала.</div></div></div><div class="card-info"><h3 class="card-title">Творческий поток</h3></div></a>
+                    <a href="../meditation_work/med11.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук11.png" alt=""><div class="card-overlay"><div class="overlay-desc">Вечерняя релаксация.</div></div></div><div class="card-info"><h3 class="card-title">Вечерний релакс</h3></div></a>
+                    <a href="../meditation_work/med12.html" class="grid-card"><div class="card-image-wrapper"><img src="../img/звук/Пейзаж-звук12.png" alt=""><div class="card-overlay"><div class="overlay-desc">Полная перезагрузка организма.</div></div></div><div class="card-info"><h3 class="card-title">Полная перезагрузка</h3></div></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB 2: Современные разработки -->
+        <div id="tab-developments" class="tab-content" style="display: none;">
+            <div class="fiction2" id="fiction2">
+                <p class="zk1_2">Главные направления развития современных технологий звуковой терапии</p>
+                <p class="zk5_11">Современные технологии звуковой терапии представляют собой динамично развивающуюся область на стыке биоакустики, нейробиологии и цифровых инноваций, направленную на прецизионную регуляцию психофизиологического состояния человека. В отличие от традиционных эмпирических методов, современные подходы опираются на объективные биометрические данные и алгоритмы машинного обучения, позволяя адаптировать акустическое воздействие под индивидуальные потребности пользователя в реальном времени. Анализ текущих научных трендов и клинических разработок позволяет выделить несколько ключевых векторов развития этой дисциплины, каждый из которых трансформирует звук из простого средства релаксации в высокотехнологичный инструмент доказательной медицины.</p>
+                       
+                <p class="zk5_2">1. Цифровая персонализация и адаптивные алгоритмы на базе ИИ</p>
+                <img src="../img/Современные разработки/Цифровая персонализация и адаптивные алгоритмы на базе ИИ/13-9.png" alt="" class="img_med">
+                <p class="zk5_1">Современные технологии звуковой терапии всё чаще опираются на искусственный интеллект и машинное обучение для создания индивидуальных терапевтических протоколов. Алгоритмы анализируют аудиометрические данные пользователя, его физиологические показатели (частота сердечных сокращений, вариабельность сердечного ритма, ЭЭГ-паттерны) и поведенческие паттерны, чтобы в реальном времени подбирать оптимальные частотные диапазоны, темп и гармоническую структуру звукового воздействия. Приложения вроде AudioCardio и Endel используют нейросетевые модели для генерации персонализированных звуковых ландшафтов, адаптирующихся под текущее эмоциональное состояние и когнитивную нагрузку пользователя. Это направление позволяет перейти от универсальных методик к прецизионной звуковой медицине, где каждый сеанс строится на основе объективных биометрических данных.</p>
+                <a href="../development/1digital.html" class="btm_mix1">Подробнее</a>
+
+                <p class="zk5_2">2. Нейроакустическая стимуляция и синхронизация мозговых ритмов</p>
+                <img src="../img/Современные разработки/Нейроакустическая стимуляция и синхронизация мозговых ритмов/14-3.png" alt="" class="img_med">
+                <p class="zk5_1">Направление, развивающее идеи Альфреда Томатиса и Дона Кэмпбелла, фокусируется на использовании бинауральных ритмов, изохронных тонов и модулированных звуковых последовательностей для индукции специфических состояний мозга. Современные исследования с помощью фМРТ и ЭЭГ подтверждают, что акустические стимулы определённой частоты способны синхронизировать нейронные осцилляции в тета-, альфа- и гамма-диапазонах, что коррелирует с состояниями релаксации, концентрации, творческого потока и глубокого сна. Технологии вроде Brain.fm и MyNoise используют сложные алгоритмы частотной модуляции для создания «акустических каркасов», направляющих активность мозга в желаемое функциональное состояние. Это направление особенно перспективно для терапии тревожных расстройств, нарушений сна и когнитивной реабилитации.</p>
+                <a href="../development/2neuroacoustic.html" class="btm_mix1">Подробнее</a>
+
+                <p class="zk5_2">3. Интеграция с интерфейсами «мозг-компьютер» и биологической обратной связью</p>
+                <img src="../img/Современные разработки/Интеграция с интерфейсами «мозг-компьютер» и биологической обратной связью/15-3.png" alt="" class="img_med">
+                <p class="zk5_1">Перспективное направление на стыке нейрофизиологии и звуковой терапии — создание замкнутых контуров обратной связи, где звуковые стимулы подбираются и модулируются в реальном времени на основе сигналов мозга или вегетативной нервной системы. Системы нейрофидбэка, сочетающие ЭЭГ-мониторинг с адаптивной звуковой стимуляцией, позволяют пользователю осознанно тренировать желаемые паттерны мозговой активности. Например, при повышении бета-активности (маркер стресса) система автоматически вводит низкочастотные гармонические последовательности, способствующие переходу в альфа-состояние. Это направление открывает возможности для неинвазивной нейромодуляции при депрессии, СДВГ, посттравматическом стрессовом расстройстве и хронической боли.</p>
+                <a href="../development/3integration.html" class="btm_mix1">Подробнее</a>
+
+                <p class="zk5_2">4. Вибрационная терапия и резонансные практики с научным обоснованием</p>
+                <img src="../img/Современные разработки/Вибрационная терапия и резонансные практики с научным обоснованием/16-3.png" alt="" class="img_med">
+                <p class="zk5_1">Методы, восходящие к работам Фабьена Мамана, получают новое развитие через количественное изучение механизмов резонансного воздействия звука на биологические ткани. Современные исследования фокусируются на частотных диапазонах 40–150 Гц, способных стимулировать блуждающий нерв, активировать парасимпатическую нервную систему и модулировать воспалительные реакции. Технологии звуковых ванн, камертонов и низкочастотных виброакустических платформ интегрируются в клинические протоколы реабилитации, паллиативной помощи и управления стрессом. Ключевой тренд — переход от эмпирических практик к доказательным методикам с чёткими параметрами частоты, интенсивности и длительности воздействия, верифицируемыми через биомаркеры (кортизол, IL-6, вариабельность сердечного ритма).</p>
+                <a href="../development/4vibration.html" class="btm_mix1">Подробнее</a>
+
+                <p class="zk5_2">5. Мультимодальные протоколы: звук + свет + тактильная стимуляция + дыхание</p>
+                <img src="../img/Современные разработки/Мультимодальные протоколы звук + свет + тактильная стимуляция + дыхание/17-8.png" alt="" class="img_med">
+                <p class="zk5_1">Современные подходы к звуковой терапии всё чаще используют синергию нескольких сенсорных модальностей для усиления терапевтического эффекта. Аудиовизуальная стимуляция (AVS), сочетающая ритмические световые импульсы с синхронизированными звуковыми паттернами, демонстрирует более выраженное воздействие на нейропластичность и когнитивную гибкость по сравнению с монотерапией. Добавление тактильной вибрации (через виброакустические кресла или носимые устройства) и дыхательных практик создаёт целостный соматический опыт, способствующий глубокой релаксации и интеграции. Это направление особенно актуально для работы с травмой, где мультисенсорная стимуляция помогает обойти защитные механизмы и активировать ресурсы саморегуляции.</p>
+                <a href="../development/5multimodal.html" class="btm_mix1">Подробнее</a>
+
+                <p class="zk5_2">6. Глобальная доступность и интеграция в повседневные цифровые экосистемы</p>
+                <img src="../img/Современные разработки/119957.jpg" alt="" class="img_med">
+                <p class="zk5_1">Тренд на демократизацию звуковой терапии проявляется в развитии мобильных приложений, потоковых сервисов и интеграции терапевтических звуковых протоколов в привычные цифровые среды (умные колонки, наушники с шумоподавлением, автомобильные аудиосистемы). Онлайн-формат исследований и терапии позволяет доставлять звуковые вмешательства глобально с минимальными затратами, что особенно важно для регионов с ограниченным доступом к специализированной помощи. Ключевой вызов этого направления — сохранение терапевтической эффективности при масштабировании и обеспечение научной валидации массовых продуктов. Перспективные решения включают создание открытых стандартов качества, системы сертификации приложений и интеграцию с телемедицинскими платформами для клинического сопровождения.</p>
+                <a href="../development/6global.html" class="btm_mix1">Подробнее</a>
+            </div>
+        </div>
+
+        <!-- TAB 3: Специалисты (8 карточек) -->
+        <div id="tab-specialists" class="tab-content" style="display: none;">
+            <div class="grid-container">
+                <a href="../people/Vladimir_Bechterev.html" class="grid-card specialist-card">
+                    <div class="card-image-wrapper">
+                        <img src="../img/people/Снимок экрана 2026-03-21 105026.jpg" alt="">
+                        <div class="card-overlay">
+                            <div class="overlay-desc">Русский невролог, психиатр и физиолог, один из основоположников рефлексологии и объективной психологии.</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Владимир Бехтерев</h3>
+                    </div>
+                </a>
+                
+                <a href="../people/Mitch_Gayer.html" class="grid-card specialist-card">
+                    <div class="card-image-wrapper">
+                        <img src="../img/people/mitch.jpg" alt="">
+                        <div class="card-overlay">
+                            <div class="overlay-desc">Американский врач-онколог, новатор в области интегративной медицины и звуковой терапии.</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Митч Гейер</h3>
+                    </div>
+                </a>
+                
+                <a href="../people/Tomatis_Alfred.html" class="grid-card specialist-card">
+                    <div class="card-image-wrapper">
+                        <img src="../img/people/f6294a7099ef6eaf1353687405091716.jpg" alt="">
+                        <div class="card-overlay">
+                            <div class="overlay-desc">Французский отоларинголог и исследователь, заложил фундамент современной аудио-психо-фонологии.</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Томатис Альфред</h3>
+                    </div>
+                </a>
+                
+                <a href="../people/Christian_Huygens.html" class="grid-card specialist-card">
+                    <div class="card-image-wrapper">
+                        <img src="../img/people/hqdefault.jpg" alt="">
+                        <div class="card-overlay">
+                            <div class="overlay-desc">Голландский математик, физик и астроном, заложили фундамент современной классической механики и оптики.</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Христиан Гюйгенс</h3>
+                    </div>
+                </a>
+                
+                <a href="../people/Fabien_Maman.html" class="grid-card specialist-card">
+                    <div class="card-image-wrapper">
+                        <img src="../img/people/Снимок экрана 2026-03-21 105923.jpg" alt="">
+                        <div class="card-overlay">
+                            <div class="overlay-desc">Французский учёный, заложил основы современного направления «звуковой вибрационной терапии».</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Фабьен Маман</h3>
+                    </div>
+                </a>
+                
+                <a href="../people/Don_Campbell.html" class="grid-card specialist-card">
+                    <div class="card-image-wrapper">
+                        <img src="../img/people/maxresdefault.jpg" alt="">
+                        <div class="card-overlay">
+                            <div class="overlay-desc">Американский музыкотерапевт, заложил основы современного понимания влияния музыки на человеческий организм.</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Дон Кэмпбелл</h3>
+                    </div>
+                </a>
+                
+                <a href="../people/Boris_Teplov.html" class="grid-card specialist-card">
+                    <div class="card-image-wrapper">
+                        <img src="../img/people/teplov.jpg" alt="">
+                        <div class="card-overlay">
+                            <div class="overlay-desc">Советский психолог, физиолог и специалист в области психофизиологии индивидуальных различий.</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Борис Теплов</h3>
+                    </div>
+                </a>
+                
+                <a href="../people/Petr_Anokhin.html" class="grid-card specialist-card">
+                    <div class="card-image-wrapper">
+                        <img src="../img/people/longrid-765.-foto-3.-wikipedia.org-dobrosovestnoe-ispolzovanie.jpg" alt="">
+                        <div class="card-overlay">
+                            <div class="overlay-desc">Советский физиолог, автор теории функциональных систем.</div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3 class="card-title">Петр Анохин</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="section8_fin">
         <div id="fin_plashka">
            <div class="fin_plashka1">
-                <a href="./index.html" class="logo22">Purity of Aum</a>
-                <div class="social">
-                    <!-- <a href="https://t.me/ayy_mir_zvukov" class="tg" target="_blank"><img src="../img/glav_pages/telegram.png" alt="" class="tg1"></a>
-                    <a href="https://vk.com/purity_of_aum" class="vk" target="_blank"><img src="../img/glav_pages/vk.png" alt="" class="vk"1></a> -->
-                </div>
-                
+                <a href="#" class="logo22">Purity of Aum</a>
             </div>
             <div class="fin_plashka2">
-                <a href="./pages/zvuk.html" class="fin1">Звукотерапия</a>
-                <a href="./pages/articles.html" class="fin1">Статьи</a>
-                <a href="./pages/vzaim.html" class="fin1">Взаимодействия</a>
-                <a href="" class="fin1">Тесты</a>
+                <a href="./zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="./articles.html" class="fin1">Статьи</a>
+                <a href="./vzaim.html" class="fin1">Взаимодействия</a>
+                <a href="./tests.html" class="fin1">Тесты</a>
             </div> 
-
             <div class="btm_fin">
                 <div class="card1">
                     <form id="thanks" method="POST">
-                        <input type="email" name="email" 
-                        id="email" 
-                        placeholder="E-mail" 
-                        required>
-                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><a href="" class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</a></button>
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis">
+                            <span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span>
+                        </button>
                     </form>
                     <p class="msg" id="congo">Спасибо за подписку!</p>
                 </div>
             </div>
 
-            <script>
-                const form = document.getElementById("thanks");
-                const successMessage =
-                    document.getElementById("congo");
-
-                form.addEventListener("submit", function (e) {
-                    e.preventDefault();
-                    successMessage.style.display = "block";
-                });
-            </script>
-
-             <hr class="line_fin">
+            <hr class="line_fin">
             <div class="box_fin">
                 <p class="PoA">2026 Purity of Aum</p>
                 <p class="NS">Настасья Звонарёва</p>
             </div>
         </div>
-    </div> 
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        // --- Функция переключения табов (вынесена для переиспользования) ---
+        const tabLinks = document.querySelectorAll('.tab-link');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        function switchToTab(targetId) {
+        tabLinks.forEach(l => l.classList.remove('active'));
+        tabContents.forEach(content => {
+            content.style.display = 'none';
+            content.classList.remove('active');
+        });
+
+        const targetLink = document.querySelector('.tab-link[data-target="' + targetId + '"]');
+        if (targetLink) {
+            targetLink.classList.add('active');
+        }
+
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+            targetContent.style.display = 'block';
+            setTimeout(() => targetContent.classList.add('active'), 10);
+            
+            // Перезапуск анимации карточек
+            const cards = targetContent.querySelectorAll('.grid-card, .fiction2');
+            cards.forEach((card, index) => {
+                card.style.animation = 'none';
+                card.offsetHeight;
+                card.style.animation = `fadeInUp 0.8s ease forwards ${index * 0.05}s`;
+            });
+        }
+        }
+
+        // Обработчик клика по верхним табам
+        tabLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('data-target');
+                switchToTab(targetId);
+                // Обновляем hash в URL
+                history.pushState(null, null, '#' + targetId);
+            });
+        });
+
+        // --- НОВОЕ: Проверка hash при загрузке страницы ---
+        function handleHash() {
+            const hash = window.location.hash.replace('#', '');
+            // Проверяем, что hash соответствует существующему табу
+            if (hash && document.getElementById(hash)) {
+                switchToTab(hash);
+                // Плавно прокручиваем к табам
+                setTimeout(() => {
+                    const tabsNav = document.querySelector('.tabs-nav');
+                    if (tabsNav) {
+                        tabsNav.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+                }, 100);
+            }
+        }
+
+        // Запускаем при загрузке
+        handleHash();
+
+        // Отслеживаем изменение hash (если пользователь на той же странице)
+        window.addEventListener('hashchange', handleHash);
+
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Генерация спор на фоне
+            const sporesContainer = document.getElementById('sporesContainer');
+            if (sporesContainer) {
+                const sporesCount = 25;
+                
+                for (let i = 0; i < sporesCount; i++) {
+                    const spore = document.createElement('div');
+                    spore.classList.add('spore');
+                    const size = Math.random() * 8 + 3;
+                    spore.style.width = `${size}px`;
+                    spore.style.height = `${size}px`;
+                    spore.style.left = `${Math.random() * 100}%`;
+                    spore.style.animationDelay = `${Math.random() * 15}s`;
+                    spore.style.animationDuration = `${12 + Math.random() * 10}s`;
+                    sporesContainer.appendChild(spore);
+                }
+            }
+
+            // --- Логика верхних табов ---
+            const tabLinks = document.querySelectorAll('.tab-link');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            // Функция переключения табов (вынесена отдельно для переиспользования)
+            function switchToTab(targetId) {
+                // Снимаем активность со всех табов
+                tabLinks.forEach(l => l.classList.remove('active'));
+                tabContents.forEach(content => {
+                    content.style.display = 'none';
+                    content.classList.remove('active');
+                });
+
+                // Находим нужный таб-линк по data-target и активируем его
+                const targetLink = document.querySelector('.tab-link[data-target="' + targetId + '"]');
+                if (targetLink) {
+                    targetLink.classList.add('active');
+                }
+
+                const targetContent = document.getElementById(targetId);
+                if (targetContent) {
+                    targetContent.style.display = 'block';
+                    setTimeout(() => targetContent.classList.add('active'), 10);
+                    
+                    // Перезапуск анимации карточек внутри таба
+                    const cards = targetContent.querySelectorAll('.grid-card, .fiction2');
+                    cards.forEach((card, index) => {
+                        card.style.animation = 'none';
+                        card.offsetHeight;
+                        card.style.animation = `fadeInUp 0.8s ease forwards ${index * 0.05}s`;
+                    });
+                }
+            }
+
+            // Обработчик клика по верхним табам
+            tabLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('data-target');
+                    switchToTab(targetId);
+                });
+            });
+
+            // --- Логика подтабов (Статьи / Практика) ---
+            const subTabLinks = document.querySelectorAll('.sub-tab-link');
+            const subTabContents = document.querySelectorAll('.subtab-content');
+
+            subTabLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    subTabLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    subTabContents.forEach(content => {
+                        content.style.display = 'none';
+                    });
+
+                    const targetSubId = link.getAttribute('data-subtarget');
+                    const targetSubContent = document.getElementById(targetSubId);
+                    
+                    if (targetSubContent) {
+                        targetSubContent.style.display = 'block';
+                        
+                        const cards = targetSubContent.querySelectorAll('.grid-card');
+                        cards.forEach((card, index) => {
+                            card.style.animation = 'none';
+                            card.offsetHeight;
+                            card.style.animation = `fadeInUp 0.8s ease forwards ${index * 0.05}s`;
+                        });
+                    }
+                });
+            });
+
+            // --- НОВОЕ: Обработчик клика по ссылкам подменю для переключения табов ---
+            const submenuSwitchLinks = document.querySelectorAll('.submenu-link[data-switch-tab]');
+            submenuSwitchLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('data-switch-tab');
+                    
+                    // Закрываем боковое меню
+                    if (sideMenu.classList.contains('active')) {
+                        toggleSideMenu();
+                    }
+                    
+                    // Переключаемся на нужный таб
+                    switchToTab(targetId);
+                    
+                    // Плавно прокручиваем к табам, чтобы пользователь увидел результат
+                    setTimeout(() => {
+                        const tabsNav = document.getElementById('tabsNav');
+                        if (tabsNav) {
+                            tabsNav.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    }, 400); // Задержка, чтобы меню успело закрыться
+                });
+            });
+        });
+
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active');
+            sideMenu.classList.toggle('active');
+            sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+
+        document.querySelectorAll('.side-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                // Закрываем меню только если это обычная ссылка-переход, не переключатель табов
+                if (!link.hasAttribute('data-switch-tab')) {
+                    toggleSideMenu();
+                }
+            });
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+                toggleSideMenu();
+            }
+        });
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.classList.contains('tab-link') || this.classList.contains('sub-tab-link')) {
+                    return; 
+                }
+
+                const href = this.getAttribute('href');
+                if (href === '#' || href === '') return;
+
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        const form = document.getElementById("thanks");
+        const successMessage = document.getElementById("congo");
+
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            successMessage.style.display = "block";
+            setTimeout(() => {
+                successMessage.style.display = "none";
+                form.reset();
+            }, 3000);
+        });
+    </script>
 </body>
 </html>

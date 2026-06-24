@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
+    <title>Тест: Групповой Резонанс</title>
+</head>
+<body>
+    <!-- Живой лесной фон -->
+    <div class="forest-bg">
+        <svg class="tree-silhouette tree-1" viewBox="0 0 200 400"><path d="M100,20 L180,380 L20,380 Z M100,20 L100,380"/></svg>
+        <svg class="tree-silhouette tree-2" viewBox="0 0 200 400"><path d="M100,30 Q160,200 180,380 L20,380 Q40,200 100,30 Z"/></svg>
+        <svg class="tree-silhouette tree-3" viewBox="0 0 200 400"><path d="M100,10 L170,380 L30,380 Z M100,10 L100,380"/></svg>
+        <div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="../pages/zvuk.html">Звукотерапия</a></li>
+                    <li><a href="../pages/articles.html">Статьи</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="../index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="../pages/vzaim.html">Взаимодействие</a></li>
+                    <li><a href="../pages/tests.html">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- TEST CONTENT -->
+    <div class="test-container">
+        <div id="quizPanel">
+            <div class="test-header"><h1 class="test-title">🎭 Ваш групповой резонанс</h1></div>
+            <div class="info-box">Ответьте на 10 вопросов, чтобы понять, как вы взаимодействуете со звуком в группе, и подобрать формат коллективной звуковой практики, который вам подходит.</div>
+            
+            <form id="testForm">
+                <div class="question-block">
+                    <div class="question"><div class="question-text">1. Как вы чувствуете себя в группе людей?</div><div class="answers"><label><input type="radio" name="q1" value="harmony"> Комфортно, чувствую единство</label><label><input type="radio" name="q1" value="solo"> Лучше одному, группа утомляет</label><label><input type="radio" name="q1" value="rhythm"> Заряжаюсь энергией группы</label><label><input type="radio" name="q1" value="observer"> Спокойно наблюдаю со стороны</label></div></div>
+                    
+                    <div class="question"><div class="question-text">2. Какой звук в группе вам приятнее всего?</div><div class="answers"><label><input type="radio" name="q2" value="harmony"> Хоровое пение, гармония голосов</label><label><input type="radio" name="q2" value="solo"> Соло-импровизация</label><label><input type="radio" name="q2" value="rhythm"> Барабанный круг, общий ритм</label><label><input type="radio" name="q2" value="observer"> Общая тишина</label></div></div>
+                    
+                    <div class="question"><div class="question-text">3. Как вы реагируете на лидера в группе?</div><div class="answers"><label><input type="radio" name="q3" value="harmony"> Следую, но чувствую связь со всеми</label><label><input type="radio" name="q3" value="solo"> Сопротивляюсь, хочу по-своему</label><label><input type="radio" name="q3" value="rhythm"> Подхватываю энергию и веду за собой</label><label><input type="radio" name="q3" value="observer"> Наблюдаю, не вмешиваясь</label></div></div>
+                    
+                    <div class="question"><div class="question-text">4. Какой размер группы вам ближе для звуковой практики?</div><div class="answers"><label><input type="radio" name="q4" value="harmony"> Средняя (5-10 человек) — чувствуется единство</label><label><input type="radio" name="q4" value="solo"> Только я один</label><label><input type="radio" name="q4" value="rhythm"> Большая (15-30 человек) — мощная энергия</label><label><input type="radio" name="q4" value="observer"> Маленькая (2-3 человека) — тихо и уютно</label></div></div>
+                    
+                    <div class="question"><div class="question-text">5. Как вы чувствуете энергию группы?</div><div class="answers"><label><input type="radio" name="q5" value="harmony"> Сильно — она меня питает</label><label><input type="radio" name="q5" value="solo"> Слабо — предпочитаю свою энергию</label><label><input type="radio" name="q5" value="rhythm"> Очень сильно — хочу её направлять</label><label><input type="radio" name="q5" value="observer"> Чувствую, но не вовлекаюсь</label></div></div>
+                    
+                    <div class="question"><div class="question-text">6. Как вы восстанавливаетесь после групповой практики?</div><div class="answers"><label><input type="radio" name="q6" value="harmony"> Общением с участниками</label><label><input type="radio" name="q6" value="solo"> Ухожу в тишину, один на один с собой</label><label><input type="radio" name="q6" value="rhythm"> Продолжаю двигаться, танцевать</label><label><input type="radio" name="q6" value="observer"> Наблюдаю за природой, гуляю</label></div></div>
+                    
+                    <div class="question"><div class="question-text">7. Как вы влияете на звук в группе?</div><div class="answers"><label><input type="radio" name="q7" value="harmony"> Подстраиваюсь под общую гармонию</label><label><input type="radio" name="q7" value="solo"> Создаю свой собственный звук</label><label><input type="radio" name="q7" value="rhythm"> Задаю ритм, веду группу</label><label><input type="radio" name="q7" value="observer"> Почти не влияю, слушаю других</label></div></div>
+                    
+                    <div class="question"><div class="question-text">8. Как вы слушаете в группе?</div><div class="answers"><label><input type="radio" name="q8" value="harmony"> Внимательно всех, ищу гармонию</label><label><input type="radio" name="q8" value="solo"> Больше себя, чем других</label><label><input type="radio" name="q8" value="rhythm"> Избирательно — тех, кто задаёт ритм</label><label><input type="radio" name="q8" value="observer"> Рассеянно, как фоновую музыку</label></div></div>
+                    
+                    <div class="question"><div class="question-text">9. Как вы чувствуете границы в группе?</div><div class="answers"><label><input type="radio" name="q9" value="harmony"> Чётко, но они гибкие</label><label><input type="radio" name="q9" value="solo"> Очень чётко, защищаю своё пространство</label><label><input type="radio" name="q9" value="rhythm"> Размыто — растворяюсь в общем потоке</label><label><input type="radio" name="q9" value="observer"> Чётко, держу дистанцию</label></div></div>
+                    
+                    <div class="question"><div class="question-text">10. Какой звук в группе вас объединяет с другими?</div><div class="answers"><label><input type="radio" name="q10" value="harmony"> Общий напев или мантра</label><label><input type="radio" name="q10" value="solo"> Ничто — я сам по себе</label><label><input type="radio" name="q10" value="rhythm"> Единый ритм барабанов</label><label><input type="radio" name="q10" value="observer"> Разделённая тишина</label></div></div>
+                </div>
+                <button type="button" class="btn-submit" onclick="calculateResult()">🎭 Узнать свой резонанс</button>
+            </form>
+        </div>
+
+        <div id="resultPanel" class="result-panel"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="section8_fin">
+        <div id="fin_plashka">
+           <div class="fin_plashka1"><a href="#" class="logo22">Purity of Aum</a></div>
+           <div class="fin_plashka2">
+                <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="../pages/articles.html" class="fin1">Статьи</a>
+                <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
+                <a href="../pages/tests.html" class="fin1">Тесты</a>
+            </div>  
+           <div class="btm_fin">
+                <div class="card1">
+                    <form id="thanks" method="POST">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span></button>
+                    </form>
+                    <p class="msg" id="congo">Спасибо за подписку!</p>
+                </div>
+            </div>
+            <hr class="line_fin">
+            <div class="box_fin"><p class="PoA">2026 Purity of Aum</p><p class="NS">Настасья Звонарёва</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active'); sideMenu.classList.toggle('active'); sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+        document.querySelectorAll('.side-menu-link').forEach(link => { link.addEventListener('click', () => { toggleSideMenu(); }); });
+        window.addEventListener('scroll', () => { if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
+
+        // Результаты по 4 типам группового резонанса
+        const results = {
+            harmony: { 
+                title: '🎶 Гармонизатор', 
+                desc: 'Вы — душа коллектива. Ваша сила в способности создавать и чувствовать единство звуков. В группе вы расцветаете, находя общий язык с каждым участником.',
+                practices: ['Хоровая медитация с мантрами', 'Групповое пение звуков «Ом»', 'Практика кругового пения (каждый добавляет голос)', 'Звуковые ванны в малых группах 5-8 человек'],
+                instruments: ['Поющие чаши в ансамбле', 'Хрустальные чаши (гармония)', 'Колокольчики ветра', 'Голос (хоровое пение)'],
+                advice: 'Ваш путь — через гармонию. Ищите или создайте «звуковое племя» — группу единомышленников, с которыми вы будете практиковать регулярно. Гармония голосов исцеляет вас глубже всего.'
+            },
+            solo: { 
+                title: '🌟 Солист', 
+                desc: 'Ваш звук — это вы сами. Вы самодостаточны и чувствительны к чужим вибрациям. Групповые практики могут вас истощать, но в малых дозах — обогащать.',
+                practices: ['Индивидуальная звуковая медитация', 'Соло-импровизация на инструменте', 'Дыхательные практики в тишине', 'Звуковое ведение дневника (напевание своих состояний)'],
+                instruments: ['Один инструмент по выбору', 'Поющая чаша (персональная)', 'Голос (соло-мантры)', 'Дудук или флейта'],
+                advice: 'Не заставляйте себя быть в группе, если не хочется. Ваша сила — в уединении. Если идёте в группу — выбирайте формат «каждый играет своё, но в одном пространстве», где нет давления подстраиваться.'
+            },
+            rhythm: { 
+                title: '🥁 Ритмовик', 
+                desc: 'Вы — сердцебиение группы. Через ритм вы чувствуете связь с другими и заряжаете их энергией. Вам нужны активные, динамичные коллективные практики.',
+                practices: ['Барабанные круги (15-30 человек)', 'Ритмические медитации под общий бит', 'Шаманские практики с бубном в группе', 'Танцевальные звуковые практики'],
+                instruments: ['Барабаны (разные размеры)', 'Бубен', 'Диджериду', 'Перкуссия (кахоны, тамбурины)'],
+                advice: 'Ваша стихия — движение и ритм. Ищите барабанные круги или ритм-медитации. Даже 10 минут общего ритма в день с близкими вернут вам ощущение принадлежности и силы.'
+            },
+            observer: { 
+                title: '🌙 Наблюдатель', 
+                desc: 'Вы — тихий свидетель звука. В группе вы присутствуете, но не растворяетесь. Ваша сила — в способности слушать и удерживать пространство тишины для других.',
+                practices: ['Медитация в группе в тишине', 'Практика «свидетель» — слушать, не участвуя', 'Звуковые ретриты с соблюдением молчания', 'Малые группы (2-3 человека) для глубокого слушания'],
+                instruments: ['Камертон', 'Одна поющая чаша', 'Монохорда', 'Тишина как инструмент'],
+                advice: 'Вам не нужно громко заявлять о себе в группе. Ваша роль — быть «тихим центром», вокруг которого разворачивается звук. Практикуйте «молчаливое присутствие» — это ваша уникальная сила.'
+            }
+        };
+
+        function calculateResult() {
+            let counts = { harmony: 0, solo: 0, rhythm: 0, observer: 0 };
+            let allAnswered = true;
+            
+            for (let i = 1; i <= 10; i++) {
+                const ans = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!ans) { alert('Пожалуйста, ответьте на все вопросы!'); return; }
+                counts[ans.value]++;
+            }
+
+            // Находим тип с максимальным количеством ответов
+            let type = 'harmony';
+            let maxCount = 0;
+            for (let key in counts) {
+                if (counts[key] > maxCount) {
+                    maxCount = counts[key];
+                    type = key;
+                }
+            }
+
+            const r = results[type];
+            
+            document.getElementById('quizPanel').style.display = 'none';
+            const rp = document.getElementById('resultPanel');
+            rp.innerHTML = `
+                <div class="result-title">${r.title}</div>
+                <div class="result-desc">${r.desc}</div>
+                <div class="level-indicator">
+                    <div class="level-badge ${type==='harmony'?'active':''}">Гармонизатор</div>
+                    <div class="level-badge ${type==='solo'?'active':''}">Солист</div>
+                    <div class="level-badge ${type==='rhythm'?'active':''}">Ритмовик</div>
+                    <div class="level-badge ${type==='observer'?'active':''}">Наблюдатель</div>
+                </div>
+                <div class="result-section"><h3>📋 Рекомендованные практики:</h3><ul>${r.practices.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+                <div class="result-section"><h3>🎼 Ваши инструменты:</h3><div class="instruments-list">${r.instruments.map(i=>`<span class="instrument-tag">${i}</span>`).join('')}</div></div>
+                <div class="recommendations"><h4>💡 Совет:</h4><p>${r.advice}</p></div>
+                <div style="text-align:center;"><button class="btn-submit" onclick="resetTest()" style="max-width:300px;margin:0 auto;">🔄 Пройти заново</button><br><a href="./tests_glav.html" class="btn-secondary">← К тестам</a></div>
+            `;
+            rp.style.display = 'block';
+            rp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetTest() {
+            document.getElementById('testForm').reset();
+            document.getElementById('resultPanel').style.display = 'none';
+            document.getElementById('quizPanel').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>

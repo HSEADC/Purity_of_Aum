@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="preload" href="../stylesheets/style.css" as="style">
+    <title>Тест: Звуковая Память</title>
+</head>
+<body>
+    <!-- Живой лесной фон -->
+    <div class="forest-bg">
+        <svg class="tree-silhouette tree-1" viewBox="0 0 200 400"><path d="M100,20 L180,380 L20,380 Z M100,20 L100,380"/></svg>
+        <svg class="tree-silhouette tree-2" viewBox="0 0 200 400"><path d="M100,30 Q160,200 180,380 L20,380 Q40,200 100,30 Z"/></svg>
+        <svg class="tree-silhouette tree-3" viewBox="0 0 200 400"><path d="M100,10 L170,380 L30,380 Z M100,10 L100,380"/></svg>
+        <div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div><div class="firefly"></div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="header-left">
+            <div class="burger-menu" id="burgerMenu">
+                <span></span><span></span><span></span>
+            </div>
+            <nav>
+                <ul class="nav-menu-left">
+                    <li><a href="../pages/zvuk.html">Звукотерапия</a></li>
+                    <li><a href="../pages/articles.html">Статьи</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a href="../index.html" class="logo">Purity of Aum</a>
+        <div class="header-right">
+            <nav>
+                <ul class="nav-menu-right">
+                    <li><a href="../pages/vzaim.html">Взаимодействие</a></li>
+                    <li><a href="../pages/tests.html">Тесты</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- SIDE MENU -->
+    <div class="side-menu-overlay" id="sideMenuOverlay"></div>
+    <div class="side-menu" id="sideMenu">
+        <ul class="side-menu-list">
+            <li class="side-menu-item">
+                <a href="./index.html" class="side-menu-link">Главная</a>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/zvuk.html" class="side-menu-link">Звукотерапия</a>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/articles.html" class="side-menu-link">Статьи</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/articles.html#origin" class="submenu-link" data-filter="origin">Возникновение звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#influence" class="submenu-link" data-filter="influence">Влияние звука</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#meditation" class="submenu-link" data-filter="meditation">Медитации</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#instruments" class="submenu-link" data-filter="instruments">Музыкальные инструменты</a></li>
+                        <li class="submenu-item"><a href="./pages/articles.html#interviews" class="submenu-link" data-filter="interviews">Интервью</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item has-submenu">
+                <a href="./pages/vzaim.html" class="side-menu-link">Взаимодействие</a>
+                <div class="submenu">
+                    <ul class="side-menu-list">
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-meditation" class="submenu-link">Практическая медитация</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-developments" class="submenu-link">Современные разработки</a></li>
+                        <li class="submenu-item"><a href="./pages/vzaim.html#tab-specialists" class="submenu-link">Специалисты</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="side-menu-item">
+                <a href="./pages/tests.html" class="side-menu-link">Тесты</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- TEST CONTENT -->
+    <div class="test-container">
+        <div id="quizPanel">
+            <div class="test-header"><h1 class="test-title">🕰️ Ваша звуковая память</h1></div>
+            <div class="info-box">Ответьте на 10 вопросов, чтобы понять, какие звуки из прошлого формируют ваше настоящее, и подобрать практику для работы со звуковой памятью.</div>
+            
+            <form id="testForm">
+                <div class="question-block">
+                    <div class="question"><div class="question-text">1. Какой звук из детства вам чаще всего снится?</div><div class="answers"><label><input type="radio" name="q1" value="lullaby"> Колыбельная мамы</label><label><input type="radio" name="q1" value="resonance"> Голоса родных за столом</label><label><input type="radio" name="q2" value="echo"> Звуки улицы или двора</label><label><input type="radio" name="q1" value="silence"> Тишина ночного дома</label></div></div>
+                    
+                    <div class="question"><div class="question-text">2. Какой звук вызывает у вас самую сильную ностальгию?</div><div class="answers"><label><input type="radio" name="q2" value="lullaby"> Старая пластинка или радио</label><label><input type="radio" name="q2" value="resonance"> Пение птиц в родном дворе</label><label><input type="radio" name="q2" value="echo"> Школьный звонок</label><label><input type="radio" name="q2" value="silence"> Треск печки или камина</label></div></div>
+                    
+                    <div class="question"><div class="question-text">3. Какой звук из прошлого вы хотели бы забыть?</div><div class="answers"><label><input type="radio" name="q3" value="echo"> Крик или громкий спор</label><label><input type="radio" name="q3" value="echo"> Сирена или сигнал тревоги</label><label><input type="radio" name="q3" value="echo"> Разбитое стекло</label><label><input type="radio" name="q3" value="silence"> Ничего не хочу забывать</label></div></div>
+                    
+                    <div class="question"><div class="question-text">4. Какой звук из прошлого вы хотели бы вернуть?</div><div class="answers"><label><input type="radio" name="q4" value="lullaby"> Смех из детства</label><label><input type="radio" name="q4" value="resonance"> Любимую музыку юности</label><label><input type="radio" name="q4" value="lullaby"> Голос близкого человека</label><label><input type="radio" name="q4" value="silence"> Тишину старого дома</label></div></div>
+                    
+                    <div class="question"><div class="question-text">5. Какой звук ассоциируется у вас с чувством безопасности?</div><div class="answers"><label><input type="radio" name="q5" value="lullaby"> Звуки дома — шаги, посуда</label><label><input type="radio" name="q5" value="resonance"> Голоса семьи</label><label><input type="radio" name="q5" value="lullaby"> Колыбельная</label><label><input type="radio" name="q5" value="silence"> Полная тишина</label></div></div>
+                    
+                    <div class="question"><div class="question-text">6. Какой звук из прошлого до сих пор влияет на вас сильнее всего?</div><div class="answers"><label><input type="radio" name="q6" value="resonance"> Положительно — вдохновляет</label><label><input type="radio" name="q6" value="echo"> Отрицательно — тревожит</label><label><input type="radio" name="q6" value="silence"> Нейтрально — просто фон</label><label><input type="radio" name="q6" value="lullaby"> Тёплое, согревающее чувство</label></div></div>
+                    
+                    <div class="question"><div class="question-text">7. За какой звук из прошлого вы больше всего благодарны?</div><div class="answers"><label><input type="radio" name="q7" value="lullaby"> За любовь, которую услышал</label><label><input type="radio" name="q7" value="resonance"> За урок, который преподал</label><label><input type="radio" name="q7" value="resonance"> За опыт, который сформировал</label><label><input type="radio" name="q7" value="silence"> За тишину, которая научила слушать</label></div></div>
+                    
+                    <div class="question"><div class="question-text">8. Какой звук из прошлого вы готовы простить?</div><div class="answers"><label><input type="radio" name="q8" value="echo"> Боль, которую он причинил</label><label><input type="radio" name="q8" value="echo"> Обиду, которая осталась</label><label><input type="radio" name="q8" value="echo"> Потерю, которую он принёс</label><label><input type="radio" name="q8" value="silence"> Мне нечего прощать</label></div></div>
+                    
+                    <div class="question"><div class="question-text">9. Какой звук из прошлого вы сейчас отпускаете?</div><div class="answers"><label><input type="radio" name="q9" value="echo"> Само прошлое — оно ушло</label><label><input type="radio" name="q9" value="echo"> Страх, который оно оставило</label><label><input type="radio" name="q9" value="echo"> Боль, которую оно причинило</label><label><input type="radio" name="q9" value="resonance"> Я ничего не отпускаю — всё со мной</label></div></div>
+                    
+                    <div class="question"><div class="question-text">10. Какой звук вы хотите создать для будущего?</div><div class="answers"><label><input type="radio" name="q10" value="lullaby"> Тёплый, как колыбельная</label><label><input type="radio" name="q10" value="resonance"> Вдохновляющий, как музыка</label><label><input type="radio" name="q10" value="silence"> Тихий, полный покоя</label><label><input type="radio" name="q10" value="echo"> Новый, ещё не знакомый</label></div></div>
+                </div>
+                <button type="button" class="btn-submit" onclick="calculateResult()">🕰️ Расшифровать память звуков</button>
+            </form>
+        </div>
+
+        <div id="resultPanel" class="result-panel"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="section8_fin">
+        <div id="fin_plashka">
+           <div class="fin_plashka1"><a href="#" class="logo22">Purity of Aum</a></div>
+           <div class="fin_plashka2">
+                <a href="../pages/zvuk.html" class="fin1">Звукотерапия</a>
+                <a href="../pages/articles.html" class="fin1">Статьи</a>
+                <a href="../pages/vzaim.html" class="fin1">Взаимодействия</a>
+                <a href="../pages/tests.html" class="fin1">Тесты</a>
+            </div>  
+           <div class="btm_fin">
+                <div class="card1">
+                    <form id="thanks" method="POST">
+                        <input type="email" name="email" id="email" placeholder="E-mail" required>
+                        <button type="submit" class="btm_fin_podpis" id="btm_fin_podpis"><span class="btm_fin_podpis1" id="btm_fin_podpis1">Подписаться</span></button>
+                    </form>
+                    <p class="msg" id="congo">Спасибо за подписку!</p>
+                </div>
+            </div>
+            <hr class="line_fin">
+            <div class="box_fin"><p class="PoA">2026 Purity of Aum</p><p class="NS">Настасья Звонарёва</p></div>
+        </div>
+    </footer>
+
+    <script>
+        const burgerMenu = document.getElementById('burgerMenu');
+        const sideMenu = document.getElementById('sideMenu');
+        const sideMenuOverlay = document.getElementById('sideMenuOverlay');
+        const header = document.getElementById('header');
+
+        function toggleSideMenu() {
+            burgerMenu.classList.toggle('active'); sideMenu.classList.toggle('active'); sideMenuOverlay.classList.toggle('active');
+            document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        burgerMenu.addEventListener('click', toggleSideMenu);
+        sideMenuOverlay.addEventListener('click', toggleSideMenu);
+        document.querySelectorAll('.side-menu-link').forEach(link => { link.addEventListener('click', () => { toggleSideMenu(); }); });
+        window.addEventListener('scroll', () => { if (window.scrollY > 50) header.classList.add('scrolled'); else header.classList.remove('scrolled'); });
+
+        // Результаты по 4 типам звуковой памяти
+        const results = {
+            lullaby: { 
+                title: '🎶 Круг Колыбельной', 
+                desc: 'Ваша звуковая память хранит тёплые, безопасные звуки детства. Вы ищете в звуках защиту, любовь и возвращение к истокам.',
+                practices: ['Прослушивание колыбельных из вашего детства', 'Звуковая медитация с записями голоса близких', 'Терапия «внутреннего ребёнка» через звуки дома', 'Создание собственного «звукового одеяла» безопасности'],
+                instruments: ['Музыкальная шкатулка', 'Поющие чаши (высокие, нежные)', 'Колыбельные на арфе', 'Тихие флейты'],
+                advice: 'Создайте плейлист из звуков, которые напоминают вам о безопасности. Слушайте его перед сном — это восстановит глубокое доверие к миру.'
+            },
+            echo: { 
+                title: '🔊 Круг Эха', 
+                desc: 'Ваша звуковая память хранит незавершённые звуки — те, что требуют отпускания и прощения. Прошлое ещё звучит в вас эхом.',
+                practices: ['Практика «отпускания звука» — проговаривание вслух', 'Звуковое письмо — запись и последующее стирание', 'Медитация с гонгом для растворения старых вибраций', 'Работа с мантрами прощения'],
+                instruments: ['Гонг', 'Тибетские чаши (низкие частоты)', 'Барабан для ритмического отпускания', 'Диджериду'],
+                advice: 'Найдите звук, который «застрял» в прошлом, и позвольте ему прозвучать через вас — крик, плач, пение. После этого наступит тишина исцеления.'
+            },
+            resonance: { 
+                title: '✨ Круг Резонанса', 
+                desc: 'Ваша звуковая память — это источник силы и вдохновения. Прошлые звуки стали вашей опорой и мудростью.',
+                practices: ['Создание «звукового алтаря» из значимых записей', 'Практика благодарности через звук', 'Интеграция старых мелодий в новые ритуалы', 'Звуковое повествование своей истории'],
+                instruments: ['Любимые инструменты вашей юности', 'Колокольчики и ветра', 'Хрустальные чаши', 'Этнические инструменты'],
+                advice: 'Ваши прошлые звуки — это сокровище. Соберите их в «звуковую книгу жизни» и перечитывайте её в моменты сомнений — они вернут вам силу.'
+            },
+            silence: { 
+                title: '🌙 Круг Тишины', 
+                desc: 'Ваша звуковая память уходит корнями в тишину. Вы чувствительны к паузам и пустотам, которые говорят громче слов.',
+                practices: ['Медитация в полной тишине 20 минут в день', 'Практика «слушания тишины» — различение её слоёв', 'Создание тихих звуковых якорей (один тон, один удар)', 'Звуковой пост — день без музыки и разговоров'],
+                instruments: ['Камертон', 'Одна поющая чаша', 'Тишина как инструмент', 'Монохорда'],
+                advice: 'Ваша сила — в тишине. Не бойтесь её. Именно в ней рождаются самые глубокие звуки вашей души. Практикуйте «звуковое молчание» хотя бы час в день.'
+            }
+        };
+
+        function calculateResult() {
+            let counts = { lullaby: 0, echo: 0, resonance: 0, silence: 0 };
+            let allAnswered = true;
+            
+            for (let i = 1; i <= 10; i++) {
+                const ans = document.querySelector(`input[name="q${i}"]:checked`);
+                if (!ans) { alert('Пожалуйста, ответьте на все вопросы!'); return; }
+                counts[ans.value]++;
+            }
+
+            // Находим тип с максимальным количеством ответов
+            let type = 'lullaby';
+            let maxCount = 0;
+            for (let key in counts) {
+                if (counts[key] > maxCount) {
+                    maxCount = counts[key];
+                    type = key;
+                }
+            }
+
+            const r = results[type];
+            
+            document.getElementById('quizPanel').style.display = 'none';
+            const rp = document.getElementById('resultPanel');
+            rp.innerHTML = `
+                <div class="result-title">${r.title}</div>
+                <div class="result-desc">${r.desc}</div>
+                <div class="level-indicator">
+                    <div class="level-badge ${type==='lullaby'?'active':''}">Колыбельная</div>
+                    <div class="level-badge ${type==='echo'?'active':''}">Эхо</div>
+                    <div class="level-badge ${type==='resonance'?'active':''}">Резонанс</div>
+                    <div class="level-badge ${type==='silence'?'active':''}">Тишина</div>
+                </div>
+                <div class="result-section"><h3>📋 Рекомендованные практики:</h3><ul>${r.practices.map(p=>`<li>${p}</li>`).join('')}</ul></div>
+                <div class="result-section"><h3>🎼 Ваши инструменты:</h3><div class="instruments-list">${r.instruments.map(i=>`<span class="instrument-tag">${i}</span>`).join('')}</div></div>
+                <div class="recommendations"><h4>💡 Совет:</h4><p>${r.advice}</p></div>
+                <div style="text-align:center;"><button class="btn-submit" onclick="resetTest()" style="max-width:300px;margin:0 auto;">🔄 Пройти заново</button><br><a href="./tests_glav.html" class="btn-secondary">← К тестам</a></div>
+            `;
+            rp.style.display = 'block';
+            rp.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function resetTest() {
+            document.getElementById('testForm').reset();
+            document.getElementById('resultPanel').style.display = 'none';
+            document.getElementById('quizPanel').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
